@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackTriggerScript : MonoBehaviour
 {
-    void OnTriggerEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
         transform.parent.GetComponent<PlayerController>().EnemyHit(col);
     }

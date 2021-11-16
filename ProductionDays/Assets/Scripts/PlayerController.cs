@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     void OnLeftButtonDown()
     {
         _moveLeft = true;
-        if (_lookRight) 
+        if (_lookRight && !_attacking) 
         { 
             transform.Rotate(new Vector3(0, 180, 0)); 
             _lookRight = false;
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     void OnRightButtonDown()
     {
         _moveRight = true; 
-        if (!_lookRight)
+        if (!_lookRight && !_attacking)
         {
             transform.Rotate(new Vector3(0, 180, 0));
             _lookRight = true;
@@ -128,6 +128,19 @@ public class PlayerController : MonoBehaviour
         _attackColliderFist.enabled = false;
         _walkable = true;
         _attacking = false;
+        Debug.Log(transform.eulerAngles);
+        if (_moveLeft && (int)transform.eulerAngles.y == (int)0)
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            _lookRight = false;
+        }
+
+        if (_moveRight && (int)transform.eulerAngles.y == (int)180)
+        {
+
+            transform.Rotate(new Vector3(0, 180, 0));
+            _lookRight = true;
+        }
     }
 
     public void PlayerHit(float damage)
@@ -138,11 +151,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void EnemyHit(Collision col)
+    public void EnemyHit(Collider col)
     {
         if (col.gameObject.CompareTag("Enemy"))
         {
-            //col.gameObject.GetComponent<EnemyScript>().Healthpoint -= _attackDamage;
+            col.gameObject.GetComponent<EnemyHPScript>().Updatehealt(_attackDamage);
         }
     }
     
