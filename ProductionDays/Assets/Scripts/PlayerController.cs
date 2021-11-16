@@ -5,51 +5,145 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
+    [SerializeField] private float _blockMoveSpeed;
     [SerializeField] private float _attackDamage;
     [SerializeField] private float _healthPoint;
 
     private bool _moveLeft = false;
     private bool _moveRight = false;
     private bool _walkable = true;
+    private bool _blocking = false;
+    private bool _attacking = false;
+    private bool _lookRight = true;
 
-    void Update()
+    private BoxCollider _attackColliderFist;
+    private Animator _animator;
+
+    void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        _attackColliderFist = transform.GetChild(0).GetComponent<BoxCollider>();
+        _attackColliderFist.enabled = false;
+    }
+
+
+    void FixedUpdate()
     {
         if (_walkable)
         {
             Vector3 move = Vector3.zero;
             if (_moveRight)
             {
-                move += Vector3.right;
+                if (_lookRight)
+                {
+                    move += Vector3.right;
+                }
+                else
+                {
+                    move += Vector3.left;
+                }
             }
-
             if (_moveLeft)
             {
-                move += Vector3.left;
+                if (_lookRight)
+                {
+                    move += Vector3.left;
+                }
+                else
+                {
+                    move += Vector3.right;
+                }
             }
 
-            move = move * _moveSpeed * Time.deltaTime;
+            if (_blocking)
+            {
+                move = move * _blockMoveSpeed * Time.deltaTime;
+            }
+            else
+            {
+                move = move * _moveSpeed * Time.deltaTime;
+            }
+
             transform.Translate(move);
         }
     }
 
-    void OnLeftButton()
+    void OnLeftButtonDown()
     {
-        _moveLeft = !_moveLeft;
+        _moveLeft = true;
+        if (_lookRight) 
+        { 
+            transform.Rotate(new Vector3(0, 180, 0)); 
+            _lookRight = false;
+        }
     }
-    void OnRightButton()
+    void OnRightButtonDown()
     {
-        _moveRight = !_moveRight;
+        _moveRight = true; 
+        if (!_lookRight)
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            _lookRight = true;
+        }
+    }
+
+    void OnLeftButtonUp()
+    {
+        _moveLeft = false;
+    }
+    void OnRightButtonUp()
+    {
+        _moveRight = false;
     }
 
     void OnAttackButton()
     {
-        //_walkable = false;
-        //wait for Animation then _walkable = true;
-        Debug.Log("Attack");
+        if (!_blocking)
+        {
+            _attacking = true;
+            _walkable = false;
+            _attackColliderFist.enabled = true;
+            _animator.SetBool("Attacking", true);
+        }
     }
 
-    void OnBlockButton()
+    void OnBlockButtonDown()
     {
-        //walk slower look into direction you started the block
+        if (!_attacking)
+        {
+            _blocking = true;
+            _animator.SetBool("Blocking", true);
+        }
     }
+
+    void OnBlockButtonUp()
+    {
+        _animator.SetBool("Blocking", false);
+        _blocking = false;
+    }
+
+    void AttackAnimationEnd()
+    {
+        _animator.SetBool("Attacking", false);
+        _attackColliderFist.enabled = false;
+        _walkable = true;
+        _attacking = false;
+    }
+
+    public void PlayerHit(float damage)
+    {
+        if (!_blocking)
+        {
+            _healthPoint -= damage;
+        }
+    }
+
+    public void EnemyHit(Collision col)
+    {
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            //col.gameObject.GetComponent<EnemyScript>().Healthpoint -= _attackDamage;
+        }
+    }
+    
 }
