@@ -120,7 +120,19 @@ public class PlayerController : MonoBehaviour
     void OnBlockButtonUp()
     {
         _animator.SetBool("Blocking", false);
-        _blocking = false;
+        _blocking = false; 
+        if (_moveLeft && (int)transform.eulerAngles.y == (int)0)
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            _lookRight = false;
+        }
+
+        if (_moveRight && (int)transform.eulerAngles.y == (int)180)
+        {
+
+            transform.Rotate(new Vector3(0, 180, 0));
+            _lookRight = true;
+        }
     }
 
     void AttackAnimationEnd()
