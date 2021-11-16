@@ -275,7 +275,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e317789c2eab7b845877152f4ac0e2e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   _moveSpeed: 5
   _blockMoveSpeed: 2.5
   _attackDamage: 1
-  _healthPoint: 3
+  _healthPoint: 30
 --- !u!95 &1763588418
 Animator:
   serializedVersion: 4
