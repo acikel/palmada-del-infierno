@@ -10,6 +10,9 @@
 /ProductionDays/[Ll]ogs/
 /ProductionDays/[Uu]ser[Ss]ettings/
 
+/FMOD/ProductionDays/[Bb]uild/
+/FMOD/ProductionDays/[Bb]uilds/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /ProductionDays/[Mm]emoryCaptures/
@@ -69,3 +72,22 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /ProductionDays/[Aa]ssets/[Ss]treamingAssets/aa.meta
 /ProductionDays/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+
+# Never ignore DLLs in the FMOD subfolder.
+!/ProductionDays/[Aa]ssets/Plugins/FMOD/**/lib/*
+
+# Don't ignore images and gizmos used by FMOD in the Unity Editor.
+!/ProductionDays/[Aa]ssets/Gizmos/FMOD/*
+!/ProductionDays/[Aa]ssets/Editor Default Resources/FMOD/*
+                    
+# Ignore the Cache folder since it is updated locally.
+/ProductionDays/[Aa]ssets/Plugins/FMOD/Cache/*
+                    
+# Ignore bank files in the StreamingAssets folder.
+/ProductionDays/[Aa]ssets/StreamingAssets/**/*.bank
+/ProductionDays/[Aa]ssets/StreamingAssets/**/*.bank.meta
+                    
+# If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
+# Log files can be ignored.
+fmod_editor.log
