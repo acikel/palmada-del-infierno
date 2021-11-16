@@ -11,6 +11,9 @@ public class InfiniteEnemySpawner : MonoBehaviour
     private GameObject enemy;
 
     private GameObject spawnedEnemy;
+
+    private int amountToKill = 4;
+    private int enemyCounter = 0;
     
     void Start()
     {
@@ -21,8 +24,9 @@ public class InfiniteEnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        yield return new WaitForSeconds(spawnDelay);
+
         spawnedEnemy = Instantiate(enemy, transform.position, transform.rotation);
+        yield return new WaitForSeconds(spawnDelay);
     }
 
     void CheckForSpawn()
@@ -30,6 +34,17 @@ public class InfiniteEnemySpawner : MonoBehaviour
         if (spawnedEnemy == null)
         {
             StartCoroutine(SpawnEnemy());
+            enemyCounter++;
+            /*if (enemyCounter < amountToKill)
+            {
+                StartCoroutine(SpawnEnemy());
+                enemyCounter++;
+            }
+            else
+            {
+                InstanceRepository.Instance.Get<LevelManager>().RoomCleared();
+            }*/
+            
         }
     }
 }

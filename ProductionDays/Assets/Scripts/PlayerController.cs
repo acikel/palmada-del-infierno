@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -152,7 +153,8 @@ public class PlayerController : MonoBehaviour
 
         if (_healthPoint <= 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
