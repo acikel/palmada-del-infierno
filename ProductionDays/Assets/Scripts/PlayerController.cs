@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void OnAttackButton()
     {
-        _walkable = false;
+        //_walkable = false;
         //wait for Animation then _walkable = true;
         Debug.Log("Attack");
     }
