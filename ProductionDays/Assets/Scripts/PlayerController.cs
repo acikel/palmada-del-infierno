@@ -149,6 +149,11 @@ public class PlayerController : MonoBehaviour
         {
             _healthPoint -= damage;
         }
+
+        if (_healthPoint <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void EnemyHit(Collider col)
