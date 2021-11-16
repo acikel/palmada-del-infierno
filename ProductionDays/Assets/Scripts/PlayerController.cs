@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     void OnLeftButtonDown()
     {
         _moveLeft = true;
-        if (_lookRight && !_attacking) 
+        if (_lookRight && !_attacking && !_blocking) 
         { 
             transform.Rotate(new Vector3(0, 180, 0)); 
             _lookRight = false;
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     void OnRightButtonDown()
     {
         _moveRight = true; 
-        if (!_lookRight && !_attacking)
+        if (!_lookRight && !_attacking && !_blocking)
         {
             transform.Rotate(new Vector3(0, 180, 0));
             _lookRight = true;
