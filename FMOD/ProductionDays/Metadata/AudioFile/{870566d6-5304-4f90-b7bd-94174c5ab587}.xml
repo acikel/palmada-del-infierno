@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{870566d6-5304-4f90-b7bd-94174c5ab587}">
+		<property name="assetPath">
+			<value>Shiva1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.25</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ba190cdf-7dab-47c7-9ca8-c27a40d9e2fe}</destination>
+		</relationship>
+	</object>
+</objects>
