@@ -122,9 +122,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{b9d44265-c720-4ce6-b3af-ef8f2db2f0f7}" />
 	<object class="SingleSound" id="{4879cd09-1f4d-47ef-8096-ac33ffc7c177}">
-		<property name="startOffset">
-			<value>83</value>
-		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>

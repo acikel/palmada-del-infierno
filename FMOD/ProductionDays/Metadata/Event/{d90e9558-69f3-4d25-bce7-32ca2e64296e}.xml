@@ -91,6 +91,7 @@
 		</relationship>
 		<relationship name="markers">
 			<destination>{721f8377-7596-4abc-a5a4-c8319ec0aa75}</destination>
+			<destination>{6988d5e9-c47e-462b-bd68-9535c2398de1}</destination>
 		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{87b4218d-3b4f-405d-8e3c-66631a222de3}">
@@ -193,6 +194,20 @@
 		</property>
 		<property name="length">
 			<value>58.235312499999999</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{0df3d4d1-d1da-42ca-a55a-0b753d3db50c}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{72844799-20d9-41df-978d-f1fffa98d368}</destination>
+		</relationship>
+	</object>
+	<object class="TempoMarker" id="{6988d5e9-c47e-462b-bd68-9535c2398de1}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="tempo">
+			<value>136</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{0df3d4d1-d1da-42ca-a55a-0b753d3db50c}</destination>
