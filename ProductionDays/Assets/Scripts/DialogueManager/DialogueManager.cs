@@ -14,19 +14,23 @@ public class DialogueManager : MonoBehaviour
     public bool isTalking = false;
 
     static Story story;
-    TMP_Text nametag;
+    TMP_Text nametagHelvetia;
+    TMP_Text nametagOther;
     TMP_Text message;
     List<string> tags;
     static Choice choiceSelected;
 
-    private int ButtonSize = 50;
+    private int buttonSize = 50;
+    private bool showChoices = false;
 
     // Start is called before the first frame update
     void Start()
     {
         story = new Story(inkFile.text);
-        nametag = textBox.transform.GetChild(0).GetComponent<TMP_Text>();
-        message = textBox.transform.GetChild(1).GetComponent<TMP_Text>();
+        nametagHelvetia = textBox.transform.GetChild(0).GetComponent<TMP_Text>();
+        nametagOther = textBox.transform.GetChild(1).GetComponent<TMP_Text>();
+        message = textBox.transform.GetChild(2).GetComponent<TMP_Text>();
+        message.text = "";
         tags = new List<string>();
         choiceSelected = null;
     }
@@ -40,16 +44,19 @@ public class DialogueManager : MonoBehaviour
     {
         if (!optionPanel.activeInHierarchy)
         {
+            //Are there any choices?
+            if (story.currentChoices.Count != 0)
+            {
+                StartCoroutine(ShowChoices());
+            }
+
             //Is there more to the story?
             if (story.canContinue)
             {
                 //nametag.text = "Phoenix";
-                AdvanceDialogue();
-
-                //Are there any choices?
-                if (story.currentChoices.Count != 0)
+                if (!optionPanel.activeInHierarchy && !showChoices)
                 {
-                    StartCoroutine(ShowChoices());
+                    AdvanceDialogue();
                 }
             }
             else
@@ -89,6 +96,10 @@ public class DialogueManager : MonoBehaviour
     // Create then show the choices on the screen until one got selected
     IEnumerator ShowChoices()
     {
+        nametagHelvetia.gameObject.SetActive(true);
+        nametagOther.gameObject.SetActive(false);
+        message.gameObject.SetActive(false);
+
         Debug.Log("There are choices need to be made here!");
         List<Choice> _choices = story.currentChoices;
 
@@ -100,9 +111,9 @@ public class DialogueManager : MonoBehaviour
             temp.GetComponent<Selectable>().element = _choices[i];
             temp.GetComponent<Button>().onClick.AddListener(() => { temp.GetComponent<Selectable>().Decide(); });
 
-            temp.GetComponent<RectTransform>().localPosition += new Vector3(0, i*ButtonSize, 0);
+            temp.GetComponent<RectTransform>().localPosition -= new Vector3(0, i*buttonSize, 0);
         }
-
+        
         optionPanel.SetActive(true);
 
         yield return new WaitUntil(() => { return choiceSelected != null; });
@@ -120,12 +131,14 @@ public class DialogueManager : MonoBehaviour
     // After a choice was made, turn off the panel and advance from that choice
     void AdvanceFromDecision()
     {
+        message.gameObject.SetActive(true);
         optionPanel.SetActive(false);
         for (int i = 0; i < optionPanel.transform.childCount; i++)
         {
             Destroy(optionPanel.transform.GetChild(i).gameObject);
         }
         choiceSelected = null; // Forgot to reset the choiceSelected. Otherwise, it would select an option without player intervention.
+        AdvanceDialogue();
         AdvanceDialogue();
     }
 
@@ -139,7 +152,18 @@ public class DialogueManager : MonoBehaviour
         {
             string[] subs = t.Split(' ');
 
-            nametag.text = subs[0];
+            if (subs[0].Equals("Helvetia"))
+            {
+                nametagHelvetia.gameObject.SetActive(true);
+                nametagOther.gameObject.SetActive(false);
+            }
+            else
+            {
+                nametagHelvetia.gameObject.SetActive(false);
+                nametagOther.gameObject.SetActive(true);
+                nametagOther.text = subs[0];
+            }
+            
             if(subs.Length > 1)
             {
                 // change sprite according to emotion
