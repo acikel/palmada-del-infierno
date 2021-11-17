@@ -6,21 +6,21 @@
             "id": "5f62244b-fe97-48a3-86a9-e8f0f67ec55c",
             "actions": [
                 {
-                    "name": "LeftButton",
+                    "name": "LeftButtonDown",
                     "type": "Button",
                     "id": "ad6d0b7f-c6cc-4b6b-807d-0ac7b486f122",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RightButton",
+                    "name": "RightButtonDown",
                     "type": "Button",
                     "id": "953e6e35-2a73-4c31-82a0-9a0cebaf2025",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -33,12 +33,48 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "BlockButton",
+                    "name": "BlockButtonDown",
                     "type": "Button",
                     "id": "53b4d18b-d12b-4f9d-b8dc-134b4dc8eba1",
                     "expectedControlType": "Button",
                     "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BlockButtonUp",
+                    "type": "Button",
+                    "id": "9c043b09-ba00-49b5-b68a-5fb9477f29af",
+                    "expectedControlType": "Button",
+                    "processors": "",
                     "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftButtonUp",
+                    "type": "Button",
+                    "id": "164c5d0c-1610-4487-a717-13db7d9755e3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightButtonUp",
+                    "type": "Button",
+                    "id": "c3ca657d-8505-4334-8ab3-844c1169830b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ConfirmButton",
+                    "type": "Button",
+                    "id": "acbb21c8-68e3-4e83-bdc3-5f9f33ff7dc1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -50,7 +86,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftButton",
+                    "action": "LeftButtonDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -61,7 +97,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftButton",
+                    "action": "LeftButtonDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -72,7 +108,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightButton",
+                    "action": "RightButtonDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -83,7 +119,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightButton",
+                    "action": "RightButtonDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -105,7 +141,73 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "BlockButton",
+                    "action": "BlockButtonDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e59e3b7-50f8-4b98-95cc-77599f543908",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BlockButtonUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f17f4df-e33c-494b-8bbf-40dcaae171b7",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftButtonUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "566fd7f6-f8bc-4529-b047-3ba0478f92fc",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftButtonUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ac99592-b89b-4fc4-9cbc-0b1243a6d299",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightButtonUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9614ecee-de8e-48be-a0ad-b7fb55c2a904",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightButtonUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ff781d1-58cc-4932-b19c-024f40db0e4a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ConfirmButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
