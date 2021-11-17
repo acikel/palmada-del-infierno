@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77f7f6c31b51eb4495e1ddad144a570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: {fileID: 0}
-  _block: {fileID: 0}
+  _hp: {fileID: 277573704}
+  _block: {fileID: 286300431}
   _maxHP: 200
   _maxBlock: 200
 --- !u!4 &173740202
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 286300432}
   - component: {fileID: 286300431}
   m_Layer: 0
-  m_Name: CurrenHP
+  m_Name: CurrenStamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 1517940008}
   - component: {fileID: 1517940007}
   m_Layer: 0
-  m_Name: HPBackground
+  m_Name: StaminaBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1150,15 +1150,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975041964580764809, guid: adb36f9f5246e2947baeb41d6c9fcf80, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8975041964580764809, guid: adb36f9f5246e2947baeb41d6c9fcf80, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8975041964580764809, guid: adb36f9f5246e2947baeb41d6c9fcf80, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8975041964580764809, guid: adb36f9f5246e2947baeb41d6c9fcf80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
