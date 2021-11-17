@@ -53,6 +53,7 @@ public class LevelManager : MonoBehaviour
 
     public void RoomCleared()
     {
+        Debug.Log("Bub");
         activeRoomCleared = true;
         camController.SetIntermissionLvl();
         //DialogeManager Call Function
@@ -64,8 +65,8 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("test");
         camController.cameraFollowing = false;
-        currentRoom++;
         activeRoomCleared = false;
+        currentRoom++;
         camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
         player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;

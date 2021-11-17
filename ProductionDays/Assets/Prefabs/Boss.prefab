@@ -365,7 +365,7 @@ MonoBehaviour:
   decisionTime: 2
   meleeDamage: 1
   meleeDistance: 6
-  minion: {fileID: 1772283408247557581, guid: 643fdd07a830bd740958c430bdc0cf47, type: 3}
+  minion: {fileID: 1772283408247557581, guid: 1b40d1f2085cbb14d9387c24cb8a5705, type: 3}
   minionSpawnAmount: 3
   spawnWaitDuration: 10
   spawnDistanceFromCenter: 16

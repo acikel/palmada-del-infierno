@@ -1,5 +1,6 @@
 ﻿
 using System.Collections;
+using AI;
 using UnityEngine;
 
 public class BossSpawnMinions : State
@@ -42,6 +43,7 @@ public class BossSpawnMinions : State
                 spawnPosition.x += spawnDistanceToCenter;
 
             var instancedMinion = GameObject.Instantiate(minion, spawnPosition, Quaternion.identity);
+            instancedMinion.GetComponent<MinionConfig>().BossSpawned = true;
             instancedMinion.GetComponent<StateMachine>().SetState(new EngagePlayer());
         }
         
