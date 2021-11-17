@@ -31,14 +31,24 @@ public class AIMovement : MonoBehaviour
         Vector3 position = transform.position;
 
         TurnTowardsDestination(destination, position);
+        Vector3 difference = destination - position;
+        difference.y = 0;
+        Vector3 move = difference.normalized;
 
         if (Vector3.Distance(position, destination) < reachDistance)
         {
-            return true;
+            if (Mathf.Abs(position.z - destination.z) > 0.1f)
+            {
+                move.x = 0;
+            }
+            else
+            {
+                return true;     
+            }
         }
-            
-        Vector3 move = Vector3.forward * moveSpeed * Time.deltaTime;
-        transform.Translate(move);
+        
+        move = move * moveSpeed * Time.deltaTime;
+        transform.position = position + move;
 
         return false;
     }

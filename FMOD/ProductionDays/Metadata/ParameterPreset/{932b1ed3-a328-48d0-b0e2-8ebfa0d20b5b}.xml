@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{932b1ed3-a328-48d0-b0e2-8ebfa0d20b5b}">
+		<property name="name">
+			<value>StoryCombatCrossfade</value>
+		</property>
+		<relationship name="folder">
+			<destination>{eecd45cf-da31-4d2f-92e5-3b27558f3f17}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{bd0a0d00-4d84-4ff9-81bf-d6d73381b1af}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{bd0a0d00-4d84-4ff9-81bf-d6d73381b1af}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
