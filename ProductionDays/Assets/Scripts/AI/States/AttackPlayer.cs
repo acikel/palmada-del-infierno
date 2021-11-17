@@ -36,6 +36,6 @@ public class AttackPlayer : State
 
     private void Attack()
     {
-        playerController.PlayerHit(attackDamage);
+        playerController.PlayerHit(attackDamage, this.GameObject.transform);
     }
 }
