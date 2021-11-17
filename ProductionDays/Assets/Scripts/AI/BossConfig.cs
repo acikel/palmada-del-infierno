@@ -38,9 +38,9 @@ namespace AI
         public float RangedAttackDamage => rangedAttackDamage;
         public float RangedAttackLifetime => rangedAttackLifetime;
 
-        private void OnDestroy()
+        /*private void OnDestroy()
         {
             InstanceRepository.Instance.Get<LevelManager>().Rooms[InstanceRepository.Instance.Get<LevelManager>().currentRoom].GetComponent<Room>().EnemyCount--;
-        }
+        }*/
     }
 }

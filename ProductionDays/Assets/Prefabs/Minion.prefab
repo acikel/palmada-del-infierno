@@ -271,3 +271,4 @@ MonoBehaviour:
   attackRange: 1.5
   attackInterval: 1.5
   attackDamage: 1
+  BossSpawned: 0

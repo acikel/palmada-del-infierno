@@ -28,6 +28,8 @@ public class LevelManager : MonoBehaviour
 
         player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
         player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
+
+        Rooms[currentRoom].GetComponent<Room>().SpawnEnemies();
     }
 
     // Update is called once per frame
@@ -42,10 +44,9 @@ public class LevelManager : MonoBehaviour
             }else camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         }
 
-        if (Rooms[currentRoom].GetComponent<Room>().EnemyCount <= 0 && !activeRoomCleared)
+        if (Rooms[currentRoom].GetComponent<Room>().currentEnemyCount <= 0 && !activeRoomCleared)
         {
             RoomCleared();
-            Debug.Log("beep");
         }
     }
 
@@ -53,7 +54,6 @@ public class LevelManager : MonoBehaviour
 
     public void RoomCleared()
     {
-        Debug.Log("Bub");
         activeRoomCleared = true;
         camController.SetIntermissionLvl();
         //DialogeManager Call Function
@@ -70,7 +70,7 @@ public class LevelManager : MonoBehaviour
         camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
         player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
-        Rooms[currentRoom].GetComponent<Room>().SpawnBoss();
+        Rooms[currentRoom].GetComponent<Room>().SpawnEnemies();
     }
 
     void OnConfirmButton()

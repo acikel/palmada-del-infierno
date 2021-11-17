@@ -9,21 +9,27 @@ public class DialogueManager : MonoBehaviour
 {
     private ExpressionChanger expChange;
     private UIControllerDialogue UICont;
+    private StoryManager storyMan;
 
     private GameObject Player;
     private float nextDialoguePos;
-    public float distPerDialogue;
+    [SerializeField] private float distPerDialogue;
+    private int sentenceLength;
+    private float playerSpeed;
+    private float actualDistPerDialogue;
+    [SerializeField] private float minDist;
+    [SerializeField] private float distPerCharacterDivider;
 
-    public TextAsset inkFile;
-    public GameObject textBox;
-    public GameObject customButton;
-    public GameObject optionPanel;
-    public bool isTalking = false;
+    //public TextAsset inkFile;
+    [SerializeField] private GameObject textBox;
+    [SerializeField] private GameObject customButton;
+    [SerializeField] private GameObject optionPanel;
+    [SerializeField] private bool isTalking = false;
 
     private bool dialogueStarted = false;
 
     static Story story;
-    TMP_Text nametagHelvetia;
+    TMP_Text nametagHelvezia;
     TMP_Text nametagOther;
     TMP_Text message;
     List<string> tags;
@@ -37,11 +43,12 @@ public class DialogueManager : MonoBehaviour
     {
         UICont = GetComponent<UIControllerDialogue>();
         expChange = GetComponent<ExpressionChanger>();
+        storyMan = GetComponent<StoryManager>();
         Player = GameObject.FindGameObjectWithTag("Player");
-        nextDialoguePos = Player.transform.position.x + distPerDialogue;
+        playerSpeed = Player.GetComponent<PlayerController>()._moveSpeed;
 
-        story = new Story(inkFile.text);
-        nametagHelvetia = textBox.transform.GetChild(0).GetComponent<TMP_Text>();
+        story = new Story(storyMan.GetCurrentStory().text);
+        nametagHelvezia = textBox.transform.GetChild(0).GetComponent<TMP_Text>();
         nametagOther = textBox.transform.GetChild(1).GetComponent<TMP_Text>();
         message = textBox.transform.GetChild(2).GetComponent<TMP_Text>();
         message.text = "";
@@ -54,8 +61,10 @@ public class DialogueManager : MonoBehaviour
         ProceedDialogueOnDistWalked();
     }
 
+    /*
+    // DEBUG START
     void OnConfirmButton()
-    {/*
+    {
         if (!optionPanel.activeInHierarchy && dialogueStarted)
         {
             //Are there any choices?
@@ -76,14 +85,21 @@ public class DialogueManager : MonoBehaviour
             {
                 FinishDialogue();
             }
-        }   */
+        }   
     }
 
+    void OnBlockButtonDown()
+    {
+        StartDialogue();
+    }
+
+    // DEBUG END
+    */
     private void ProceedDialogueOnDistWalked()
     {
         if(dialogueStarted && Player.transform.position.x > nextDialoguePos && !optionPanel.activeInHierarchy)
         {
-            nextDialoguePos += distPerDialogue;
+            
             //Are there any choices?
             if (story.currentChoices.Count != 0)
             {
@@ -96,6 +112,7 @@ public class DialogueManager : MonoBehaviour
                 if (!optionPanel.activeInHierarchy && !showChoices)
                 {
                     AdvanceDialogue();
+                    nextDialoguePos = Player.transform.position.x + playerSpeed * (minDist + distPerDialogue * sentenceLength / distPerCharacterDivider);
                 }
             }
             else
@@ -111,12 +128,14 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of Dialogue!");
         dialogueStarted = false;
         UICont.ScaleDown();
+        story = new Story(storyMan.NextStory().text);
     }
 
     // Advance through the story 
     void AdvanceDialogue()
     {
         string currentSentence = story.Continue();
+        sentenceLength = currentSentence.Length;
         ParseTags();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(currentSentence));
@@ -137,7 +156,7 @@ public class DialogueManager : MonoBehaviour
     // Create then show the choices on the screen until one got selected
     IEnumerator ShowChoices()
     {
-        nametagHelvetia.gameObject.SetActive(true);
+        nametagHelvezia.gameObject.SetActive(true);
         nametagOther.gameObject.SetActive(false);
         message.gameObject.SetActive(false);
 
@@ -179,8 +198,10 @@ public class DialogueManager : MonoBehaviour
             Destroy(optionPanel.transform.GetChild(i).gameObject);
         }
         choiceSelected = null; // Forgot to reset the choiceSelected. Otherwise, it would select an option without player intervention.
+
         AdvanceDialogue();
         AdvanceDialogue();
+        nextDialoguePos = Player.transform.position.x + Player.transform.position.x + playerSpeed * (minDist + distPerDialogue * sentenceLength / distPerCharacterDivider);
     }
 
     /*** Tag Parser ***/
@@ -193,14 +214,14 @@ public class DialogueManager : MonoBehaviour
         {
             string[] subs = t.Split(' ');
 
-            if (subs[0].Equals("Helvetia"))
+            if (subs[0].Equals("Helvezia"))
             {
-                nametagHelvetia.gameObject.SetActive(true);
+                nametagHelvezia.gameObject.SetActive(true);
                 nametagOther.gameObject.SetActive(false);
             }
             else
             {
-                nametagHelvetia.gameObject.SetActive(false);
+                nametagHelvezia.gameObject.SetActive(false);
                 nametagOther.gameObject.SetActive(true);
                 nametagOther.text = subs[0];
             }
@@ -208,13 +229,13 @@ public class DialogueManager : MonoBehaviour
             if(subs.Length > 1)
             {
                 // change sprite according to emotion
-                if (subs[0].Equals("Helvetia"))
+                if (subs[0].Equals("Helvezia"))
                 {
                     expChange.ChangeExpressionLeft(subs[1]);
                 }
                 else
                 {
-                    expChange.ChangeExpressionRight(subs[1]);
+                    expChange.ChangeExpressionRight(subs[1], subs[0]);
                 }
                 
 
@@ -249,5 +270,6 @@ public class DialogueManager : MonoBehaviour
         dialogueStarted = true;
         UICont.ScaleUp();
         AdvanceDialogue();
+        nextDialoguePos = Player.transform.position.x + playerSpeed * (minDist + distPerDialogue * sentenceLength / distPerCharacterDivider);
     }
 }

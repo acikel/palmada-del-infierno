@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4570955418230121853}
   - component: {fileID: 4570955418230121854}
   - component: {fileID: 4570955418230121855}
+  - component: {fileID: 2042808982}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f77b064ec2c3b947862c7c21aea51f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expChange: {fileID: 4570955418230121855}
+  distPerDialogue: 5
   inkFile: {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
   textBox: {fileID: 0}
   customButton: {fileID: 9068726120944087058, guid: 37673b8e7a0cb3e448266825d981f8ab, type: 3}
@@ -109,19 +110,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb38b74f424bb547ba1be0d1f28f573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Expressions:
-  - {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
-  - {fileID: 21300000, guid: 23b70329f12a3384e98fcf15b2239e73, type: 3}
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  ExpressionsHelvezia:
+  - name: 0
+    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+  - name: 1
+    ExpressionSprite: {fileID: 21300000, guid: 23b70329f12a3384e98fcf15b2239e73, type: 3}
+  - name: 2
+    ExpressionSprite: {fileID: 21300000, guid: 918db029d07844740be767005ec82f80, type: 3}
+  - name: 3
+    ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
+  - name: 4
+    ExpressionSprite: {fileID: 21300000, guid: e06c806a7f95c5642ba325a5e9e7e030, type: 3}
+  - name: 5
+    ExpressionSprite: {fileID: 21300000, guid: 77ddd9797f4167d4eb84438d2ddddecb, type: 3}
+  - name: 6
+    ExpressionSprite: {fileID: 21300000, guid: 22062909f76086b40b1f373240dce7b1, type: 3}
+  - name: 7
+    ExpressionSprite: {fileID: 21300000, guid: 9c124c48551c94945b4ec64167d5b0a1, type: 3}
+  - name: 8
+    ExpressionSprite: {fileID: 21300000, guid: 1cbf3ddc35a121f41a89d421be0edc03, type: 3}
+  - name: 9
+    ExpressionSprite: {fileID: 21300000, guid: 1b42053b280058245a104da9fd1eb81f, type: 3}
+  - name: 10
+    ExpressionSprite: {fileID: 21300000, guid: 67c5f478150a7e645bd8162354c7da91, type: 3}
+  ExpressionsSike:
+  - name: 0
+    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+  - name: 3
+    ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
+  - name: 6
+    ExpressionSprite: {fileID: 21300000, guid: 22062909f76086b40b1f373240dce7b1, type: 3}
+  - name: 9
+    ExpressionSprite: {fileID: 21300000, guid: 1b42053b280058245a104da9fd1eb81f, type: 3}
+  ExpressionsBhomas:
+  - name: 0
+    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+  - name: 1
+    ExpressionSprite: {fileID: 21300000, guid: 23b70329f12a3384e98fcf15b2239e73, type: 3}
+  - name: 2
+    ExpressionSprite: {fileID: 21300000, guid: 918db029d07844740be767005ec82f80, type: 3}
+  - name: 5
+    ExpressionSprite: {fileID: 21300000, guid: 77ddd9797f4167d4eb84438d2ddddecb, type: 3}
+  - name: 6
+    ExpressionSprite: {fileID: 21300000, guid: 22062909f76086b40b1f373240dce7b1, type: 3}
+  - name: 7
+    ExpressionSprite: {fileID: 21300000, guid: 9c124c48551c94945b4ec64167d5b0a1, type: 3}
+  - name: 10
+    ExpressionSprite: {fileID: 21300000, guid: 67c5f478150a7e645bd8162354c7da91, type: 3}
+  - name: 11
+    ExpressionSprite: {fileID: 21300000, guid: 0e05541dbe85ce946bc0537c67db18a9, type: 3}
+  - name: 12
+    ExpressionSprite: {fileID: 21300000, guid: 5a1ab259cf132f64ca2ac905811de580, type: 3}
+  ExpressionsDobo:
+  - name: 0
+    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+  - name: 1
+    ExpressionSprite: {fileID: 21300000, guid: 23b70329f12a3384e98fcf15b2239e73, type: 3}
+  - name: 2
+    ExpressionSprite: {fileID: 21300000, guid: 918db029d07844740be767005ec82f80, type: 3}
+  - name: 3
+    ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
+  - name: 5
+    ExpressionSprite: {fileID: 21300000, guid: 77ddd9797f4167d4eb84438d2ddddecb, type: 3}
+  - name: 6
+    ExpressionSprite: {fileID: 21300000, guid: 22062909f76086b40b1f373240dce7b1, type: 3}
+  - name: 7
+    ExpressionSprite: {fileID: 21300000, guid: 9c124c48551c94945b4ec64167d5b0a1, type: 3}
+  Phone:
+  - name: 0
+    ExpressionSprite: {fileID: 21300000, guid: 1cbf3ddc35a121f41a89d421be0edc03, type: 3}
+  Angel:
+  - name: 0
+    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+  - name: 3
+    ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
   ExpressionLeft: {fileID: 0}
   ExpressionRight: {fileID: 0}
+--- !u!114 &2042808982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570955418230121850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7998cd9033239d8449e1bdf31f069564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chapters:
+  - stories:
+    - {fileID: 4900000, guid: 213c5009bdd0b974ba523a0e7a5981df, type: 3}
+    - {fileID: 4900000, guid: 14fb78fbdafb9ac459f2b36bc4c60504, type: 3}
+    - {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
+    - {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
+    - {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
+    - {fileID: 4900000, guid: b2e92a2a288ce004f831e606ed61b59a, type: 3}
+    - {fileID: 4900000, guid: b8587fed40b1aa64baa959d146add887, type: 3}
+    - {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
+    - {fileID: 4900000, guid: 4b9b2ac0cd846be46bb17db86f21931f, type: 3}
+    - {fileID: 4900000, guid: ea55e80cd5a1c754fb832aec4c24b2d7, type: 3}
+    - {fileID: 4900000, guid: a28b9ef6b99067444b976a88a35030c0, type: 3}
+  - stories:
+    - {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
+  - stories: []
+  - stories: []
+  - stories: []
+  lastLinearChapter: 1
+  BJDoboChapter: 2
+  BhomasTuchelinChapter: 3

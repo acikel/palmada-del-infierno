@@ -40,7 +40,6 @@ public class InfiniteEnemySpawner : MonoBehaviour
                 StartCoroutine(SpawnEnemy());
                 enemyCounter++;
             }
-
         }
     }
 }

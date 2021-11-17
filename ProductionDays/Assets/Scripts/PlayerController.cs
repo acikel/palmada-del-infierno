@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public Action UpdateUI;
     public Action StaminaUI;
-    [SerializeField] private float _moveSpeed;
+    public float _moveSpeed;
     [SerializeField] private float _blockMoveSpeed;
     [SerializeField] private float _attackDamage;
     public float MaxHealthPoints { get; private set; }

@@ -14,7 +14,7 @@ namespace AI
         public float AttackInterval => attackInterval;
         public float AttackDamage => attackDamage;
 
-        void OnDestroy()
+        /*void OnDestroy()
         {
             if (!BossSpawned)
             {
@@ -22,7 +22,7 @@ namespace AI
                     .Rooms[InstanceRepository.Instance.Get<LevelManager>().currentRoom].GetComponent<Room>()
                     .EnemyCount--;
             }
-        }
+        }*/
 
     }
 }
