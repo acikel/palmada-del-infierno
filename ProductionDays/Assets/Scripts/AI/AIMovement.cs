@@ -9,9 +9,7 @@ public class AIMovement : MonoBehaviour
 
     [SerializeField]
     private float moveSpeed = 5f;
-
-    [SerializeField]
-    private float reachDistance = 1.5f;
+    
     // [SerializeField]
     // private float movementAbortTime = 3f;
     
@@ -26,7 +24,7 @@ public class AIMovement : MonoBehaviour
             lookRight = false;
     }
 
-    public bool WalkTowards(Vector3 destination)
+    public bool WalkTowards(Vector3 destination, float reachDistance)
     {
         Vector3 position = transform.position;
 
