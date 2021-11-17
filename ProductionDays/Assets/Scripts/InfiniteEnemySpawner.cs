@@ -12,7 +12,7 @@ public class InfiniteEnemySpawner : MonoBehaviour
 
     private GameObject spawnedEnemy;
 
-    private int amountToKill = 4;
+    private int amountToKill = 2;
     private int enemyCounter = 0;
     
     void Start()
@@ -33,9 +33,9 @@ public class InfiniteEnemySpawner : MonoBehaviour
     {
         if (spawnedEnemy == null)
         {
-            StartCoroutine(SpawnEnemy());
-            enemyCounter++;
-            /*if (enemyCounter < amountToKill)
+            //StartCoroutine(SpawnEnemy());
+            //enemyCounter++;
+            if (enemyCounter < amountToKill)
             {
                 StartCoroutine(SpawnEnemy());
                 enemyCounter++;
@@ -43,7 +43,7 @@ public class InfiniteEnemySpawner : MonoBehaviour
             else
             {
                 InstanceRepository.Instance.Get<LevelManager>().RoomCleared();
-            }*/
+            }
             
         }
     }
