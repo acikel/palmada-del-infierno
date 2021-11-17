@@ -324,7 +324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  reachDistance: 1.5
 --- !u!114 &7004529762004609403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,3 +369,7 @@ MonoBehaviour:
   minionSpawnAmount: 3
   spawnWaitDuration: 10
   spawnDistanceFromCenter: 16
+  rangedAttackPrefab: {fileID: 2099868678812290408, guid: 960a75cc85b93f044bc3367257ac87fd, type: 3}
+  rangedAttackAmount: 3
+  rangedAttackDamage: 1
+  rangedAttackLifetime: 1.5

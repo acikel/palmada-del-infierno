@@ -12,5 +12,10 @@ namespace AI
         public float AttackRange => attackRange;
         public float AttackInterval => attackInterval;
         public float AttackDamage => attackDamage;
+
+        private void OnDestroy()
+        {
+            InstanceRepository.Instance.Get<LevelManager>().Rooms[InstanceRepository.Instance.Get<LevelManager>().currentRoom].GetComponent<Room>().EnemyCount--;
+        }
     }
 }
