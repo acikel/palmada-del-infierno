@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             //Is there more to the story?
-            if (story.canContinue)
+            if (story.canContinue || optionPanel.activeInHierarchy)
             {
                 //nametag.text = "Phoenix";
                 if (!optionPanel.activeInHierarchy && !showChoices)

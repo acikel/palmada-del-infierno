@@ -12,7 +12,7 @@ public class InfiniteEnemySpawner : MonoBehaviour
 
     private GameObject spawnedEnemy;
 
-    private int amountToKill = 2;
+    private int amountToKill = 1;
     private int enemyCounter = 0;
     
     void Start()
