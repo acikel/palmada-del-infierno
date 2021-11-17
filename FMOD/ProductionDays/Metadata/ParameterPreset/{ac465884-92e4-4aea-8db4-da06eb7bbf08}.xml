@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ac465884-92e4-4aea-8db4-da06eb7bbf08}">
+		<property name="name">
+			<value>CombatBossCrossfade</value>
+		</property>
+		<relationship name="folder">
+			<destination>{eecd45cf-da31-4d2f-92e5-3b27558f3f17}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{58657499-17fc-4976-8c23-d789dc49e75b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{58657499-17fc-4976-8c23-d789dc49e75b}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
