@@ -15,7 +15,18 @@ public class AttackPlayer : State
     public override void OnStart()
     {
         Debug.Log("Attack");
+
+        attackRange = MinionConfig.AttackRange;
+        attackInterval = MinionConfig.AttackInterval;
+        attackDamage = MinionConfig.AttackDamage;
+        
         target = Blackboard.Get<GameObject>(BlackboardConstants.VARIABLE_TARGET);
+
+        if (target == null)
+        {
+            target = GameObject.FindWithTag("Player");
+        }
+        
         targetTransform = target.transform;
         playerController = target.GetComponent<PlayerController>();
     }

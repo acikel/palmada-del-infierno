@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AI;
 using UnityEngine;
 
 public class StateMachine : MonoBehaviour
@@ -12,10 +13,12 @@ public class StateMachine : MonoBehaviour
     private State currentState;
     
     public Blackboard Blackboard { get; private set; }
-    
-    private void Start()
+    public EnemyConfig EnemyConfig { get; private set; }
+
+    private void Awake()
     {
         Blackboard = new Blackboard(this);
+        EnemyConfig = GetComponent<EnemyConfig>();
         
         Type stateType = Type.GetType(startStateType);
         if (stateType == null)
@@ -36,6 +39,11 @@ public class StateMachine : MonoBehaviour
         state.StateMachine = this;
         state.OnStart();
         currentState = state;
+    }
+
+    public Coroutine StateStartCoroutine(IEnumerator routine)
+    {
+        return StartCoroutine(routine);
     }
 
     private void Update()

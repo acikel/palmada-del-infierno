@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AI;
 using UnityEngine;
 
 public class State
@@ -18,6 +19,15 @@ public class State
     {
         return GameObject.GetComponent<T>();
     }
+
+    protected Coroutine StartCoroutine(IEnumerator routine)
+    {
+        return StateMachine.StateStartCoroutine(routine);
+    }
+
+    protected EnemyConfig Config => StateMachine.EnemyConfig;
+    protected BossConfig BossConfig => (BossConfig)StateMachine.EnemyConfig;
+    protected MinionConfig MinionConfig => (MinionConfig)StateMachine.EnemyConfig;
     
     public virtual void OnStart() { }
     public virtual void Update() { }
