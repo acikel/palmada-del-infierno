@@ -83,6 +83,7 @@ crashlytics-build.properties
                     
 # Ignore the Cache folder since it is updated locally.
 /ProductionDays/[Aa]ssets/Plugins/FMOD/Cache/*
+/FMOD/ProductionDays/.cache/
                     
 # Ignore bank files in the StreamingAssets folder.
 /ProductionDays/[Aa]ssets/StreamingAssets/**/*.bank
