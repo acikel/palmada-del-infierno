@@ -50,13 +50,18 @@ public class BossDecision : State
         {
             List<Type> possibleAttackStates = new List<Type>();
             float distanceToPlayer = Vector3.Distance(GameObject.transform.position, playerTransform.position);
-
+                
             if (distanceToPlayer < closeAttackDistance)
             {
+                // higher probability hack
+                possibleAttackStates.Add(typeof(BossMelee));
+                possibleAttackStates.Add(typeof(BossMelee));
                 possibleAttackStates.Add(typeof(BossMelee));
             }
             
-            //possibleAttackStates.Add(typeof(BossSpawnMinions));
+            possibleAttackStates.Add(typeof(BossSpawnMinions));
+            // higher probability hack
+            possibleAttackStates.Add(typeof(BossRanged));
             possibleAttackStates.Add(typeof(BossRanged));
 
             if (possibleAttackStates.Count == 0)
