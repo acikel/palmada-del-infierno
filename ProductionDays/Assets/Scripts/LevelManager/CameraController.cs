@@ -32,6 +32,7 @@ public class CameraController : MonoBehaviour
 
     public void SetActiveRoom(float _activeRoomX)
     {
+        StopAllCoroutines();
         StartCoroutine(MoveToRoomCenter(_activeRoomX));
     }
 
