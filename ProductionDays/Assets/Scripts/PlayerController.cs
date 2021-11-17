@@ -1,21 +1,32 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public Action UpdateUI;
+    public Action StaminaUI;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _blockMoveSpeed;
     [SerializeField] private float _attackDamage;
-    [SerializeField] private float _healthPoint;
+    public float MaxHealthPoints { get; private set; }
+    public float HealthPoint;
+    public float MaxBlockPoints { get; private set; }
+    public float BlockStamina;
+    [SerializeField] private float _blockStaminaRegen;
 
     private bool _moveLeft = false;
     private bool _moveRight = false;
+    private bool _moveUp = false;
+    private bool _moveDown = false;
     private bool _walkable = true;
     private bool _blocking = false;
     private bool _attacking = false;
     private bool _lookRight = true;
+    private bool _blockBrocken = false;
+
+    public float _blockStaminaCurrent { get; private set; }
 
     private BoxCollider _attackColliderFist;
     private Animator _animator;
@@ -25,6 +36,9 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _attackColliderFist = transform.GetChild(0).GetComponent<BoxCollider>();
         _attackColliderFist.enabled = false;
+        _blockStaminaCurrent = BlockStamina;
+        MaxHealthPoints = HealthPoint;
+        MaxBlockPoints = BlockStamina;
     }
 
 
@@ -56,6 +70,29 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            if (_moveUp)
+            {
+                if (_lookRight)
+                {
+                    move += Vector3.forward;
+                }
+                else
+                {
+                    move += Vector3.back;
+                }
+            }
+            if (_moveDown)
+            {
+                if (_lookRight)
+                {
+                    move += Vector3.back;
+                }
+                else
+                {
+                    move += Vector3.forward;
+                }
+            }
+
             if (_blocking)
             {
                 move = move * _blockMoveSpeed * Time.deltaTime;
@@ -67,8 +104,17 @@ public class PlayerController : MonoBehaviour
 
             transform.Translate(move);
         }
+
+        if (!_blocking && !_blockBrocken && _blockStaminaCurrent < BlockStamina)
+        {
+            _blockStaminaCurrent += _blockStaminaRegen * Time.deltaTime;
+            if (_blockStaminaCurrent > BlockStamina) _blockStaminaCurrent = BlockStamina;
+        }
+
+        if (StaminaUI != null) StaminaUI();
     }
 
+    #region MoveInput
     void OnLeftButtonDown()
     {
         _moveLeft = true;
@@ -97,6 +143,28 @@ public class PlayerController : MonoBehaviour
         _moveRight = false;
     }
 
+    void OnUpButtonDown()
+    {
+        _moveUp = true;
+    }
+
+    void OnUpButtonUp()
+    {
+
+        _moveUp = false;
+    }
+    void OnDownButtonDown()
+    {
+        _moveDown = true;
+    }
+
+    void OnDownButtonUp()
+    {
+        _moveDown = false;
+    }
+
+#endregion
+    #region Attack / Block
     void OnAttackButton()
     {
         if (!_blocking)
@@ -110,7 +178,7 @@ public class PlayerController : MonoBehaviour
 
     void OnBlockButtonDown()
     {
-        if (!_attacking)
+        if (!_attacking && !_blockBrocken)
         {
             _blocking = true;
             _animator.SetBool("Blocking", true);
@@ -120,7 +188,19 @@ public class PlayerController : MonoBehaviour
     void OnBlockButtonUp()
     {
         _animator.SetBool("Blocking", false);
-        _blocking = false;
+        _blocking = false; 
+        if (_moveLeft && (int)transform.eulerAngles.y == (int)0)
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            _lookRight = false;
+        }
+
+        if (_moveRight && (int)transform.eulerAngles.y == (int)180)
+        {
+
+            transform.Rotate(new Vector3(0, 180, 0));
+            _lookRight = true;
+        }
     }
 
     void AttackAnimationEnd()
@@ -144,14 +224,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void PlayerHit(float damage)
+    #endregion
+    #region PlayerHit Cal
+    public void PlayerHit(float damage, Transform trans)
     {
-        if (!_blocking)
+        bool dirBlock = false;
+        if (_blocking)
         {
-            _healthPoint -= damage;
+            if (transform.position.x < trans.position.x && _lookRight) dirBlock = true;
+            if (transform.position.x > trans.position.x && !_lookRight) dirBlock = true;
+        }
+        if (!_blocking || !dirBlock)
+        {
+            HealthPoint -= damage;
+
+            if (UpdateUI != null) UpdateUI();
+        }
+        else if(_blocking && dirBlock)
+        {
+            _blockStaminaCurrent -= damage;
+            if (_blockStaminaCurrent <= 0)
+            {
+                _blockBrocken = true;
+                OnBlockButtonUp();
+                StartCoroutine(BlockBrockenTimer());
+            }
         }
 
-        if (_healthPoint <= 0)
+        if (HealthPoint <= 0)
         {
             //Destroy(this.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -164,6 +264,17 @@ public class PlayerController : MonoBehaviour
         {
             col.gameObject.GetComponent<EnemyHPScript>().Updatehealt(_attackDamage);
         }
+    }
+#endregion
+    IEnumerator BlockBrockenTimer()
+    {
+        while (_blockStaminaCurrent < BlockStamina)
+        {
+            _blockStaminaCurrent += _blockStaminaRegen * Time.deltaTime;
+            if (_blockStaminaCurrent > BlockStamina) _blockStaminaCurrent = BlockStamina;
+            yield return null;
+        }
+        _blockBrocken = false;
     }
     
 }

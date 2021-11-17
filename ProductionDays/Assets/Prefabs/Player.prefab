@@ -368,7 +368,9 @@ MonoBehaviour:
   _moveSpeed: 5
   _blockMoveSpeed: 2.5
   _attackDamage: 1
-  _healthPoint: 30
+  HealthPoint: 5
+  BlockStamina: 3
+  _blockStaminaRegen: 1
 --- !u!95 &1763588418
 Animator:
   serializedVersion: 4
