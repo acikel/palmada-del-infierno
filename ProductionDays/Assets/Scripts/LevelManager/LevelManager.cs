@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     private CameraController camController;
     [SerializeField] private List<GameObject> Rooms;
+    [SerializeField] private DialogueManager diaMan;
     private int currentRoom = 0;
     private bool activeRoomCleared = false;
 
@@ -41,10 +42,10 @@ public class LevelManager : MonoBehaviour
             }else camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         }
 
-        /*if (Rooms[currentRoom].GetComponent<Room>().EnemyCount <= 0 && !activeRoomCleared)
+        if (Rooms[currentRoom].GetComponent<Room>().EnemyCount <= 0 && !activeRoomCleared)
         {
             RoomCleared();
-        }*/
+        }
     }
 
     public GameObject GetCurrentRoom() { return Rooms[currentRoom]; }
@@ -54,6 +55,8 @@ public class LevelManager : MonoBehaviour
         activeRoomCleared = true;
         camController.SetIntermissionLvl();
         //DialogeManager Call Function
+        diaMan.StartDialogue();
+
     }
 
     public void RoomReached()
@@ -69,7 +72,7 @@ public class LevelManager : MonoBehaviour
 
     void OnConfirmButton()
     {
-        RoomCleared();
+        //RoomCleared();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
