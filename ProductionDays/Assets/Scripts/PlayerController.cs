@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public Action UpdateUI;
+    public Action StaminaUI;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _blockMoveSpeed;
     [SerializeField] private float _attackDamage;
+    public float MaxHealthPoints { get; private set; }
     public float HealthPoint;
+    public float MaxBlockPoints { get; private set; }
     public float BlockStamina;
     [SerializeField] private float _blockStaminaRegen;
 
@@ -21,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool _lookRight = true;
     private bool _blockBrocken = false;
 
-    private float _blockStaminaCurrent;
+    public float _blockStaminaCurrent { get; private set; }
 
     private BoxCollider _attackColliderFist;
     private Animator _animator;
@@ -32,6 +35,8 @@ public class PlayerController : MonoBehaviour
         _attackColliderFist = transform.GetChild(0).GetComponent<BoxCollider>();
         _attackColliderFist.enabled = false;
         _blockStaminaCurrent = BlockStamina;
+        MaxHealthPoints = HealthPoint;
+        MaxBlockPoints = BlockStamina;
     }
 
 
@@ -80,6 +85,8 @@ public class PlayerController : MonoBehaviour
             _blockStaminaCurrent += _blockStaminaRegen * Time.deltaTime;
             if (_blockStaminaCurrent > BlockStamina) _blockStaminaCurrent = BlockStamina;
         }
+
+        if (StaminaUI != null) StaminaUI();
     }
 
     void OnLeftButtonDown()

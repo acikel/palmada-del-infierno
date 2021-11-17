@@ -76,6 +76,42 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UpButtonDown",
+                    "type": "Button",
+                    "id": "0c40f80c-f9ff-4361-9eb9-28d3255e161d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UpButtonUp",
+                    "type": "Button",
+                    "id": "8cd0a629-ca02-4315-9df9-905ab1f5c8a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DownButtonDown",
+                    "type": "Button",
+                    "id": "25b23ff1-e0a3-4368-9c53-4a7a56d9ba49",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DownButtonUp",
+                    "type": "Button",
+                    "id": "da484fab-859a-4a3b-8e31-9567cc1f519e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -208,6 +244,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "ConfirmButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ada4564-4850-4136-8bb6-341c35b51e00",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "UpButtonDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "247dc3ad-6404-4b27-999b-c4de8aa17b86",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "UpButtonUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd1eb273-1bdb-4efa-b23d-12c063e9397f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "DownButtonDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8e9cdda-1698-4f94-a856-0ebc22eaa516",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "DownButtonUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
