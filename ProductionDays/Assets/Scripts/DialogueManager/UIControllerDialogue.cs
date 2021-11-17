@@ -24,12 +24,12 @@ public class UIControllerDialogue : MonoBehaviour
 
     void OnAttackButton()
     {
-        ScaleDown();
+        //ScaleDown();
     }
 
     void OnBlockButtonDown()
     {
-        ScaleUp();
+        //ScaleUp();
     }
 
     public void ScaleDown()

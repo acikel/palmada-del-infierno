@@ -7,11 +7,16 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] private ExpressionChanger expChange;
+    [SerializeField] private UIControllerDialogue UICont;
+
     public TextAsset inkFile;
     public GameObject textBox;
     public GameObject customButton;
     public GameObject optionPanel;
     public bool isTalking = false;
+
+    private bool dialogueStarted = false;
 
     static Story story;
     TMP_Text nametagHelvetia;
@@ -42,7 +47,7 @@ public class DialogueManager : MonoBehaviour
 
     void OnConfirmButton()
     {
-        if (!optionPanel.activeInHierarchy)
+        if (!optionPanel.activeInHierarchy && dialogueStarted)
         {
             //Are there any choices?
             if (story.currentChoices.Count != 0)
@@ -70,6 +75,8 @@ public class DialogueManager : MonoBehaviour
     private void FinishDialogue()
     {
         Debug.Log("End of Dialogue!");
+        dialogueStarted = false;
+        UICont.ScaleDown();
     }
 
     // Advance through the story 
@@ -167,10 +174,20 @@ public class DialogueManager : MonoBehaviour
             if(subs.Length > 1)
             {
                 // change sprite according to emotion
+                if (subs[0].Equals("Helvetia"))
+                {
+                    expChange.ChangeExpressionLeft(subs[1]);
+                }
+                else
+                {
+                    expChange.ChangeExpressionRight(subs[1]);
+                }
+                
+
             }
         }
     }
-
+    /*
     void SetTextColor(string _color)
     {
         switch (_color)
@@ -191,6 +208,11 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log($"{_color} is not available as a text color");
                 break;
         }
-    }
+    }*/
 
+    public void StartDialogue()
+    {
+        dialogueStarted = true;
+        UICont.ScaleUp();
+    }
 }
