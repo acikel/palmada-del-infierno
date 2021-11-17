@@ -7,8 +7,12 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private ExpressionChanger expChange;
-    [SerializeField] private UIControllerDialogue UICont;
+    private ExpressionChanger expChange;
+    private UIControllerDialogue UICont;
+
+    private GameObject Player;
+    private float nextDialoguePos;
+    public float distPerDialogue;
 
     public TextAsset inkFile;
     public GameObject textBox;
@@ -31,6 +35,11 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UICont = GetComponent<UIControllerDialogue>();
+        expChange = GetComponent<ExpressionChanger>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        nextDialoguePos = Player.transform.position.x + distPerDialogue;
+
         story = new Story(inkFile.text);
         nametagHelvetia = textBox.transform.GetChild(0).GetComponent<TMP_Text>();
         nametagOther = textBox.transform.GetChild(1).GetComponent<TMP_Text>();
@@ -42,11 +51,11 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        
+        ProceedDialogueOnDistWalked();
     }
 
     void OnConfirmButton()
-    {
+    {/*
         if (!optionPanel.activeInHierarchy && dialogueStarted)
         {
             //Are there any choices?
@@ -58,7 +67,6 @@ public class DialogueManager : MonoBehaviour
             //Is there more to the story?
             if (story.canContinue || optionPanel.activeInHierarchy)
             {
-                //nametag.text = "Phoenix";
                 if (!optionPanel.activeInHierarchy && !showChoices)
                 {
                     AdvanceDialogue();
@@ -68,7 +76,33 @@ public class DialogueManager : MonoBehaviour
             {
                 FinishDialogue();
             }
-        }   
+        }   */
+    }
+
+    private void ProceedDialogueOnDistWalked()
+    {
+        if(dialogueStarted && Player.transform.position.x > nextDialoguePos && !optionPanel.activeInHierarchy)
+        {
+            nextDialoguePos += distPerDialogue;
+            //Are there any choices?
+            if (story.currentChoices.Count != 0)
+            {
+                StartCoroutine(ShowChoices());
+            }
+
+            //Is there more to the story?
+            if (story.canContinue || optionPanel.activeInHierarchy)
+            { 
+                if (!optionPanel.activeInHierarchy && !showChoices)
+                {
+                    AdvanceDialogue();
+                }
+            }
+            else
+            {
+                FinishDialogue();
+            }
+        }
     }
 
     // Finished the Story (Dialogue)
@@ -214,5 +248,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueStarted = true;
         UICont.ScaleUp();
+        AdvanceDialogue();
     }
 }
