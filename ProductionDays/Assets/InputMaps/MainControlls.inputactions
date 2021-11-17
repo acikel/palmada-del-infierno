@@ -250,7 +250,7 @@
                 {
                     "name": "",
                     "id": "4ada4564-4850-4136-8bb6-341c35b51e00",
-                    "path": "",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
@@ -260,8 +260,19 @@
                 },
                 {
                     "name": "",
+                    "id": "0fbe35aa-337a-41ec-9aa8-30d9e1ded52d",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UpButtonDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "247dc3ad-6404-4b27-999b-c4de8aa17b86",
-                    "path": "",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
@@ -271,8 +282,19 @@
                 },
                 {
                     "name": "",
+                    "id": "f70bddbf-bd39-4964-9346-ecde895b504f",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UpButtonUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bd1eb273-1bdb-4efa-b23d-12c063e9397f",
-                    "path": "",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
@@ -282,11 +304,33 @@
                 },
                 {
                     "name": "",
+                    "id": "59ee68c4-fe9e-4508-99c0-fa2072d9712f",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DownButtonDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a8e9cdda-1698-4f94-a856-0ebc22eaa516",
-                    "path": "",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
+                    "action": "DownButtonUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6b92350-d495-431e-9f7a-2db3b897736a",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "DownButtonUp",
                     "isComposite": false,
                     "isPartOfComposite": false

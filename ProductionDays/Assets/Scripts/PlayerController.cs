@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private bool _moveLeft = false;
     private bool _moveRight = false;
+    private bool _moveUp = false;
+    private bool _moveDown = false;
     private bool _walkable = true;
     private bool _blocking = false;
     private bool _attacking = false;
@@ -68,6 +70,29 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            if (_moveUp)
+            {
+                if (_lookRight)
+                {
+                    move += Vector3.forward;
+                }
+                else
+                {
+                    move += Vector3.back;
+                }
+            }
+            if (_moveDown)
+            {
+                if (_lookRight)
+                {
+                    move += Vector3.back;
+                }
+                else
+                {
+                    move += Vector3.forward;
+                }
+            }
+
             if (_blocking)
             {
                 move = move * _blockMoveSpeed * Time.deltaTime;
@@ -89,6 +114,7 @@ public class PlayerController : MonoBehaviour
         if (StaminaUI != null) StaminaUI();
     }
 
+    #region MoveInput
     void OnLeftButtonDown()
     {
         _moveLeft = true;
@@ -117,6 +143,28 @@ public class PlayerController : MonoBehaviour
         _moveRight = false;
     }
 
+    void OnUpButtonDown()
+    {
+        _moveUp = true;
+    }
+
+    void OnUpButtonUp()
+    {
+
+        _moveUp = false;
+    }
+    void OnDownButtonDown()
+    {
+        _moveDown = true;
+    }
+
+    void OnDownButtonUp()
+    {
+        _moveDown = false;
+    }
+
+#endregion
+    #region Attack / Block
     void OnAttackButton()
     {
         if (!_blocking)
@@ -176,6 +224,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    #endregion
+    #region PlayerHit Cal
     public void PlayerHit(float damage, Transform trans)
     {
         bool dirBlock = false;
@@ -215,7 +265,7 @@ public class PlayerController : MonoBehaviour
             col.gameObject.GetComponent<EnemyHPScript>().Updatehealt(_attackDamage);
         }
     }
-
+#endregion
     IEnumerator BlockBrockenTimer()
     {
         while (_blockStaminaCurrent < BlockStamina)
