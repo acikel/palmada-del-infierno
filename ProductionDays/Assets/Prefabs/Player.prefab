@@ -371,6 +371,12 @@ MonoBehaviour:
   HealthPoint: 5
   BlockStamina: 3
   _blockStaminaRegen: 1
+  _lvlWidth: 28
+  _lvlDeapth: 4
+  _lvlOffsetX: 3.5
+  _lvlOffsetZ: 0.5
+  _lvlCenterX: 0
+  _lvlCenterZ: 0
 --- !u!95 &1763588418
 Animator:
   serializedVersion: 4
