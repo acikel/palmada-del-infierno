@@ -79,4 +79,14 @@ public class InstanceRepository
 
         return repository[type] as List<T>;
     }
+
+    public void Remove(object obj)
+    {
+        Type type = obj.GetType();
+
+        if (!repository.ContainsKey(type))
+            return;
+
+        repository[type].Remove(obj);
+    }
 }
