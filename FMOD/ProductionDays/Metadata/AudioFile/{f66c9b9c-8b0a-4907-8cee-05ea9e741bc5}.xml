@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f66c9b9c-8b0a-4907-8cee-05ea9e741bc5}">
+		<property name="assetPath">
+			<value>ProductiondaysCombatMusic.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>58.235312499999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ba190cdf-7dab-47c7-9ca8-c27a40d9e2fe}</destination>
+		</relationship>
+	</object>
+</objects>
