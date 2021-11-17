@@ -10,11 +10,14 @@ public class BossRanged : State
 
     private int attackAmount = 3;
     private GameObject attackObject;
+
+    private CameraManager cameraManager;
     
     public override void OnStart()
     {
         Debug.Log("Boss Ranged Attack");
-
+        cameraManager = InstanceRepository.Instance.Get<CameraManager>();
+        
         attackAmount = BossConfig.RangedAttackAmount;
         attackObject = BossConfig.RangedAttackPrefab;
         
@@ -37,6 +40,8 @@ public class BossRanged : State
             
             GameObject attack = GameObject.Instantiate(attackObject, attackPosition, Quaternion.identity);
             attack.GetComponent<BossRayAttack>().BossConfig = BossConfig;
+            
+            cameraManager.ScreenShake(0.5f);
             yield return new WaitForSeconds(0.3f);
         }
 

@@ -11,11 +11,14 @@ public class BossMelee : State
 
     private GameObject bossFist;
     private Vector3 bossFistPosition;
+    private CameraManager cameraManager;
     
     public override void OnStart()
     {
         Debug.Log("Boss Melee");
-
+        
+        cameraManager = InstanceRepository.Instance.Get<CameraManager>();
+        
         bossFist = GameObject.transform.Find("BossFist").gameObject;
         bossFistPosition = bossFist.transform.position;
         
@@ -37,6 +40,7 @@ public class BossMelee : State
             yield return null;
         }
 
+        cameraManager.ScreenShake(0.3f);
         yield return new WaitForSeconds(0.5f);
         bossFist.SetActive(false);
         bossFist.transform.position = bossFistPosition;

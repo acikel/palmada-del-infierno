@@ -17,6 +17,7 @@ public class BossRayAttack : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.LogError("Ouch");
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
             playerController.PlayerHit(BossConfig.RangedAttackDamage, transform);
         }

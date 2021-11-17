@@ -56,7 +56,7 @@ public class BossDecision : State
                 possibleAttackStates.Add(typeof(BossMelee));
             }
             
-            possibleAttackStates.Add(typeof(BossSpawnMinions));
+            //possibleAttackStates.Add(typeof(BossSpawnMinions));
             possibleAttackStates.Add(typeof(BossRanged));
 
             if (possibleAttackStates.Count == 0)

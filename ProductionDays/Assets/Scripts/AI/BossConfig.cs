@@ -8,7 +8,7 @@ namespace AI
         [SerializeField] private float decisionTime = 2f;
 
         [Header("Attack: Melee")] 
-        [SerializeField] private float meleeDamage;
+        [SerializeField] private float meleeDamage = 1;
 
         [SerializeField] private float meleeDistance = 6f;
         
@@ -18,8 +18,8 @@ namespace AI
         [SerializeField] private float spawnWaitDuration = 10;
         [SerializeField] private float spawnDistanceFromCenter = 16;
 
-        [Header("Attack: Ranged")] [SerializeField]
-        private GameObject rangedAttackPrefab;
+        [Header("Attack: Ranged")] 
+        [SerializeField] private GameObject rangedAttackPrefab;
         [SerializeField] private int rangedAttackAmount = 3;
         [SerializeField] private float rangedAttackDamage = 1;
         [SerializeField] private float rangedAttackLifetime = 1.5f;
