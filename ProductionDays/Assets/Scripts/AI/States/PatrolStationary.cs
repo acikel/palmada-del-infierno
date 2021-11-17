@@ -4,7 +4,7 @@ using UnityEngine;
 public class PatrolStationary : State
 {
     private Vector3 position;
-    private float sightDistance = 3f;
+    private float sightDistance = 8f;
 
     private Transform playerTransform;
 
@@ -19,7 +19,7 @@ public class PatrolStationary : State
 
     public override void Update()
     {
-        if (Vector3.Distance(position, GameObject.transform.position) < sightDistance) {
+        if (Vector3.Distance(position, playerTransform.position) < sightDistance) {
             Blackboard.Set(BlackboardConstants.VARIABLE_TARGET, playerTransform.gameObject);
             SetState(new EngagePlayer());
         }
