@@ -50,6 +50,7 @@ public class CameraController : MonoBehaviour
     public void SetIntermissionLvl()
     {
         StartCoroutine(MoveToPlayerPosition());
+        Debug.Log("after Call");
     }
 
     IEnumerator MoveToPlayerPosition()
@@ -61,7 +62,7 @@ public class CameraController : MonoBehaviour
             Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
             yield return null;
         }
-
+        Debug.Log("Cor");
         cameraFollowing = true;
     }
 }

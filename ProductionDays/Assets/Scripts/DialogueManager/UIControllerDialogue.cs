@@ -10,6 +10,7 @@ public class UIControllerDialogue : MonoBehaviour
     [SerializeField] private GameObject TextElements;
     private float cropSpeed = 1;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,7 @@ public class UIControllerDialogue : MonoBehaviour
 
     public void ScaleUp()
     {
-        StartCoroutine(EnlargeImage());
+            StartCoroutine(EnlargeImage());
     }
 
     IEnumerator ReduceImage()

@@ -93,7 +93,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566904130}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4a714ccd1c2794599377ea90a24ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthpoint: 2
+  _healthpoint: 10
 --- !u!114 &3852082343262217024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,9 +365,9 @@ MonoBehaviour:
   decisionTime: 2
   meleeDamage: 1
   meleeDistance: 6
-  minion: {fileID: 1772283408247557581, guid: 643fdd07a830bd740958c430bdc0cf47, type: 3}
-  minionSpawnAmount: 2
-  spawnWaitDuration: 6
+  minion: {fileID: 1772283408247557581, guid: 1b40d1f2085cbb14d9387c24cb8a5705, type: 3}
+  minionSpawnAmount: 3
+  spawnWaitDuration: 10
   spawnDistanceFromCenter: 16
   rangedAttackPrefab: {fileID: 2099868678812290408, guid: 960a75cc85b93f044bc3367257ac87fd, type: 3}
   rangedAttackAmount: 3

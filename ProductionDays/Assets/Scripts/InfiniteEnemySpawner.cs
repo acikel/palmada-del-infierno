@@ -40,11 +40,7 @@ public class InfiniteEnemySpawner : MonoBehaviour
                 StartCoroutine(SpawnEnemy());
                 enemyCounter++;
             }
-            else
-            {
-                InstanceRepository.Instance.Get<LevelManager>().RoomCleared();
-            }
-            
+
         }
     }
 }

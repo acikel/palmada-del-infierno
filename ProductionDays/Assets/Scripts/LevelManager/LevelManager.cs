@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     private CameraController camController;
-    [SerializeField] private List<GameObject> Rooms;
+    [SerializeField] public List<GameObject> Rooms;
     [SerializeField] private DialogueManager diaMan;
-    private int currentRoom = 0;
+    public int currentRoom = 0;
     private bool activeRoomCleared = false;
 
     private PlayerController player;
@@ -45,6 +45,7 @@ public class LevelManager : MonoBehaviour
         if (Rooms[currentRoom].GetComponent<Room>().EnemyCount <= 0 && !activeRoomCleared)
         {
             RoomCleared();
+            Debug.Log("beep");
         }
     }
 
@@ -52,6 +53,7 @@ public class LevelManager : MonoBehaviour
 
     public void RoomCleared()
     {
+        Debug.Log("Bub");
         activeRoomCleared = true;
         camController.SetIntermissionLvl();
         //DialogeManager Call Function
@@ -63,11 +65,12 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("test");
         camController.cameraFollowing = false;
-        currentRoom++;
         activeRoomCleared = false;
+        currentRoom++;
         camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
         player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
+        Rooms[currentRoom].GetComponent<Room>().SpawnBoss();
     }
 
     void OnConfirmButton()
