@@ -12,7 +12,11 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InstanceRepository.Instance.AddOnce(this);
+        if (InstanceRepository.Instance.Get<CameraController>() == null)
+        {
+            InstanceRepository.Instance.AddOnce(this);
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -21,6 +25,8 @@ public class CameraController : MonoBehaviour
         if (cameraFollowing)
         {
             camPosX.transform.position = new Vector3(Player.transform.position.x, camPosX.transform.position.y, camPosX.transform.position.z);
+            Player.GetComponent<PlayerController>()._lvlCenterX = camPosX.transform.position.x;
+            Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
         }
     }
 
@@ -35,6 +41,27 @@ public class CameraController : MonoBehaviour
         {
             camPosX.transform.position += new Vector3(camSpeed * Time.deltaTime, 0, 0);
             yield return null;
-        }   
+        }
+
+        Player.GetComponent<PlayerController>()._lvlCenterX = camPosX.transform.position.x;
+        Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
+    }
+
+    public void SetIntermissionLvl()
+    {
+        StartCoroutine(MoveToPlayerPosition());
+    }
+
+    IEnumerator MoveToPlayerPosition()
+    {
+        while (camPosX.transform.position.x < Player.transform.position.x)
+        {
+            camPosX.transform.position += new Vector3(camSpeed * Time.deltaTime, 0, 0);
+            Player.GetComponent<PlayerController>()._lvlCenterX = camPosX.transform.position.x;
+            Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
+            yield return null;
+        }
+
+        cameraFollowing = true;
     }
 }

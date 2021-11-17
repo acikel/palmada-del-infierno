@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Data;
+using System.IO.Pipes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,8 +33,21 @@ public class PlayerController : MonoBehaviour
     private BoxCollider _attackColliderFist;
     private Animator _animator;
 
+    [Header("LevelSize")] 
+    public float _lvlWidth;
+    public float _lvlDeapth;
+    public float _lvlOffsetX;
+    public float _lvlOffsetZ;
+    public float _lvlCenterX;
+    public float _lvlCenterZ;
+
     void Awake()
     {
+
+        if (InstanceRepository.Instance.Get<PlayerController>() == null)
+        {
+            InstanceRepository.Instance.AddOnce(this);
+        }
         _animator = GetComponent<Animator>();
         _attackColliderFist = transform.GetChild(0).GetComponent<BoxCollider>();
         _attackColliderFist.enabled = false;
@@ -92,7 +107,7 @@ public class PlayerController : MonoBehaviour
                     move += Vector3.forward;
                 }
             }
-
+            move = CheckIfOnScreen(move);
             if (_blocking)
             {
                 move = move * _blockMoveSpeed * Time.deltaTime;
@@ -101,7 +116,6 @@ public class PlayerController : MonoBehaviour
             {
                 move = move * _moveSpeed * Time.deltaTime;
             }
-
             transform.Translate(move);
         }
 
@@ -276,5 +290,60 @@ public class PlayerController : MonoBehaviour
         }
         _blockBrocken = false;
     }
-    
+
+    #region moveConstrainCheck
+
+    private Vector3 CheckIfOnScreen(Vector3 move)
+    {
+        Vector3 placeToBe = transform.position + move * _moveSpeed * Time.deltaTime;
+        bool answer = true;
+        if (placeToBe.x < (_lvlCenterX-_lvlWidth/2)+_lvlOffsetX)
+        {
+            if (_lookRight)
+            {
+                move -= Vector3.left;
+            }
+            else
+            {
+                move -= Vector3.right;
+            }
+        }
+        if (placeToBe.x > (_lvlCenterX+_lvlWidth/2) -_lvlOffsetX)
+        {
+            if (_lookRight)
+            {
+                move -= Vector3.right;
+            }
+            else
+            {
+                move -= Vector3.left;
+            }
+        }
+        if (placeToBe.z > (_lvlCenterZ - _lvlDeapth / 2)+_lvlOffsetZ)
+        {
+            if (_lookRight)
+            {
+                move -= Vector3.forward;
+            }
+            else
+            {
+                move -= Vector3.back;
+            }
+        }
+        if (placeToBe.z < (_lvlCenterZ + _lvlDeapth / 2)-_lvlOffsetZ)
+        {
+            if (_lookRight)
+            {
+                move -= Vector3.back;
+            }
+            else
+            {
+                move -= Vector3.forward;
+            }
+        }
+        return move;
+    }
+
+    #endregion
+
 }
