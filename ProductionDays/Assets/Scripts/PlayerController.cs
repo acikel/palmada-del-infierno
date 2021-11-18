@@ -43,6 +43,10 @@ public class PlayerController : MonoBehaviour
     public float _lvlCenterZ;
     private float _lastLvlSizeXwall;
 
+    private bool inputDisabled = false;
+
+    private ScreenFader screenFader;
+
     private ParticleEffects ParticleEffect { get; set; }
 
     void Awake()
@@ -61,6 +65,11 @@ public class PlayerController : MonoBehaviour
         _blockStaminaCurrent = BlockStamina;
         MaxHealthPoints = HealthPoint;
         MaxBlockPoints = BlockStamina;
+    }
+
+    private void Start()
+    {
+        screenFader = InstanceRepository.Instance.Get<ScreenFader>();
     }
 
 
@@ -138,6 +147,9 @@ public class PlayerController : MonoBehaviour
     #region MoveInput
     void OnLeftButtonDown()
     {
+        if (inputDisabled)
+            return;
+        
         _moveLeft = true;
         if (_lookRight && !_attacking && !_blocking) 
         { 
@@ -147,6 +159,9 @@ public class PlayerController : MonoBehaviour
     }
     void OnRightButtonDown()
     {
+        if (inputDisabled)
+            return;
+        
         _moveRight = true; 
         if (!_lookRight && !_attacking && !_blocking)
         {
@@ -188,6 +203,9 @@ public class PlayerController : MonoBehaviour
     #region Attack / Block
     void OnAttackButton()
     {
+        if (inputDisabled)
+            return;
+        
         if (!_blocking)
         {
             _attacking = true;
@@ -199,6 +217,9 @@ public class PlayerController : MonoBehaviour
 
     void OnBlockButtonDown()
     {
+        if (inputDisabled)
+            return;
+        
         if (!_attacking && !_blockBrocken)
         {
             _blocking = true;
@@ -208,6 +229,9 @@ public class PlayerController : MonoBehaviour
 
     void OnBlockButtonUp()
     {
+        if (inputDisabled)
+            return;
+        
         _animator.SetBool("Blocking", false);
         _blocking = false; 
         if (_moveLeft && (int)transform.eulerAngles.y == (int)0)
@@ -230,7 +254,7 @@ public class PlayerController : MonoBehaviour
         _attackColliderFist.enabled = false;
         _walkable = true;
         _attacking = false;
-        Debug.Log(transform.eulerAngles);
+        //Debug.Log(transform.eulerAngles);
         if (_moveLeft && (int)transform.eulerAngles.y == (int)0)
         {
             transform.Rotate(new Vector3(0, 180, 0));
@@ -249,6 +273,9 @@ public class PlayerController : MonoBehaviour
     #region PlayerHit Cal
     public void PlayerHit(float damage, Transform trans)
     {
+        if (HealthPoint <= 0)
+            return;
+        
         bool dirBlock = false;
         if (_blocking)
         {
@@ -279,7 +306,7 @@ public class PlayerController : MonoBehaviour
         {
             AudioManager.Instance.PlayOneShot(AudioEvent.Combat.PlayerDie);
             //Destroy(this.gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameOver();
         }
     }
 
@@ -303,6 +330,16 @@ public class PlayerController : MonoBehaviour
         AudioManager.Instance.PlayOneShot(AudioEvent.Combat.PlayerAttack);
     }
 #endregion
+
+    void GameOver()
+    {
+        inputDisabled = true;
+        screenFader.FadeToBlack(() =>
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);          
+        });
+    }
+
     IEnumerator BlockBrockenTimer()
     {
         while (_blockStaminaCurrent < BlockStamina)

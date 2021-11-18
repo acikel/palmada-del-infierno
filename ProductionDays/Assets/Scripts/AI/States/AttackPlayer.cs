@@ -11,6 +11,8 @@ public class AttackPlayer : State
     private float attackDamage = 1f;
     private float attackRange = 1.5f;
     private float attackTime = 0f;
+
+    private EnemyHPScript enemyHP;
     
     public override void OnStart()
     {
@@ -27,6 +29,18 @@ public class AttackPlayer : State
         
         targetTransform = target.transform;
         playerController = target.GetComponent<PlayerController>();
+
+        enemyHP = GameObject.GetComponent<EnemyHPScript>();
+        if (enemyHP != null)
+            enemyHP.EnemyHit += OnEnemyGotHit;
+        
+        attackTime = Time.time - (attackInterval * 0.9f);
+    }
+
+    private void OnEnemyGotHit()
+    {
+        // Reset attack timer
+        attackTime = Time.time;
     }
 
     public override void Update()
@@ -45,7 +59,14 @@ public class AttackPlayer : State
 
     private void Attack()
     {
+        Debug.Log("Attack");
         AudioManager.Instance.PlayOneShot(AudioEvent.Combat.EnemyAttack, GameObject.transform.position);
         playerController.PlayerHit(attackDamage, this.GameObject.transform);
+    }
+
+    public override void OnEnd()
+    {
+        if (enemyHP != null)
+            enemyHP.EnemyHit -= OnEnemyGotHit;
     }
 }
