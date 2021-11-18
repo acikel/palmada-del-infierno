@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Helvezia_Hair
+  m_Name: M_Umbrella_Body
   m_Shader: {fileID: -6465566751694194690, guid: 714546cb44943e047a17f5a46ac2da4b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -33,7 +33,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_C8C9609E:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7e231f53feb6b2d42a40fe5cdc2a3eda, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -126,7 +126,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_4B4CE890: {r: 0.0754717, g: 0.013321232, b: 0.00028479323, a: 0}
-    - Color_4B9AABFA: {r: 0.6415094, g: 0.50930893, b: 0.27475968, a: 0}
+    - Color_4B9AABFA: {r: 1, g: 1, b: 1, a: 0}
     - Color_A96C309B: {r: 0.0754717, g: 0, b: 0.02371968, a: 0}
     - Color_F150E237: {r: 0.9811321, g: 0.23510142, b: 0.53422666, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
