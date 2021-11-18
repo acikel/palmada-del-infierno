@@ -52,6 +52,10 @@ public class Room : MonoBehaviour
         }
         else
         {
+            if (cameraManager == null)
+            {
+                cameraManager = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraManager>();
+            }
             Vector3 spawnCenter = cameraManager.transform.position;
             spawnCenter.z = transform.position.z;
             
@@ -59,7 +63,7 @@ public class Room : MonoBehaviour
             for(int i = 0; i < EnemyCount; i++)
             {
                 Vector3 spawnPosition = spawnCenter;
-                
+                spawnPosition.y = 3f;
                 float random = UnityEngine.Random.Range(-1f, 1f);
                 if (random < 0)
                     spawnPosition.x -= spawnDistanceFromCenter;

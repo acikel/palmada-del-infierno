@@ -69,8 +69,12 @@ public class PlayerController : MonoBehaviour
         MaxBlockPoints = BlockStamina;
     }
 
-    private void Start()
+    void Start()
     {
+        Vector3 spawn = GameObject.FindGameObjectWithTag("lvl").transform.GetChild(LevelManager.Instance.currentRoom).gameObject.transform.GetChild(5).gameObject.transform.position;
+        Debug.Log(spawn);
+        transform.position = spawn;
+    
         screenFader = InstanceRepository.Instance.Get<ScreenFader>();
     }
 
