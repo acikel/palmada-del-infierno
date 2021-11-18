@@ -146,6 +146,7 @@ public class LevelManager : MonoBehaviour
             player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
             player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
             Rooms[currentRoom].GetComponent<Room>().SpawnEnemies();
+            diaMan.SetCheckpointStory(currentRoom);
         }
         
         
