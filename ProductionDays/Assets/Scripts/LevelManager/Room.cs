@@ -39,10 +39,12 @@ public class Room : MonoBehaviour
         GameObject temp;
         if (isBossRoom)
         {
+            AudioManager.Instance.ChangeGameMusic(GameMusic.Boss);
             Instantiate(Boss, SpawnTarget);
         }
         else
         {
+            AudioManager.Instance.ChangeGameMusic(GameMusic.Fight);
             for(int i = 0; i < EnemyCount; i++)
             {
                 temp = Instantiate(Enemy, SpawnTarget);
