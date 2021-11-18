@@ -41,7 +41,7 @@ public class BossSpawnMinions : State
         {
             Vector3 spawnPosition = spawnCenter;
             
-            float random = Random.Range(-1, 1);
+            float random = Random.Range(-1f, 1f);
             if (random < 0)
                 spawnPosition.x -= spawnDistanceToCenter;
             else

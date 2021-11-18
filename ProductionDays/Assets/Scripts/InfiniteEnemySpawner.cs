@@ -35,11 +35,11 @@ public class InfiniteEnemySpawner : MonoBehaviour
         {
             //StartCoroutine(SpawnEnemy());
             //enemyCounter++;
-            if (enemyCounter < amountToKill)
-            {
+            // if (enemyCounter < amountToKill)
+            // {
                 StartCoroutine(SpawnEnemy());
                 enemyCounter++;
-            }
+            //}
         }
     }
 }
