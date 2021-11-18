@@ -17,7 +17,11 @@ public class BossMelee : State
         bossFist = GameObject.transform.Find("BossFist").gameObject;
         bossFistPosition = bossFist.transform.position;
 
-        float bossHalfHeight = GameObject.GetComponent<Renderer>().bounds.extents.y;
+        var renderer = GameObject.GetComponent<Renderer>();
+        if (renderer == null)
+            renderer = GameObject.GetComponentInChildren<Renderer>();
+            
+        float bossHalfHeight = renderer.bounds.extents.y;
         bossFistGroundPosition = bossFistPosition;
         bossFistGroundPosition.y = GameObject.transform.position.y - bossHalfHeight + 0.1f;
         

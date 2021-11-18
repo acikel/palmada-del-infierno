@@ -514,6 +514,9 @@ public class PlayerController : MonoBehaviour
     public Vector3 GetFloorPosition()
     {
         Renderer renderer = GetComponent<Renderer>();
+        if (renderer == null)
+            renderer = GetComponentInChildren<Renderer>();
+        
         Vector3 position = transform.position;
         position.y -= renderer.bounds.extents.y;
 
