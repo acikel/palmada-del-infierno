@@ -27,6 +27,7 @@ public class RoomEntrance : MonoBehaviour
             if(blocked && !diaMan.dialogueStarted)
             {
                 Player.GetComponent<PlayerController>().SetBlockDisable();
+                Debug.Log("freed");
             }
         }
     }
@@ -40,6 +41,7 @@ public class RoomEntrance : MonoBehaviour
                 Player = other.gameObject;
                 other.gameObject.GetComponent<PlayerController>().SetBlockActive();
                 blocked = true;
+                Debug.Log("blocked");
             }
         }
     }
