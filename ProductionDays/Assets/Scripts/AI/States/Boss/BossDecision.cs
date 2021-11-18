@@ -57,10 +57,10 @@ public class BossDecision : State
                 possibleAttackStates.Add(typeof(BossMelee));
             }
             
-            possibleAttackStates.Add(typeof(BossSpawnMinions));
-            // higher probability hack
-            possibleAttackStates.Add(typeof(BossRanged));
-            possibleAttackStates.Add(typeof(BossRanged));
+            // possibleAttackStates.Add(typeof(BossSpawnMinions));
+            // // higher probability hack
+            // possibleAttackStates.Add(typeof(BossRanged));
+            // possibleAttackStates.Add(typeof(BossRanged));
 
             if (possibleAttackStates.Count == 0)
             {

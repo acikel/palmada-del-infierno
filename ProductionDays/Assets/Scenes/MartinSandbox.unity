@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 1814060346}
   - component: {fileID: 1814060345}
   - component: {fileID: 1814060344}
+  - component: {fileID: 1814060348}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -307,7 +308,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -338,6 +339,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814060348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814060343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00abfd93d00af647af83ce1325ad600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1995881595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1015,7 +1028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1416870639534470762, guid: 33f9d4608ea57d240b3772bd647cff11, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33f9d4608ea57d240b3772bd647cff11, type: 3}
@@ -1026,6 +1039,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1566904130, guid: ef6374781411cab4e866e835fa445f2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566904131, guid: ef6374781411cab4e866e835fa445f2c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566904131, guid: ef6374781411cab4e866e835fa445f2c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566904131, guid: ef6374781411cab4e866e835fa445f2c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566904133, guid: ef6374781411cab4e866e835fa445f2c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2852750fe2ac5444080e21ff5d9f8c66, type: 2}
     - target: {fileID: 7004529762004609382, guid: ef6374781411cab4e866e835fa445f2c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1076,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004529762004609400, guid: ef6374781411cab4e866e835fa445f2c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef6374781411cab4e866e835fa445f2c, type: 3}

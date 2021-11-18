@@ -155,6 +155,19 @@ public class PlayerController : MonoBehaviour
             _animator.SetFloat("Velocity", move.magnitude);
             
             transform.Translate(move);
+            
+            
+            if (_moveLeft && _lookRight)
+            {
+                transform.Rotate(new Vector3(0, 180, 0));
+                _lookRight = false;
+            }
+
+            if (_moveRight && !_lookRight)
+            {
+                transform.Rotate(new Vector3(0, 180, 0));
+                _lookRight = true;
+            }
         }
 
         if (!_blocking && !_blockBrocken && _blockStaminaCurrent < BlockStamina)
@@ -353,7 +366,7 @@ public class PlayerController : MonoBehaviour
     {
         AudioManager.Instance.PlayOneShot(AudioEvent.Combat.PlayerAttack);
         Vector3 hitBoxOffset = new Vector3(1.25f, 0, 0);
-        Vector3 halfSize = new Vector3(.5f, .5f, .5f);
+        Vector3 halfSize = new Vector3(.5f, 1f, .5f);
         Vector3 hitPosition = transform.position;
 
         if (_lookRight)
