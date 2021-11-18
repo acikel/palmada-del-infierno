@@ -36,6 +36,8 @@ public class EnemyHPScript : MonoBehaviour
         if (difference.x > 0)
             force = Vector3.left;
 
+        force.y = 0.1f;
+        
         force *= MinionConfig.KnockBackStrength;
         
         Rigidbody.AddForce(force, ForceMode.Impulse);
