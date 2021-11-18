@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class Room : MonoBehaviour
     public float zScale { get; private set; }
 
     public bool isBossRoom = false;
+    [SerializeField] private float spawnDistanceFromCenter = 16;
 
     [SerializeField] private GameObject Boss;
     [SerializeField] private GameObject Enemy;
@@ -19,6 +21,7 @@ public class Room : MonoBehaviour
     private List<GameObject> Enemies = new List<GameObject>();
 
     private bool enemiesSpawned = false;
+    private CameraManager cameraManager;
 
     void Awake()
     {
@@ -26,6 +29,11 @@ public class Room : MonoBehaviour
         zScale = transform.GetChild(0).transform.localScale.z;
         currentEnemyCount = EnemyCount;
         SpawnTarget = transform.GetChild(2).transform;
+    }
+
+    private void Start()
+    {
+        cameraManager = InstanceRepository.Instance.Get<CameraManager>();
     }
 
     void Update()
@@ -44,10 +52,22 @@ public class Room : MonoBehaviour
         }
         else
         {
+            Vector3 spawnCenter = cameraManager.transform.position;
+            spawnCenter.z = transform.position.z;
+            
             AudioManager.Instance.ChangeGameMusic(GameMusic.Fight);
             for(int i = 0; i < EnemyCount; i++)
             {
-                temp = Instantiate(Enemy, SpawnTarget);
+                Vector3 spawnPosition = spawnCenter;
+                
+                float random = UnityEngine.Random.Range(-1f, 1f);
+                if (random < 0)
+                    spawnPosition.x -= spawnDistanceFromCenter;
+                else
+                    spawnPosition.x += spawnDistanceFromCenter;
+                
+                temp = Instantiate(Enemy, spawnPosition, Quaternion.identity, SpawnTarget);
+                temp.GetComponent<StateMachine>().SetState(new EngagePlayer());
                 Enemies.Add(temp);
                 temp.SetActive(false);
                 
