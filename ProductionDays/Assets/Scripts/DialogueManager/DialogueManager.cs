@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private bool isTalking = false;
 
-    private bool dialogueStarted = false;
+    public bool dialogueStarted = false;
 
     static Story story;
     TMP_Text nametagHelvezia;
@@ -180,6 +180,8 @@ public class DialogueManager : MonoBehaviour
         }
         
         optionPanel.SetActive(true);
+
+        // this shit
         Player.GetComponent<PlayerController>().SetBlockActive();
         yield return new WaitUntil(() => { return choiceSelected != null; });
         Player.GetComponent<PlayerController>().SetBlockDisable();
