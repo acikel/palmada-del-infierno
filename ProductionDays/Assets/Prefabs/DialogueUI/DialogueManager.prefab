@@ -48,12 +48,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f77b064ec2c3b947862c7c21aea51f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distPerDialogue: 5
-  inkFile: {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
+  distPerDialogue: 0.5
+  minDist: 0.5
+  distPerCharacterDivider: 10
+  TextBoxes:
+  - {fileID: 21300000, guid: 5505a3885a842244db041f2a15d462e9, type: 3}
+  - {fileID: 21300000, guid: 4802c0ab253493549befc78ba5e6dc8e, type: 3}
+  - {fileID: 21300000, guid: 78d2d00763defea48a7fe949f9750316, type: 3}
+  - {fileID: 21300000, guid: 33e3fa54ec6932f48b947b1569aa4e0c, type: 3}
+  - {fileID: 21300000, guid: 9c4197f2f196f504989f275cc66289fa, type: 3}
+  - {fileID: 21300000, guid: 9c4197f2f196f504989f275cc66289fa, type: 3}
+  - {fileID: 21300000, guid: 9c4197f2f196f504989f275cc66289fa, type: 3}
+  TextBoxImage: {fileID: 0}
+  Backgrounds:
+  - {fileID: 21300000, guid: e906545a536cfc94795c8cdee04b7759, type: 3}
+  - {fileID: 21300000, guid: 48dfa7f073b70494b8919cdb5d10736a, type: 3}
+  - {fileID: 21300000, guid: e78653c91ce843144b25758d13ee49c0, type: 3}
+  Background: {fileID: 0}
   textBox: {fileID: 0}
   customButton: {fileID: 9068726120944087058, guid: 37673b8e7a0cb3e448266825d981f8ab, type: 3}
   optionPanel: {fileID: 0}
   isTalking: 0
+  dialogueStarted: 0
+  startWithDialogue: 1
 --- !u!114 &4570955418230121853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueWindow: {fileID: 0}
+  BackgroundWindow: {fileID: 0}
+  ExpressionLeft: {fileID: 0}
+  ExpressionRight: {fileID: 0}
   TextElements: {fileID: 0}
 --- !u!114 &4570955418230121855
 MonoBehaviour:
@@ -184,6 +204,7 @@ MonoBehaviour:
     ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
   - name: 3
     ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
+  Stranger: []
   ExpressionLeft: {fileID: 0}
   ExpressionRight: {fileID: 0}
 --- !u!114 &2042808982
@@ -201,13 +222,13 @@ MonoBehaviour:
   chapters:
   - stories:
     - {fileID: 4900000, guid: 213c5009bdd0b974ba523a0e7a5981df, type: 3}
+    - {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
     - {fileID: 4900000, guid: 14fb78fbdafb9ac459f2b36bc4c60504, type: 3}
     - {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
     - {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
     - {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
     - {fileID: 4900000, guid: b2e92a2a288ce004f831e606ed61b59a, type: 3}
     - {fileID: 4900000, guid: b8587fed40b1aa64baa959d146add887, type: 3}
-    - {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
     - {fileID: 4900000, guid: 4b9b2ac0cd846be46bb17db86f21931f, type: 3}
     - {fileID: 4900000, guid: ea55e80cd5a1c754fb832aec4c24b2d7, type: 3}
     - {fileID: 4900000, guid: a28b9ef6b99067444b976a88a35030c0, type: 3}

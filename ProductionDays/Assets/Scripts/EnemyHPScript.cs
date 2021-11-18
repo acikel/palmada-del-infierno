@@ -11,7 +11,9 @@ public class EnemyHPScript : MonoBehaviour
     private ParticleEffects ParticleEffects { get; set; }
     private Rigidbody Rigidbody;
     private MinionConfig MinionConfig;
-    
+
+    public event EnemyHitHandler EnemyHit;
+
     private void Start()
     {
         ParticleEffects = InstanceRepository.Instance.Get<ParticleEffects>();
@@ -24,6 +26,9 @@ public class EnemyHPScript : MonoBehaviour
         _healthpoint -= damage;
         if (_healthpoint <= 0)
         {
+            if (EnemyHit != null)
+                EnemyHit.Invoke();
+            
             ParticleEffects.SpawnEffect(Effect.Fighting, transform.position);
             Destroy(this.gameObject);
         }
@@ -43,3 +48,5 @@ public class EnemyHPScript : MonoBehaviour
         Rigidbody.AddForce(force, ForceMode.Impulse);
     }
 }
+
+public delegate void EnemyHitHandler();
