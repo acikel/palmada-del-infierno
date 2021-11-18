@@ -128,7 +128,8 @@ public class ExpressionChanger : MonoBehaviour
         if(HelveziaDict.TryGetValue(_mood, out temp))
         {
             ExpressionLeft.sprite = temp;
-        }   
+            ExpressionLeft.gameObject.SetActive(true);
+        }
     }
 
     public void ChangeExpressionRight(string _mood, string _person)
@@ -142,6 +143,7 @@ public class ExpressionChanger : MonoBehaviour
             if(temp.TryGetValue(_mood, out temp2))
             {
                 ExpressionRight.sprite = temp2;
+                ExpressionRight.gameObject.SetActive(true);
             }
         }
     }
@@ -185,5 +187,13 @@ public class ExpressionChanger : MonoBehaviour
         PeopleDict.Add("Sike", SikeDict);
         PeopleDict.Add("Dobo", DoboDict);
         PeopleDict.Add("Phone", PhoneDict);
+        PeopleDict.Add("Liberty", PhoneDict);
+        PeopleDict.Add("Grandma", PhoneDict);
+    }
+
+    public void DeactivateExpressions()
+    {
+        ExpressionLeft.gameObject.SetActive(false);
+        ExpressionRight.gameObject.SetActive(false);
     }
 }
