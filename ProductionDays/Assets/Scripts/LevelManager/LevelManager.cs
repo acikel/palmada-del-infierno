@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     private CameraController camController;
     [SerializeField] public List<GameObject> Rooms;
     [SerializeField] private DialogueManager diaMan;
-    private int currentRoom = -1;
+    public int currentRoom = 0;
     private bool activeRoomCleared = false;
     private int _roomAmount;
 
@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     
     void Awake()
     {
+        
         if (Instance == null)
         {
             Instance = this;
@@ -45,7 +46,6 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
         if(camController == null)
         {
             camController = InstanceRepository.Instance.Get<CameraController>();
@@ -55,10 +55,13 @@ public class LevelManager : MonoBehaviour
             }else camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         }
 
-        if(currentRoom > 0)
+        if(currentRoom >= 0)
         {
             if (Rooms[currentRoom].GetComponent<Room>().currentEnemyCount <= 0 && !activeRoomCleared)
             {
+                Debug.Log(Rooms[currentRoom]);
+                Debug.Log(Rooms[currentRoom].GetComponent<Room>().currentEnemyCount);
+                Debug.Log("Cleared");
                 RoomCleared();
             }
         }
@@ -95,6 +98,7 @@ public class LevelManager : MonoBehaviour
 
     public void RoomCleared()
     {
+        Debug.Log("ImCleared");
         activeRoomCleared = true;
         currentRoom++;
         camController.SetIntermissionLvl();
@@ -132,5 +136,5 @@ public class LevelManager : MonoBehaviour
         //RoomCleared();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
+    
 }
