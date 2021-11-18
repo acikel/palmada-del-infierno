@@ -5,6 +5,8 @@ using System.IO.Pipes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+[DefaultExecutionOrder(1)]
 public class PlayerController : MonoBehaviour
 {
     public Action UpdateUI;
