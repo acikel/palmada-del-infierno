@@ -46,6 +46,11 @@ public class StateMachine : MonoBehaviour
         return StartCoroutine(routine);
     }
 
+    public void StateStopCoroutine(Coroutine coroutine)
+    {
+        StopCoroutine(coroutine);
+    }
+
     private void Update()
     {
         if (currentState != null)

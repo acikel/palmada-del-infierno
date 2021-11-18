@@ -25,6 +25,11 @@ public class State
         return StateMachine.StateStartCoroutine(routine);
     }
 
+    protected void StopCoroutine(Coroutine coroutine)
+    {
+        StateMachine.StateStopCoroutine(coroutine);
+    }
+
     protected EnemyConfig Config => StateMachine.EnemyConfig;
     protected BossConfig BossConfig => (BossConfig)StateMachine.EnemyConfig;
     protected MinionConfig MinionConfig => (MinionConfig)StateMachine.EnemyConfig;

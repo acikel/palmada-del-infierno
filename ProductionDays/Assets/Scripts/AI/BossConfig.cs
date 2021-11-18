@@ -14,10 +14,11 @@ namespace AI
         [SerializeField] private float meleeDamage = 1;
         [SerializeField] private float meleeDistance = 6f;
         [SerializeField] private GameObject meleeEffect;
+        [SerializeField] private float meleeHitHeight = 2f;
 
         
         [Header("Attack: Spawn Minion")]
-        [SerializeField] private GameObject minion;
+        [SerializeField] private GameObject[] minions;
         [SerializeField] private int minionSpawnAmount = 3;
         [SerializeField] private float spawnWaitDuration = 10;
         [SerializeField] private float spawnDistanceFromCenter = 16;
@@ -30,13 +31,14 @@ namespace AI
 
 
         public float MeleeDamage => meleeDamage;
-        public GameObject Minion => minion;
+        public GameObject[] Minions => minions;
         public int MinionSpawnAmount => minionSpawnAmount;
         public float SpawnWaitDuration => spawnWaitDuration;
         public float SpawnDistanceFromCenter => spawnDistanceFromCenter;
         public float DecisionTime => decisionTime;
         public float MeleeDistance => meleeDistance;
         public GameObject MeleeEffect => meleeEffect;
+        public float MeleeHitHeight => meleeHitHeight;
 
         public EventReference BossAttackSound => bossAttackSound;
         public EventReference BossVoice => bossVoice;
