@@ -39,7 +39,7 @@ public class DialogueManager : MonoBehaviour
     private bool showChoices = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         UICont = GetComponent<UIControllerDialogue>();
         expChange = GetComponent<ExpressionChanger>();
@@ -54,6 +54,7 @@ public class DialogueManager : MonoBehaviour
         message.text = "";
         tags = new List<string>();
         choiceSelected = null;
+        InstanceRepository.Instance.AddOnce(this);
     }
 
     private void Update()
@@ -282,5 +283,10 @@ public class DialogueManager : MonoBehaviour
 
         }
         
+    }
+
+    void OnDestroy()
+    {
+        InstanceRepository.Instance.Remove(this);
     }
 }
