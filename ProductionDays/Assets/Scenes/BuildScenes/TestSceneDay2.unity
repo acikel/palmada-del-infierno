@@ -154,6 +154,14 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6406650635027304401, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6917ed30ef05267418487688ad86d35b, type: 2}
+    - target: {fileID: 6406650635027304401, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6406650636191630823, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
       propertyPath: m_Type
       value: 3
@@ -1316,19 +1324,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284975131, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016468091
+      value: -0.000000016468091
       objectReference: {fileID: 0}
     - target: {fileID: 284975131, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000049861364
+      value: 0.0000000049861364
       objectReference: {fileID: 0}
     - target: {fileID: 1067499263, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016468091
+      value: -0.000000016468091
       objectReference: {fileID: 0}
     - target: {fileID: 1067499263, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000049861364
+      value: 0.0000000049861364
       objectReference: {fileID: 0}
     - target: {fileID: 4409455370763558604, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_RootOrder
