@@ -363,7 +363,6 @@ public class DialogueManager : MonoBehaviour
 
     public void SetCheckpointStory(int _currentRoom)
     {
-
         story = new Story(storyMan.GetCurrentStory().text);
     }
 }

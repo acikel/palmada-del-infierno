@@ -92,7 +92,8 @@ public class StoryManager : MonoBehaviour
         {
             if (_currentRoom + 1 < chapters[i].Count())
             {
-                
+                storyIndex = _currentRoom + 1;
+                chapterIndex = i;
             }
             else
             {
