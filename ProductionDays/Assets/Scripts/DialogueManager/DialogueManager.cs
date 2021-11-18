@@ -38,6 +38,8 @@ public class DialogueManager : MonoBehaviour
     private int buttonSize = 50;
     private bool showChoices = false;
 
+    public bool startWithDialogue = true;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -55,6 +57,8 @@ public class DialogueManager : MonoBehaviour
         tags = new List<string>();
         choiceSelected = null;
         InstanceRepository.Instance.AddOnce(this);
+
+        if (startWithDialogue) StartDialogue();
     }
 
     private void Update()
