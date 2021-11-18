@@ -378,4 +378,9 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    void OnDestroy()
+    {
+        InstanceRepository.Instance.Remove(this);
+    }
+
 }
