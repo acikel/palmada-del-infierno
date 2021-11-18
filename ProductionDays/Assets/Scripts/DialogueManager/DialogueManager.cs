@@ -266,16 +266,21 @@ public class DialogueManager : MonoBehaviour
 
                     case "Stranger1":
                         TextBoxImage.sprite = TextBoxes[7];
+                        expChange.ChangeExpressionRight("Neutral", subs[0]);
                         break;
 
                     case "Stranger2":
                         TextBoxImage.sprite = TextBoxes[7];
+                        expChange.ChangeExpressionRight("Sad", subs[0]);
                         break;
 
                     case "Stranger3":
                         TextBoxImage.sprite = TextBoxes[7];
+                        expChange.ChangeExpressionRight("Happy", subs[0]);
                         break;
                 }
+
+
 
                 //nametagHelvezia.gameObject.SetActive(false);
                 //nametagOther.gameObject.SetActive(true);
@@ -293,8 +298,17 @@ public class DialogueManager : MonoBehaviour
                 {
                     expChange.ChangeExpressionRight(subs[1], subs[0]);
                 }
-                
-
+            }
+            else if(!subs[0].Equals("Stranger1") && !subs[0].Equals("Stranger2") && !subs[0].Equals("Stranger3"))
+            {
+                if(subs[0].Equals( "Helvezia"))
+                {
+                    expChange.ChangeExpressionLeft("Neutral");
+                }
+                else
+                {
+                    expChange.ChangeExpressionRight("Neutral", subs[0]);
+                }
             }
         }
     }
@@ -323,6 +337,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        expChange.DeactivateExpressions();
+
         AudioManager.Instance.ChangeGameMusic(GameMusic.Dialogue);
         dialogueStarted = true;
         UICont.ScaleUp();
@@ -343,5 +359,11 @@ public class DialogueManager : MonoBehaviour
     void OnDestroy()
     {
         InstanceRepository.Instance.Remove(this);
+    }
+
+    public void SetCheckpointStory(int _currentRoom)
+    {
+
+        story = new Story(storyMan.GetCurrentStory().text);
     }
 }

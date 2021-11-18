@@ -8,11 +8,13 @@ public class RoomEntrance : MonoBehaviour
     private DialogueManager diaMan;
     private bool blocked = false;
     private GameObject Player;
+    private GameObject Exit;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Exit = transform.parent.transform.GetChild(3).gameObject;
+        Exit.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class RoomEntrance : MonoBehaviour
             {
                 Player.GetComponent<PlayerController>().SetBlockDisable();
                 Debug.Log("freed");
+                blocked = false;
             }
         }
     }
@@ -36,6 +39,7 @@ public class RoomEntrance : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Exit.SetActive(true);
             if (diaMan.dialogueStarted)
             {
                 Player = other.gameObject;

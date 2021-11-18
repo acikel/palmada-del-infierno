@@ -36,7 +36,10 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            SetActiveRoom(LevelManager.Instance.currentRoom);
+            if(LevelManager.Instance.currentRoom >= 0)
+            {
+                SetActiveRoom(LevelManager.Instance.currentRoom);
+            }
         }
     }
 

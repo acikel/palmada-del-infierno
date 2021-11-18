@@ -15,7 +15,7 @@ public class CameraManager : MonoBehaviour
 
     private Coroutine shakeRoutine;
     
-    void Start()
+    void Awake()
     {
         InstanceRepository.Instance.AddOnce(this);
     }
