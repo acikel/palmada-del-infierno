@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -17,8 +18,14 @@ public class CameraController : MonoBehaviour
             InstanceRepository.Instance.AddOnce(this);
             DontDestroyOnLoad(this.gameObject);
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Player = InstanceRepository.Instance.Get<PlayerController>().gameObject;
+    }
     // Update is called once per frame
     void Update()
     {
