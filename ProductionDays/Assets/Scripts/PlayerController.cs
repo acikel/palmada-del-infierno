@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private bool _blockBrocken = false;
     private bool _decisionBlocked = false;
 
+    private bool hitRight = true;
+
     public float _blockStaminaCurrent { get; private set; }
 
     private BoxCollider _attackColliderFist;
@@ -283,10 +285,12 @@ public class PlayerController : MonoBehaviour
 
         if (_moveRight && (int)transform.eulerAngles.y == (int)180)
         {
-
             transform.Rotate(new Vector3(0, 180, 0));
             _lookRight = true;
         }
+
+        hitRight = !hitRight;
+        _animator.SetBool("HitRight", hitRight);
     }
 
     #endregion
