@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class BossMelee : State
 {
-    private float attackInterval = 1f;
-    private float attackDamage = 1f;
-    private float attackRange = 1.5f;
-    private float attackDelay = 0f;
-
     private GameObject bossFist;
     private Vector3 bossFistPosition;
     private CameraManager cameraManager;
