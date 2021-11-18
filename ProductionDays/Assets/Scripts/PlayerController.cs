@@ -60,10 +60,10 @@ public class PlayerController : MonoBehaviour
         }
 
         ParticleEffect = InstanceRepository.Instance.Get<ParticleEffects>();
-        
+
         _animator = GetComponent<Animator>();
         _attackColliderFist = transform.GetChild(0).GetComponent<BoxCollider>();
-        _attackColliderFist.enabled = false;
+        //_attackColliderFist.enabled = false;
         _blockStaminaCurrent = BlockStamina;
         MaxHealthPoints = HealthPoint;
         MaxBlockPoints = BlockStamina;
@@ -137,6 +137,9 @@ public class PlayerController : MonoBehaviour
                     move += Vector3.forward;
                 }
             }
+
+            move = Quaternion.Euler(0, -90, 0) * move;
+            
             move = CheckIfOnScreen(move);
             if (_blocking)
             {
@@ -146,6 +149,9 @@ public class PlayerController : MonoBehaviour
             {
                 move = move * _moveSpeed * Time.deltaTime;
             }
+            
+            _animator.SetFloat("Velocity", move.magnitude);
+            
             transform.Translate(move);
         }
 
@@ -224,7 +230,7 @@ public class PlayerController : MonoBehaviour
         {
             _attacking = true;
             _walkable = false;
-            _attackColliderFist.enabled = true;
+            //_attackColliderFist.enabled = true;
             _animator.SetBool("Attacking", true);
         }
     }
@@ -265,7 +271,7 @@ public class PlayerController : MonoBehaviour
     void AttackAnimationEnd()
     {
         _animator.SetBool("Attacking", false);
-        _attackColliderFist.enabled = false;
+        //_attackColliderFist.enabled = false;
         _walkable = true;
         _attacking = false;
         //Debug.Log(transform.eulerAngles);
@@ -342,16 +348,47 @@ public class PlayerController : MonoBehaviour
     public void AttackHitEvent()
     {
         AudioManager.Instance.PlayOneShot(AudioEvent.Combat.PlayerAttack);
+        Vector3 hitBoxOffset = new Vector3(1.25f, 0, 0);
+        Vector3 halfSize = new Vector3(.5f, .5f, .5f);
+        Vector3 hitPosition = transform.position;
+
+        if (_lookRight)
+            hitPosition += hitBoxOffset;
+        else
+            hitPosition -= hitBoxOffset;
+        
+        RaycastHit[] hits = Physics.BoxCastAll(hitPosition, halfSize, Vector3.forward);
+
+        foreach (var hit in hits)
+        {
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                EnemyHit(hit.collider);
+            }
+        }
+
     }
 #endregion
 
     void GameOver()
     {
+        _moveLeft = false;
+        _moveDown = false;
+        _moveRight = false;
+        _moveUp = false;
+        _attacking = false;
+        _blocking = false;
+
         inputDisabled = true;
-        screenFader.FadeToBlack(() =>
+
+        if (screenFader != null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);          
-        });
+            screenFader.FadeToBlack(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); });
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     IEnumerator BlockBrockenTimer()
@@ -382,15 +419,17 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 placeToBe = transform.position + move * _moveSpeed * Time.deltaTime;
         bool answer = true;
+        Vector3 counterMove = Vector3.zero;
+        
         if (placeToBe.x < (_lvlCenterX - _lvlWidth / 2) + _lvlOffsetX)
         {
             if (_lookRight)
             {
-                move -= Vector3.left;
+                counterMove -= Vector3.left;
             }
             else
             {
-                move -= Vector3.right;
+                counterMove -= Vector3.right;
             }
         }
 
@@ -400,11 +439,11 @@ public class PlayerController : MonoBehaviour
             {
                 if (_lookRight)
                 {
-                    move -= Vector3.right;
+                    counterMove -= Vector3.right;
                 }
                 else
                 {
-                    move -= Vector3.left;
+                    counterMove -= Vector3.left;
                 }
             }
         }
@@ -414,11 +453,11 @@ public class PlayerController : MonoBehaviour
             {
                 if (_lookRight)
                 {
-                    move -= Vector3.right;
+                    counterMove -= Vector3.right;
                 }
                 else
                 {
-                    move -= Vector3.left;
+                    counterMove -= Vector3.left;
                 }
             }
         }
@@ -426,24 +465,28 @@ public class PlayerController : MonoBehaviour
         {
             if (_lookRight)
             {
-                move -= Vector3.forward;
+                counterMove -= Vector3.forward;
             }
             else
             {
-                move -= Vector3.back;
+                counterMove -= Vector3.back;
             }
         }
         if (placeToBe.z < (_lvlCenterZ + _lvlDeapth / 2)-_lvlOffsetZ)
         {
             if (_lookRight)
             {
-                move -= Vector3.back;
+                counterMove -= Vector3.back;
             }
             else
             {
-                move -= Vector3.forward;
+                counterMove -= Vector3.forward;
             }
         }
+
+        counterMove = Quaternion.Euler(0, -90, 0) * counterMove;
+        move += counterMove;
+        
         return move;
     }
 
