@@ -175,8 +175,9 @@ public class DialogueManager : MonoBehaviour
         }
         
         optionPanel.SetActive(true);
-
+        Player.GetComponent<PlayerController>().SetBlockActive();
         yield return new WaitUntil(() => { return choiceSelected != null; });
+        Player.GetComponent<PlayerController>().SetBlockDisable();
 
         AdvanceFromDecision();
     }

@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private bool _attacking = false;
     private bool _lookRight = true;
     private bool _blockBrocken = false;
+    private bool _decisionBlocked = false;
 
     public float _blockStaminaCurrent { get; private set; }
 
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
     public float _lvlOffsetZ;
     public float _lvlCenterX;
     public float _lvlCenterZ;
+    private float _lastLvlSizeXwall;
+
 
     void Awake()
     {
@@ -293,11 +296,22 @@ public class PlayerController : MonoBehaviour
 
     #region moveConstrainCheck
 
+    public void SetBlockActive()
+    {
+        _decisionBlocked = true;
+        _lastLvlSizeXwall = transform.position.x;
+    }
+
+    public void SetBlockDisable()
+    {
+        _decisionBlocked = false;
+    }
+
     private Vector3 CheckIfOnScreen(Vector3 move)
     {
         Vector3 placeToBe = transform.position + move * _moveSpeed * Time.deltaTime;
         bool answer = true;
-        if (placeToBe.x < (_lvlCenterX-_lvlWidth/2)+_lvlOffsetX)
+        if (placeToBe.x < (_lvlCenterX - _lvlWidth / 2) + _lvlOffsetX)
         {
             if (_lookRight)
             {
@@ -308,15 +322,33 @@ public class PlayerController : MonoBehaviour
                 move -= Vector3.right;
             }
         }
-        if (placeToBe.x > (_lvlCenterX+_lvlWidth/2) -_lvlOffsetX)
+
+        if (_decisionBlocked)
         {
-            if (_lookRight)
+            if (placeToBe.x > _lastLvlSizeXwall - _lvlOffsetX)
             {
-                move -= Vector3.right;
+                if (_lookRight)
+                {
+                    move -= Vector3.right;
+                }
+                else
+                {
+                    move -= Vector3.left;
+                }
             }
-            else
+        }
+        else
+        {
+            if (placeToBe.x > (_lvlCenterX + _lvlWidth / 2) - _lvlOffsetX)
             {
-                move -= Vector3.left;
+                if (_lookRight)
+                {
+                    move -= Vector3.right;
+                }
+                else
+                {
+                    move -= Vector3.left;
+                }
             }
         }
         if (placeToBe.z > (_lvlCenterZ - _lvlDeapth / 2)+_lvlOffsetZ)
