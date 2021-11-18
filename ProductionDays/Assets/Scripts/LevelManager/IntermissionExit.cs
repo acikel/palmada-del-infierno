@@ -22,6 +22,7 @@ public class IntermissionExit : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("RoomReached");
             lvlManager = InstanceRepository.Instance.Get<LevelManager>();
             if(lvlManager != null) lvlManager.RoomReached();
             else Debug.Log("failed");
