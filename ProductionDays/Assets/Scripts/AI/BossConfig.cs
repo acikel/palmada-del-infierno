@@ -7,14 +7,14 @@ namespace AI
     {
         [Header("Boss")] 
         [SerializeField] private float decisionTime = 2f;
-
-        [Header("Attack: Melee")] 
-        [SerializeField] private float meleeDamage = 1;
-
-        [SerializeField] private float meleeDistance = 6f;
-        
         [SerializeField] private EventReference bossAttackSound;
         [SerializeField] private EventReference bossVoice;
+        
+        [Header("Attack: Melee")] 
+        [SerializeField] private float meleeDamage = 1;
+        [SerializeField] private float meleeDistance = 6f;
+        [SerializeField] private GameObject meleeEffect;
+
         
         [Header("Attack: Spawn Minion")]
         [SerializeField] private GameObject minion;
@@ -36,6 +36,7 @@ namespace AI
         public float SpawnDistanceFromCenter => spawnDistanceFromCenter;
         public float DecisionTime => decisionTime;
         public float MeleeDistance => meleeDistance;
+        public GameObject MeleeEffect => meleeEffect;
 
         public EventReference BossAttackSound => bossAttackSound;
         public EventReference BossVoice => bossVoice;

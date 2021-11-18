@@ -36,6 +36,9 @@ public class EnemyHPScript : MonoBehaviour
 
     public void KnockBack(Vector3 attackerPosition)
     {
+        if (MinionConfig == null)
+            return;
+        
         Vector3 difference = attackerPosition - transform.position;
         Vector3 force = Vector3.right;
         if (difference.x > 0)

@@ -51,4 +51,10 @@ public class StateMachine : MonoBehaviour
         if (currentState != null)
             currentState.Update();
     }
+
+    private void OnDestroy()
+    {
+        if (currentState != null)
+            currentState.OnEnd();
+    }
 }

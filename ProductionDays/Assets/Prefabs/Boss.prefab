@@ -363,8 +363,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decisionTime: 2
-  meleeDamage: 1
-  meleeDistance: 6
   bossAttackSound:
     Guid:
       Data1: 1166218548
@@ -379,6 +377,9 @@ MonoBehaviour:
       Data3: -859344236
       Data4: -273224019
     Path: event:/Bosses/Bobo
+  meleeDamage: 1
+  meleeDistance: 6
+  meleeEffect: {fileID: 2197254433114130302, guid: a20a1636e866d1d4d86a001a70875418, type: 3}
   minion: {fileID: 1772283408247557581, guid: 1b40d1f2085cbb14d9387c24cb8a5705, type: 3}
   minionSpawnAmount: 3
   spawnWaitDuration: 10
