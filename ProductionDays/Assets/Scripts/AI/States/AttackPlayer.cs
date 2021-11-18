@@ -47,6 +47,7 @@ public class AttackPlayer : State
 
     private void Attack()
     {
+        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.EnemyAttack);
         playerController.PlayerHit(attackDamage, this.GameObject.transform);
     }
 }

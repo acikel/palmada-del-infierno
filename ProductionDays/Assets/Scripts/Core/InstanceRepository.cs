@@ -24,7 +24,7 @@ public class InstanceRepository
         }
     }
 
-    [RuntimeInitializeOnLoadMethod]
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void RuntimeInitialize()
     {
         instance = new InstanceRepository();
