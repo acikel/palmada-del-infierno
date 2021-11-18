@@ -24,7 +24,7 @@ public class AttackPlayer : State
 
         if (target == null)
         {
-            target = GameObject.FindWithTag("Player");
+            target = InstanceRepository.Instance.Get<PlayerController>().gameObject; //GameObject.FindWithTag("Player");
         }
         
         targetTransform = target.transform;
@@ -59,7 +59,7 @@ public class AttackPlayer : State
 
     private void Attack()
     {
-        Debug.Log("Attack");
+        playerController = InstanceRepository.Instance.Get<PlayerController>();
         AudioManager.Instance.PlayOneShot(AudioEvent.Combat.EnemyAttack, GameObject.transform.position);
         playerController.PlayerHit(attackDamage, this.GameObject.transform);
     }

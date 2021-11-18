@@ -75,6 +75,7 @@ public class ExpressionChanger : MonoBehaviour
     [SerializeField] private List<Expression> ExpressionsDobo = new List<Expression>();
     [SerializeField] private List<Expression> Phone = new List<Expression>();
     [SerializeField] private List<Expression> Angel = new List<Expression>();
+    [SerializeField] private List<Expression> Stranger = new List<Expression>();
 
     [SerializeField] private Image ExpressionLeft;
     [SerializeField] private Image ExpressionRight;
@@ -88,6 +89,7 @@ public class ExpressionChanger : MonoBehaviour
     private Dictionary<string, Sprite> DoboDict = new Dictionary<string, Sprite>();
     private Dictionary<string, Sprite> PhoneDict = new Dictionary<string, Sprite>();
     private Dictionary<string, Sprite> AngelDict = new Dictionary<string, Sprite>();
+    private Dictionary<string, Sprite> StrangerDict = new Dictionary<string, Sprite>();
 
     enum ExpressionName
     {
@@ -169,6 +171,10 @@ public class ExpressionChanger : MonoBehaviour
         foreach (Expression _expression in Angel)
         {
             AngelDict.Add(Enum.GetName(typeof(ExpressionName), _expression.name), _expression.ExpressionSprite);
+        }
+        foreach (Expression _expression in Stranger)
+        {
+            StrangerDict.Add(Enum.GetName(typeof(ExpressionName), _expression.name), _expression.ExpressionSprite);
         }
     }
 

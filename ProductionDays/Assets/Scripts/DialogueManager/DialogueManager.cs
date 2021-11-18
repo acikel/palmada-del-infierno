@@ -20,6 +20,12 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float minDist;
     [SerializeField] private float distPerCharacterDivider;
 
+    [SerializeField] private Sprite[] TextBoxes = new Sprite[7];
+    [SerializeField] private Image TextBoxImage;
+
+    [SerializeField] private Sprite[] Backgrounds = new Sprite[3];
+    [SerializeField] private Image Background;
+
     //public TextAsset inkFile;
     [SerializeField] private GameObject textBox;
     [SerializeField] private GameObject customButton;
@@ -92,12 +98,12 @@ public class DialogueManager : MonoBehaviour
             }
         }   
     }
-
+    /*
     void OnBlockButtonDown()
     {
         StartDialogue();
     }
-
+    */
     // DEBUG END
     
     private void ProceedDialogueOnDistWalked()
@@ -161,8 +167,8 @@ public class DialogueManager : MonoBehaviour
     // Create then show the choices on the screen until one got selected
     IEnumerator ShowChoices()
     {
-        nametagHelvezia.gameObject.SetActive(true);
-        nametagOther.gameObject.SetActive(false);
+        //nametagHelvezia.gameObject.SetActive(true);
+        //nametagOther.gameObject.SetActive(false);
         message.gameObject.SetActive(false);
 
         Debug.Log("There are choices need to be made here!");
@@ -181,11 +187,13 @@ public class DialogueManager : MonoBehaviour
         
         optionPanel.SetActive(true);
 
-        // this shit
+        // on choice block
+        /*
         Player.GetComponent<PlayerController>().SetBlockActive();
         yield return new WaitUntil(() => { return choiceSelected != null; });
         Player.GetComponent<PlayerController>().SetBlockDisable();
-
+        */
+        yield return new WaitUntil(() => { return choiceSelected != null; });
         AdvanceFromDecision();
     }
 
@@ -224,14 +232,54 @@ public class DialogueManager : MonoBehaviour
 
             if (subs[0].Equals("Helvezia"))
             {
-                nametagHelvezia.gameObject.SetActive(true);
-                nametagOther.gameObject.SetActive(false);
+                TextBoxImage.sprite = TextBoxes[0];
+                //nametagHelvezia.gameObject.SetActive(true);
+                //nametagOther.gameObject.SetActive(false);
             }
             else
             {
-                nametagHelvezia.gameObject.SetActive(false);
-                nametagOther.gameObject.SetActive(true);
-                nametagOther.text = subs[0];
+                switch (subs[0])
+                {
+                    case "Angel":
+                        TextBoxImage.sprite = TextBoxes[1];
+                        break;
+
+                    case "Sike":
+                        TextBoxImage.sprite = TextBoxes[2];
+                        break;
+
+                    case "Bhomas":
+                        TextBoxImage.sprite = TextBoxes[3];
+                        break;
+
+                    case "Dobo":
+                        TextBoxImage.sprite = TextBoxes[4];
+                        break;
+
+                    case "Grandma":
+                        TextBoxImage.sprite = TextBoxes[5];
+                        break;
+
+                    case "Liberty":
+                        TextBoxImage.sprite = TextBoxes[6];
+                        break;
+
+                    case "Stranger1":
+                        TextBoxImage.sprite = TextBoxes[7];
+                        break;
+
+                    case "Stranger2":
+                        TextBoxImage.sprite = TextBoxes[7];
+                        break;
+
+                    case "Stranger3":
+                        TextBoxImage.sprite = TextBoxes[7];
+                        break;
+                }
+
+                //nametagHelvezia.gameObject.SetActive(false);
+                //nametagOther.gameObject.SetActive(true);
+                //nametagOther.text = subs[0];
             }
             
             if(subs.Length > 1)
