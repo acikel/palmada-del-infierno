@@ -12,7 +12,7 @@ public class Room : MonoBehaviour
 
     [SerializeField] private GameObject Boss;
     [SerializeField] private GameObject Enemy;
-    [SerializeField] private Transform SpawnTarget;
+    private Transform SpawnTarget;
 
     public int currentEnemyCount;
     private int currentEnemy;
@@ -25,6 +25,7 @@ public class Room : MonoBehaviour
         xScale = transform.GetChild(0).transform.localScale.x;
         zScale = transform.GetChild(0).transform.localScale.z;
         currentEnemyCount = EnemyCount;
+        SpawnTarget = transform.GetChild(2).transform;
     }
 
     void Update()
