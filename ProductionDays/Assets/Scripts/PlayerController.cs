@@ -289,7 +289,12 @@ public class PlayerController : MonoBehaviour
         {
             AudioManager.Instance.PlayOneShot(AudioEvent.Combat.Impact);
             ParticleEffect.SpawnEffect(Effect.Hit, col.transform.position);
-            col.gameObject.GetComponent<EnemyHPScript>().Updatehealt(_attackDamage);
+            
+            var enemyHP = col.gameObject.GetComponent<EnemyHPScript>();
+            if (enemyHP != null) {
+                enemyHP.ApplyDamage(_attackDamage);
+                enemyHP.KnockBack(transform.position);
+            }
         }
     }
 
