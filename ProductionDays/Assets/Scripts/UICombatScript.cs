@@ -10,6 +10,12 @@ public class UICombatScript : MonoBehaviour
     [SerializeField] private Image _hp;
     [SerializeField] private Image _block;
     [SerializeField] private float _maxHP, _maxBlock;
+    [SerializeField] private GameObject Heart;
+    [SerializeField] private List<GameObject> Hearts;
+    [SerializeField] private Vector2 StartPos;
+    [SerializeField] private float Offset;
+    [SerializeField] private Sprite _hpFull;
+    [SerializeField] private Sprite _hpEmpty;
 
     void Start()
     {
@@ -20,9 +26,12 @@ public class UICombatScript : MonoBehaviour
 
     public void UpdateHP()
     {
+        Hearts[(int) _player.HealthPoint].GetComponent<UnityEngine.UI.Image>().sprite = _hpEmpty;
+        /*
         float currentP = _player.MaxHealthPoints / _player.HealthPoint;
         float currentValue = _maxHP / currentP;
         _hp.rectTransform.sizeDelta = new Vector2(currentValue, 50f);
+        */
     }
     public void UpdateStamina()
     {

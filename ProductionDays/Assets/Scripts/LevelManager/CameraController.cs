@@ -77,6 +77,11 @@ public class CameraController : MonoBehaviour
         cameraFollowing = true;
     }
 
+    public void YeetCamToPos(float _activeRoomX)
+    {
+        camPosX.transform.position = new Vector3(_activeRoomX,0f,0f);
+    }
+
     void OnDestroy()
     {
         InstanceRepository.Instance.Remove(this);
