@@ -22,6 +22,7 @@ public class BossRanged : State
         
         target = Blackboard.Get<GameObject>(BlackboardConstants.VARIABLE_TARGET);
         targetTransform = target.transform;
+        playerController = target.GetComponent<PlayerController>();
 
         StartCoroutine(RangedAttack());
     }
@@ -34,7 +35,7 @@ public class BossRanged : State
 
         for (int i = 0; i < attackAmount; i++)
         {
-            attackPosition = targetTransform.position;
+            attackPosition = playerController.GetFloorPosition();
             yield return new WaitForSeconds(0.25f);
             
             AudioManager.Instance.PlayOneShot(BossConfig.BossAttackSound, attackPosition);

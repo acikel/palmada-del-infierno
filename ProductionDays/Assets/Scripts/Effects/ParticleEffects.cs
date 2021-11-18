@@ -52,6 +52,14 @@ public class ParticleEffects : MonoBehaviour
             Instantiate(effectPrefab, position, Quaternion.identity);
     }
 
+    public void SpawnEffects(Effect[] effects, Vector3 position)
+    {
+        foreach (Effect effect in effects)
+        {
+            SpawnEffect(effect, position);
+        }
+    }
+
     private void OnDestroy()
     {
         InstanceRepository.Instance.Remove(this);

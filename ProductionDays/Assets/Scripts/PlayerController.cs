@@ -289,8 +289,18 @@ public class PlayerController : MonoBehaviour
         {
             AudioManager.Instance.PlayOneShot(AudioEvent.Combat.Impact);
             ParticleEffect.SpawnEffect(Effect.Hit, col.transform.position);
-            col.gameObject.GetComponent<EnemyHPScript>().Updatehealt(_attackDamage);
+            
+            var enemyHP = col.gameObject.GetComponent<EnemyHPScript>();
+            if (enemyHP != null) {
+                enemyHP.ApplyDamage(_attackDamage);
+                enemyHP.KnockBack(transform.position);
+            }
         }
+    }
+
+    public void AttackHitEvent()
+    {
+        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.PlayerAttack);
     }
 #endregion
     IEnumerator BlockBrockenTimer()
@@ -388,6 +398,15 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    public Vector3 GetFloorPosition()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        Vector3 position = transform.position;
+        position.y -= renderer.bounds.extents.y;
+
+        return position;
+    }
+    
     void OnDestroy()
     {
         InstanceRepository.Instance.Remove(this);
