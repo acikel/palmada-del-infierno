@@ -577,6 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 354081728}
   - component: {fileID: 354081727}
+  - component: {fileID: 354081729}
   m_Layer: 0
   m_Name: Helvezia_neutral
   m_TagString: Untagged
@@ -644,13 +645,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354081726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.4537044, y: -0.13888896, z: 0}
+  m_LocalPosition: {x: -5.4537044, y: -0.138889, z: 0}
   m_LocalScale: {x: 1.694077, y: 1.694077, z: 1.694077}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1438247841}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &354081729
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354081726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d5730ad37c72de4da889b4e34bb842a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &591940207
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 591940208}
   - component: {fileID: 591940209}
+  - component: {fileID: 591940210}
   m_Layer: 0
   m_Name: ShikeMhiva_neutral (1)
   m_TagString: Untagged
@@ -676,7 +698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591940207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.527778, y: 1.0555556, z: 0}
+  m_LocalPosition: {x: 5.83, y: 1.055556, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -735,6 +757,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &591940210
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591940207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5aa964c4a8802d0489d1b18e9d37522b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &627491247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1313,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1438247841}
   - component: {fileID: 1438247842}
-  - component: {fileID: 1438247843}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1306,24 +1347,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438247840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15466a6733daf664ba5b1d027a491834, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveModifier: 20
---- !u!114 &1438247843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438247840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 20d320c44849ab343b56b1aec3cbb871, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -1334,7 +1362,59 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ad6d0b7f-c6cc-4b6b-807d-0ac7b486f122
+    m_ActionName: MainControlls/LeftButtonDown[/Keyboard/leftArrow,/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 953e6e35-2a73-4c31-82a0-9a0cebaf2025
+    m_ActionName: MainControlls/RightButtonDown[/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a6da894-cab7-44e4-a671-cd48e1db549b
+    m_ActionName: MainControlls/AttackButton[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 53b4d18b-d12b-4f9d-b8dc-134b4dc8eba1
+    m_ActionName: MainControlls/BlockButtonDown[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9c043b09-ba00-49b5-b68a-5fb9477f29af
+    m_ActionName: MainControlls/BlockButtonUp[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 164c5d0c-1610-4487-a717-13db7d9755e3
+    m_ActionName: MainControlls/LeftButtonUp[/Keyboard/a,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c3ca657d-8505-4334-8ab3-844c1169830b
+    m_ActionName: MainControlls/RightButtonUp[/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: acbb21c8-68e3-4e83-bdc3-5f9f33ff7dc1
+    m_ActionName: MainControlls/ConfirmButton[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0c40f80c-f9ff-4361-9eb9-28d3255e161d
+    m_ActionName: MainControlls/UpButtonDown[/Keyboard/w,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8cd0a629-ca02-4315-9df9-905ab1f5c8a9
+    m_ActionName: MainControlls/UpButtonUp[/Keyboard/w,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 25b23ff1-e0a3-4368-9c53-4a7a56d9ba49
+    m_ActionName: MainControlls/DownButtonDown[/Keyboard/s,/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: da484fab-859a-4a3b-8e31-9567cc1f519e
+    m_ActionName: MainControlls/DownButtonUp[/Keyboard/s,/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1cd1d2a6-f52b-487e-b0ee-aff47d30cab6
+    m_ActionName: MainControlls/MousePosition[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MainControlls
