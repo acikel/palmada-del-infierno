@@ -30,6 +30,7 @@ public class RoomEntrance : MonoBehaviour
             {
                 Player.GetComponent<PlayerController>().SetBlockDisable();
                 Debug.Log("freed");
+                blocked = false;
             }
         }
     }

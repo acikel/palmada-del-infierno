@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     private bool activeRoomCleared = false;
     private int _roomAmount;
 
+    private bool reloading = false;
+
     private GameObject lvl;
     private PlayerController player;
     
@@ -127,7 +129,10 @@ public class LevelManager : MonoBehaviour
     {
         AudioManager.Instance.ChangeGameMusic(GameMusic.Fight);
         Debug.Log("test");
-        camController.cameraFollowing = false;
+        if (reloading)
+        {
+            camController.cameraFollowing = false;
+        }
         activeRoomCleared = false;
         if(currentRoom >= 0)
         {
