@@ -343,7 +343,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6406650636862244235, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
   m_PrefabInstance: {fileID: 35663977}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178473389}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -429,11 +429,6 @@ PrefabInstance:
       objectReference: {fileID: 252340279}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 670fc4362fab4fa459c6448f309c733d, type: 3}
---- !u!1 &178473389 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6406650636862244233, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
-  m_PrefabInstance: {fileID: 35663977}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &200517250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,49 +1128,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[0]
-      value: 
-      objectReference: {fileID: 4900000, guid: 213c5009bdd0b974ba523a0e7a5981df, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[1]
-      value: 
-      objectReference: {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[2]
-      value: 
-      objectReference: {fileID: 4900000, guid: 14fb78fbdafb9ac459f2b36bc4c60504, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[3]
-      value: 
-      objectReference: {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[4]
-      value: 
-      objectReference: {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[5]
-      value: 
-      objectReference: {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[6]
-      value: 
-      objectReference: {fileID: 4900000, guid: b2e92a2a288ce004f831e606ed61b59a, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[7]
-      value: 
-      objectReference: {fileID: 4900000, guid: b8587fed40b1aa64baa959d146add887, type: 3}
     - target: {fileID: 4570955418230121850, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: m_Name
       value: DialogueManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBox
-      value: 
-      objectReference: {fileID: 178473389}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: minDist
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: textBox
@@ -1189,58 +1144,6 @@ PrefabInstance:
       propertyPath: TextBoxImage
       value: 
       objectReference: {fileID: 35663982}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: distPerDialogue
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBoxes.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBoxes.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5505a3885a842244db041f2a15d462e9, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBoxes.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4802c0ab253493549befc78ba5e6dc8e, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBoxes.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 78d2d00763defea48a7fe949f9750316, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBoxes.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 33e3fa54ec6932f48b947b1569aa4e0c, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBoxes.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 9c4197f2f196f504989f275cc66289fa, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBoxes.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 9c4197f2f196f504989f275cc66289fa, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: TextBoxes.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 9c4197f2f196f504989f275cc66289fa, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: distPerCharacterDivider
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Backgrounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: e906545a536cfc94795c8cdee04b7759, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Backgrounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 48dfa7f073b70494b8919cdb5d10736a, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Backgrounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: e78653c91ce843144b25758d13ee49c0, type: 3}
     - target: {fileID: 4570955418230121852, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: m_RootOrder
       value: 2
