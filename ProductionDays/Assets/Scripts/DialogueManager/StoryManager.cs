@@ -32,7 +32,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private int BhomasTuchelinChapter = 3;
 
     // PLACEHOLDER SCORE
-    private int loveScore = 50;
+    private int loveScore = 0;
 
     public TextAsset NextStory()
     {
@@ -67,5 +67,10 @@ public class StoryManager : MonoBehaviour
     public TextAsset GetCurrentStory()
     {
         return chapters[chapterIndex].GetStory(storyIndex);
+    }
+
+    public void UpdateLoveMeter(object _value)
+    {
+        loveScore += (int)_value;
     }
 }

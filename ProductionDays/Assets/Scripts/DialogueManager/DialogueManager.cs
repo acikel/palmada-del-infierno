@@ -61,7 +61,7 @@ public class DialogueManager : MonoBehaviour
         ProceedDialogueOnDistWalked();
     }
 
-    /*
+    
     // DEBUG START
     void OnConfirmButton()
     {
@@ -94,7 +94,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     // DEBUG END
-    */
+    
     private void ProceedDialogueOnDistWalked()
     {
         if(dialogueStarted && Player.transform.position.x > nextDialoguePos && !optionPanel.activeInHierarchy)
@@ -272,5 +272,15 @@ public class DialogueManager : MonoBehaviour
         UICont.ScaleUp();
         AdvanceDialogue();
         nextDialoguePos = Player.transform.position.x + playerSpeed * (minDist + distPerDialogue * sentenceLength / distPerCharacterDivider);
+
+        try
+        {
+            story.ObserveVariable("loveMeter", (string varName, object newValue) => { storyMan.UpdateLoveMeter(newValue); });
+        }
+        catch
+        {
+
+        }
+        
     }
 }
