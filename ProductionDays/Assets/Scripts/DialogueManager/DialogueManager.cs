@@ -66,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         ProceedDialogueOnDistWalked();
     }
 
-    
+    /*
     // DEBUG START
     void OnConfirmButton()
     {
@@ -96,7 +96,7 @@ public class DialogueManager : MonoBehaviour
     void OnBlockButtonDown()
     {
         StartDialogue();
-    }
+    }*/
 
     // DEBUG END
     
