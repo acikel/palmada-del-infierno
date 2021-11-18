@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Instance.PlayGameMusic();
         if (InstanceRepository.Instance.Get<LevelManager>() == null)
         {
             InstanceRepository.Instance.AddOnce(this);
@@ -63,6 +64,7 @@ public class LevelManager : MonoBehaviour
 
     public void RoomReached()
     {
+        AudioManager.Instance.ChangeGameMusic(GameMusic.Fight);
         Debug.Log("test");
         camController.cameraFollowing = false;
         activeRoomCleared = false;

@@ -58,12 +58,18 @@ public class AudioManager
 
     public void PlayGameMusic()
     {
-        musicInstance.start();
+        musicInstance.getPlaybackState(out var playbackState);
+        
+        if (playbackState == PLAYBACK_STATE.STOPPED)
+            musicInstance.start();
     }
 
     public void StopGameMusic()
     {
-        musicInstance.stop(STOP_MODE.ALLOWFADEOUT);
+        musicInstance.getPlaybackState(out var playbackState);
+        
+        if (playbackState == PLAYBACK_STATE.PLAYING)
+            musicInstance.stop(STOP_MODE.ALLOWFADEOUT);
     }
 
     public void ChangeGameMusic(GameMusic gameMusic)
@@ -120,6 +126,7 @@ public class AudioManager
         CacheEvent(AudioEvent.Combat.BossAttackBobo);
         CacheEvent(AudioEvent.Combat.BossAttackBucheli);
         CacheEvent(AudioEvent.Combat.BossAttackRene);
+        CacheEvent(AudioEvent.Combat.BossStomp);
         CacheEvent(AudioEvent.Combat.EnemyAttack);
         CacheEvent(AudioEvent.Combat.EnemyDie);
         CacheEvent(AudioEvent.Combat.GruntFemale);

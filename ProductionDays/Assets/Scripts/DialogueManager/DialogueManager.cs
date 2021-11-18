@@ -268,6 +268,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        AudioManager.Instance.ChangeGameMusic(GameMusic.Dialogue);
         dialogueStarted = true;
         UICont.ScaleUp();
         AdvanceDialogue();

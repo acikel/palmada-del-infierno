@@ -39,6 +39,7 @@ public class Room : MonoBehaviour
         GameObject temp;
         if (isBossRoom)
         {
+            AudioManager.Instance.ChangeGameMusic(GameMusic.Boss);
             Instantiate(Boss, SpawnTarget);
         }
         else
