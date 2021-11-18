@@ -54,9 +54,12 @@ public class LevelManager : MonoBehaviour
             }else camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         }
 
-        if (Rooms[currentRoom].GetComponent<Room>().currentEnemyCount <= 0 && !activeRoomCleared)
+        if(currentRoom > 0)
         {
-            RoomCleared();
+            if (Rooms[currentRoom].GetComponent<Room>().currentEnemyCount <= 0 && !activeRoomCleared)
+            {
+                RoomCleared();
+            }
         }
     }
 
