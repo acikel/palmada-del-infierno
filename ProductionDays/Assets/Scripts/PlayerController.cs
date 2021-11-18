@@ -388,6 +388,15 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    public Vector3 GetFloorPosition()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        Vector3 position = transform.position;
+        position.y -= renderer.bounds.extents.y;
+
+        return position;
+    }
+    
     void OnDestroy()
     {
         InstanceRepository.Instance.Remove(this);

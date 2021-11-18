@@ -386,4 +386,4 @@ MonoBehaviour:
   rangedAttackPrefab: {fileID: 2099868678812290408, guid: 960a75cc85b93f044bc3367257ac87fd, type: 3}
   rangedAttackAmount: 3
   rangedAttackDamage: 1
-  rangedAttackLifetime: 1.5
+  rangedAttackLifetime: 2
