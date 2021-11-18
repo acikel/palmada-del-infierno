@@ -799,6 +799,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb36f9f5246e2947baeb41d6c9fcf80, type: 3}
+--- !u!1 &1053363482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4409455370763558643, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
+  m_PrefabInstance: {fileID: 1889484947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1053363486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053363482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00abfd93d00af647af83ce1325ad600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1124681818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1139,19 +1156,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284975131, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016468091
+      value: -0.000000016468091
       objectReference: {fileID: 0}
     - target: {fileID: 284975131, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000049861364
+      value: 0.0000000049861364
       objectReference: {fileID: 0}
     - target: {fileID: 1067499263, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016468091
+      value: -0.000000016468091
       objectReference: {fileID: 0}
     - target: {fileID: 1067499263, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000049861364
+      value: 0.0000000049861364
       objectReference: {fileID: 0}
     - target: {fileID: 4409455370763558604, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_RootOrder
@@ -1201,10 +1218,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 452787935}
-    - target: {fileID: 4409455370763558605, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
-      propertyPath: cameraFollowing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4409455370763558643, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_Name
       value: CameraController

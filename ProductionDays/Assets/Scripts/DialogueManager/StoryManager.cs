@@ -86,12 +86,17 @@ public class StoryManager : MonoBehaviour
 
     public void SetCurrentStory(int _currentRoom)
     {
+        int _nmbrOfStories = numberOfStories;
         // load room+1 story
         for(int i = 0; i < chapters.Count; i++)
         {
-            if (_currentRoom + 1 < chapters[0].Count())
+            if (_currentRoom + 1 < chapters[i].Count())
             {
-
+                
+            }
+            else
+            {
+                _currentRoom -= chapters[i].Count();
             }
         }
     }
