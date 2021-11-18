@@ -10,13 +10,18 @@ public class AIMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 5f;
     
-    // [SerializeField]
-    // private float movementAbortTime = 3f;
     
-    // private bool movingTowardsDestination;
-    // private Vector3 destination;
+    private static readonly int velocityParameter = Animator.StringToHash("Velocity");
 
-    // private Coroutine movementCoroutine;
+    private Animator animator;
+    public Animator Animator
+    {
+        get
+        {
+            animator ??= GetComponent<Animator>();
+            return animator;
+        }
+    }
 
     private void Start()
     {
@@ -41,12 +46,18 @@ public class AIMovement : MonoBehaviour
             }
             else
             {
+                if (Animator != null)
+                    Animator.SetFloat(velocityParameter, 0f);
+                
                 return true;     
             }
         }
         
         move = move * moveSpeed * Time.deltaTime;
         transform.position = position + move;
+        
+        if (Animator != null)
+            Animator.SetFloat(velocityParameter, move.magnitude);
 
         return false;
     }
@@ -67,44 +78,4 @@ public class AIMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 90, 0);
         }
     }
-
-    // private IEnumerator WalkTowardsDestination()
-    // {
-    //     Vector3 lastPosition = transform.position;
-    //     float lastPositionChangeTime = Time.time;
-    //     
-    //     while (movingTowardsDestination)
-    //     {
-    //         Vector3 position = transform.position;
-    //
-    //         Vector3 difference = destination - position;
-    //         Vector3 move = Vector3.right;
-    //         
-    //         if (difference.x < 0)
-    //             move = Vector3.left;
-    //
-    //         if (Vector3.Distance(position, destination) < 0.5f)
-    //         {
-    //             break;
-    //         }
-    //         
-    //         move = move * moveSpeed * Time.deltaTime;
-    //         transform.Translate(move);
-    //         
-    //         position += transform.position;
-    //         if (Vector3.Distance(position, lastPosition) > 0.01f)
-    //         {
-    //             lastPosition = position;
-    //             lastPositionChangeTime = Time.time;
-    //         }
-    //
-    //         if (lastPositionChangeTime >= movementAbortTime)
-    //         {
-    //             // Abort movement after a given time trying
-    //             break;
-    //         }
-    //
-    //         yield return null;
-    //     }
-    // }
 }

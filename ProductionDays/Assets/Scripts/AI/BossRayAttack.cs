@@ -25,7 +25,9 @@ public class BossRayAttack : MonoBehaviour
     private IEnumerator WaitToDie()
     {
         yield return new WaitForSeconds(0.25f);
-        yield return new WaitForSeconds(BossConfig.RangedAttackLifetime - 0.25f);
+        yield return new WaitForSeconds(BossConfig.RangedAttackLifetime - 0.75f);
+        GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

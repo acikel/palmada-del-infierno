@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Data;
 using System.IO.Pipes;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -398,10 +399,10 @@ public class PlayerController : MonoBehaviour
         _blocking = false;
 
         inputDisabled = true;
-        screenFaderObject.SetActive(true);
-
+        
         if (screenFader != null)
         {
+            screenFaderObject.SetActive(true);
             screenFader.FadeToBlack(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); });
         }
         else
@@ -513,13 +514,22 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 GetFloorPosition()
     {
-        Renderer renderer = GetComponent<Renderer>();
-        if (renderer == null)
-            renderer = GetComponentInChildren<Renderer>();
-        
         Vector3 position = transform.position;
-        position.y -= renderer.bounds.extents.y;
-
+        //
+        // if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo, 3f))
+        // {
+        //     position.y -= hitInfo.distance;
+        //     return position;            
+        // }
+        
+        
+        // Renderer renderer = GetComponent<Renderer>();
+        // if (renderer == null)
+        //     renderer = GetComponentInChildren<Renderer>();
+        
+        
+        //position.y -= renderer.bounds.extents.y;
+        //position.y = 0;
         return position;
     }
     
