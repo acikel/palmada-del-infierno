@@ -9,9 +9,9 @@ public class CameraManager : MonoBehaviour
 {
     private Vector3 originalPosition;
 
+    private float maxShakeDuration = 0;
     private float shakeDuration = 0;
     private float shakeAmount = 0.7f;
-    private float decreaseFactor = 1.0f;
 
     private Coroutine shakeRoutine;
     
@@ -25,13 +25,14 @@ public class CameraManager : MonoBehaviour
         InstanceRepository.Instance.Remove(this);
     }
 
-    public void ScreenShake(float shakeDuration, float shakeAmount = 0.3f, float decreaseFactor = 1.0f)
+    public void ScreenShake(float shakeDuration, float shakeAmount = 0.3f)
     {
         originalPosition = transform.localPosition;
 
+        this.maxShakeDuration = shakeDuration;
         this.shakeDuration += shakeDuration;
         this.shakeAmount = shakeAmount;
-        this.decreaseFactor = decreaseFactor;
+
 
         if (shakeRoutine == null)
         {
@@ -41,12 +42,16 @@ public class CameraManager : MonoBehaviour
 
     private IEnumerator DoShake()
     {
+        float shakeAmountValue = shakeAmount;
+        
         while (shakeDuration > 0)
         {
-            transform.localPosition = originalPosition + Random.insideUnitSphere * shakeAmount;
+            transform.localPosition = originalPosition + Random.insideUnitSphere * shakeAmountValue;
 
             shakeDuration -= Time.deltaTime;
-            shakeAmount -= Time.deltaTime * decreaseFactor;
+
+            float shakeValue = Mathf.Clamp01(shakeDuration / maxShakeDuration);
+            shakeAmountValue = shakeValue * shakeAmount;
 
             yield return null;
         }

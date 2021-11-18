@@ -15,8 +15,6 @@ public class BossMelee : State
     
     public override void OnStart()
     {
-        Debug.Log("Boss Melee");
-        
         cameraManager = InstanceRepository.Instance.Get<CameraManager>();
         
         bossFist = GameObject.transform.Find("BossFist").gameObject;
@@ -31,6 +29,7 @@ public class BossMelee : State
         yield return new WaitForSeconds(0.2f);
 
         Vector3 goalPos = bossFistPosition + (Vector3.down * 3);
+        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.BossStomp, GameObject.transform.position);
 
         while (Vector3.Distance(bossFist.transform.position, goalPos) > 0.1f)
         {

@@ -20,7 +20,6 @@ public class BossDecision : State
     
     public override void OnStart()
     {
-        Debug.Log("Decide");
         position = GameObject.transform.position;
 
         decisionTime = BossConfig.DecisionTime;
@@ -71,7 +70,14 @@ public class BossDecision : State
             }
             
             Type attackState = possibleAttackStates[Random.Range(0, possibleAttackStates.Count)];
-            
+
+            if (!BossConfig.BossVoice.IsNull)
+            {
+                float talkPossibility = Random.Range(0f, 1f);
+                if (talkPossibility > 0.6)
+                    AudioManager.Instance.PlayOneShot(BossConfig.BossVoice, GameObject.transform.position);
+            }
+
             elapsedDecisionTime = 0;
             SetState((State)Activator.CreateInstance(attackState));
         }

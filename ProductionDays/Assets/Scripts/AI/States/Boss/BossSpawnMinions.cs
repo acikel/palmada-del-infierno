@@ -16,7 +16,6 @@ public class BossSpawnMinions : State
     
     public override void OnStart()
     {
-        Debug.Log("Attack");
         cameraManager = InstanceRepository.Instance.Get<CameraManager>();
         
         target = Blackboard.Get<GameObject>(BlackboardConstants.VARIABLE_TARGET);
@@ -36,7 +35,7 @@ public class BossSpawnMinions : State
         Vector3 spawnCenter = cameraManager.transform.position;
         spawnCenter.z = GameObject.transform.position.z;
         
-        cameraManager.ScreenShake(2f);
+        cameraManager.ScreenShake(2f, 0.1f);
         
         for (int i = 0; i < minionSpawnAmount; i++)
         {
