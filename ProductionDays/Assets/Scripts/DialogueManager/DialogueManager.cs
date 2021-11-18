@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private bool isTalking = false;
 
-    private bool dialogueStarted = false;
+    public bool dialogueStarted = false;
 
     static Story story;
     TMP_Text nametagHelvezia;
@@ -37,6 +37,8 @@ public class DialogueManager : MonoBehaviour
 
     private int buttonSize = 50;
     private bool showChoices = false;
+
+    public bool startWithDialogue = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -55,11 +57,13 @@ public class DialogueManager : MonoBehaviour
         tags = new List<string>();
         choiceSelected = null;
         InstanceRepository.Instance.AddOnce(this);
+
+        if (startWithDialogue) StartDialogue();
     }
 
     private void Update()
     {
-        ProceedDialogueOnDistWalked();
+        //ProceedDialogueOnDistWalked();
     }
 
     
@@ -176,6 +180,8 @@ public class DialogueManager : MonoBehaviour
         }
         
         optionPanel.SetActive(true);
+
+        // this shit
         Player.GetComponent<PlayerController>().SetBlockActive();
         yield return new WaitUntil(() => { return choiceSelected != null; });
         Player.GetComponent<PlayerController>().SetBlockDisable();

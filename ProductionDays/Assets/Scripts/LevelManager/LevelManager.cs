@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     private CameraController camController;
     [SerializeField] public List<GameObject> Rooms;
     [SerializeField] private DialogueManager diaMan;
-    public int currentRoom = 0;
+    private int currentRoom = -1;
     private bool activeRoomCleared = false;
     private int _roomAmount;
 
@@ -54,8 +54,8 @@ public class LevelManager : MonoBehaviour
                 Debug.Log("null");
             }else camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         }
-        */
-        if (Rooms != null)
+
+        if(currentRoom > 0)
         {
             if (Rooms[currentRoom].GetComponent<Room>().currentEnemyCount <= 0 && !activeRoomCleared)
             {
