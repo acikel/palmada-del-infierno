@@ -71,9 +71,17 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Vector3 spawn = GameObject.FindGameObjectWithTag("lvl").transform.GetChild(LevelManager.Instance.currentRoom).gameObject.transform.GetChild(5).gameObject.transform.position;
-        Debug.Log(spawn);
-        transform.position = spawn;
+        if(LevelManager.Instance.currentRoom >= 0)
+        {
+            Vector3 spawn = GameObject.FindGameObjectWithTag("lvl").transform.GetChild(LevelManager.Instance.currentRoom).gameObject.transform.GetChild(5).gameObject.transform.position;
+            Debug.Log(spawn);
+            if (spawn != null)
+            {
+                transform.position = spawn;
+            }
+        }
+        
+        
     
         screenFader = InstanceRepository.Instance.Get<ScreenFader>();
     }

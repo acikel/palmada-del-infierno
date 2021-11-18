@@ -332,6 +332,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1466096772}
     - target: {fileID: 2552676367911787485, guid: 670fc4362fab4fa459c6448f309c733d, type: 3}
+      propertyPath: currentRoom
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552676367911787485, guid: 670fc4362fab4fa459c6448f309c733d, type: 3}
       propertyPath: Rooms.Array.data[0]
       value: 
       objectReference: {fileID: 1929053921}
@@ -799,23 +803,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb36f9f5246e2947baeb41d6c9fcf80, type: 3}
---- !u!1 &1053363482 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4409455370763558643, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
-  m_PrefabInstance: {fileID: 1889484947}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1053363486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053363482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00abfd93d00af647af83ce1325ad600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1124681818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1221,6 +1208,14 @@ PrefabInstance:
     - target: {fileID: 4409455370763558643, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_Name
       value: CameraController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409455370763558643, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
+      propertyPath: m_TagString
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526591463713214366, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
