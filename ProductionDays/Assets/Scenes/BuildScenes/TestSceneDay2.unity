@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6406650635360186045, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -206.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6406650636191630822, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1920
@@ -273,6 +277,14 @@ PrefabInstance:
     - target: {fileID: 6406650636764767110, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
       propertyPath: m_FillAmount
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6406650636862244235, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b8c63b093991734892a9711ef5276af, type: 3}
+    - target: {fileID: 6406650636862244235, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
+      propertyPath: m_Color.a
+      value: 0.87058824
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1819159aa9eaa547945f3463ee380ae, type: 3}
@@ -1096,30 +1108,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[0]
-      value: 
-      objectReference: {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[1]
-      value: 
-      objectReference: {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[2]
-      value: 
-      objectReference: {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[3]
-      value: 
-      objectReference: {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[4]
-      value: 
-      objectReference: {fileID: 4900000, guid: 213c5009bdd0b974ba523a0e7a5981df, type: 3}
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[5]
-      value: 
-      objectReference: {fileID: 4900000, guid: 14fb78fbdafb9ac459f2b36bc4c60504, type: 3}
     - target: {fileID: 4570955418230121850, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -1136,22 +1124,6 @@ PrefabInstance:
       propertyPath: TextBoxImage
       value: 
       objectReference: {fileID: 35663982}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Backgrounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Backgrounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: e906545a536cfc94795c8cdee04b7759, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Backgrounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 48dfa7f073b70494b8919cdb5d10736a, type: 3}
-    - target: {fileID: 4570955418230121851, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Backgrounds.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: e78653c91ce843144b25758d13ee49c0, type: 3}
     - target: {fileID: 4570955418230121852, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1224,166 +1196,6 @@ PrefabInstance:
       propertyPath: ExpressionRight
       value: 
       objectReference: {fileID: 35663978}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Stranger.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Stranger.Array.data[1].name
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Stranger.Array.data[2].name
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Angel.Array.data[0].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4a81b31195757544abb62be8c0429e91, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Angel.Array.data[1].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4a81b31195757544abb62be8c0429e91, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Phone.Array.data[0].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9383b62ee94ac2a46bc4424dc8bc6416, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Stranger.Array.data[0].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6270d1d51feb2a84083b4acf52e9167b, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Stranger.Array.data[1].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5b921ac5cf8908542b97fee383a18283, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: Stranger.Array.data[2].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: fe432cd655595f24e9d31a3857707783, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsDobo.Array.data[0].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsDobo.Array.data[1].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsDobo.Array.data[2].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsDobo.Array.data[3].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsDobo.Array.data[4].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsDobo.Array.data[5].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsDobo.Array.data[6].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsSike.Array.data[0].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: affcca3e187492d42b858b846d484c7a, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsSike.Array.data[1].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: affcca3e187492d42b858b846d484c7a, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsSike.Array.data[2].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: affcca3e187492d42b858b846d484c7a, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsSike.Array.data[3].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: affcca3e187492d42b858b846d484c7a, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[0].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[1].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[2].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[3].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[4].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[5].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[6].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[7].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 066dd6dc4701c9a4b89b0a825420abe6, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsBhomas.Array.data[8].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 066dd6dc4701c9a4b89b0a825420abe6, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[0].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[1].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[2].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[3].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[4].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[5].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[6].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[7].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[8].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[9].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsHelvezia.Array.data[10].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
 --- !u!1001 &1889484947

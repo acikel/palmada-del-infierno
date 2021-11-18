@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     private bool inputDisabled = false;
 
     private ScreenFader screenFader;
+    private GameObject screenFaderObject;
 
     private ParticleEffects ParticleEffect { get; set; }
 
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        if(LevelManager.Instance.currentRoom >= 0)
+        if(LevelManager.Instance.currentRoom >= 0 && LevelManager.Instance.reloading)
         {
             Vector3 spawn = GameObject.FindGameObjectWithTag("lvl").transform.GetChild(LevelManager.Instance.currentRoom).gameObject.transform.GetChild(5).gameObject.transform.position;
             Debug.Log(spawn);
@@ -82,10 +83,10 @@ public class PlayerController : MonoBehaviour
                 transform.position = spawn;
             }
         }
-        
-        
-    
+
+        screenFaderObject = InstanceRepository.Instance.Get<ScreenFader>().gameObject;
         screenFader = InstanceRepository.Instance.Get<ScreenFader>();
+        screenFaderObject.SetActive(false);
     }
 
 
@@ -397,6 +398,7 @@ public class PlayerController : MonoBehaviour
         _blocking = false;
 
         inputDisabled = true;
+        screenFaderObject.SetActive(true);
 
         if (screenFader != null)
         {

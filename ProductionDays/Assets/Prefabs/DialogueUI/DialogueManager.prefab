@@ -52,15 +52,17 @@ MonoBehaviour:
   minDist: 0.5
   distPerCharacterDivider: 10
   TextBoxes:
-  - {fileID: 21300000, guid: 5505a3885a842244db041f2a15d462e9, type: 3}
-  - {fileID: 21300000, guid: 4802c0ab253493549befc78ba5e6dc8e, type: 3}
-  - {fileID: 21300000, guid: 78d2d00763defea48a7fe949f9750316, type: 3}
-  - {fileID: 21300000, guid: 33e3fa54ec6932f48b947b1569aa4e0c, type: 3}
-  - {fileID: 21300000, guid: 9c4197f2f196f504989f275cc66289fa, type: 3}
-  - {fileID: 21300000, guid: 874735a41b5e69f41b0bb137214e4cda, type: 3}
-  - {fileID: 21300000, guid: 7d3be6d87cfe1c244b651be34ebcf938, type: 3}
+  - {fileID: 21300000, guid: d2f64590bf5b06e4484bab7dec041bbd, type: 3}
+  - {fileID: 21300000, guid: 0b8c63b093991734892a9711ef5276af, type: 3}
+  - {fileID: 21300000, guid: c7c57654da8de664998ab62a32c1777f, type: 3}
+  - {fileID: 21300000, guid: ead3428c937fcc3438906865696669f7, type: 3}
+  - {fileID: 21300000, guid: 8d8a4d22022e87e4ebb9efb9dd78adf8, type: 3}
+  - {fileID: 21300000, guid: 05cd9dcdc103330478386a4cbaedd83e, type: 3}
+  - {fileID: 21300000, guid: 5057120bc1e21d14c9edcb6fe1e13f1b, type: 3}
+  - {fileID: 21300000, guid: aed98e9c528d55846970141008aba9e7, type: 3}
   TextBoxImage: {fileID: 0}
   Backgrounds:
+  - {fileID: 21300000, guid: e906545a536cfc94795c8cdee04b7759, type: 3}
   - {fileID: 21300000, guid: e906545a536cfc94795c8cdee04b7759, type: 3}
   - {fileID: 21300000, guid: 48dfa7f073b70494b8919cdb5d10736a, type: 3}
   - {fileID: 21300000, guid: e78653c91ce843144b25758d13ee49c0, type: 3}
@@ -132,79 +134,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExpressionsHelvezia:
   - name: 0
-    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 1
-    ExpressionSprite: {fileID: 21300000, guid: 23b70329f12a3384e98fcf15b2239e73, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 2
-    ExpressionSprite: {fileID: 21300000, guid: 918db029d07844740be767005ec82f80, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 3
-    ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 4
-    ExpressionSprite: {fileID: 21300000, guid: e06c806a7f95c5642ba325a5e9e7e030, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 5
-    ExpressionSprite: {fileID: 21300000, guid: 77ddd9797f4167d4eb84438d2ddddecb, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 6
-    ExpressionSprite: {fileID: 21300000, guid: 22062909f76086b40b1f373240dce7b1, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 7
-    ExpressionSprite: {fileID: 21300000, guid: 9c124c48551c94945b4ec64167d5b0a1, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 8
-    ExpressionSprite: {fileID: 21300000, guid: 1cbf3ddc35a121f41a89d421be0edc03, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 9
-    ExpressionSprite: {fileID: 21300000, guid: 1b42053b280058245a104da9fd1eb81f, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 10
-    ExpressionSprite: {fileID: 21300000, guid: 67c5f478150a7e645bd8162354c7da91, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   ExpressionsSike:
   - name: 0
-    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: affcca3e187492d42b858b846d484c7a, type: 3}
   - name: 3
-    ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: affcca3e187492d42b858b846d484c7a, type: 3}
   - name: 6
-    ExpressionSprite: {fileID: 21300000, guid: 22062909f76086b40b1f373240dce7b1, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: affcca3e187492d42b858b846d484c7a, type: 3}
   - name: 9
-    ExpressionSprite: {fileID: 21300000, guid: 1b42053b280058245a104da9fd1eb81f, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: affcca3e187492d42b858b846d484c7a, type: 3}
   ExpressionsBhomas:
   - name: 0
-    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 1
-    ExpressionSprite: {fileID: 21300000, guid: 23b70329f12a3384e98fcf15b2239e73, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 2
-    ExpressionSprite: {fileID: 21300000, guid: 918db029d07844740be767005ec82f80, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 5
-    ExpressionSprite: {fileID: 21300000, guid: 77ddd9797f4167d4eb84438d2ddddecb, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 6
-    ExpressionSprite: {fileID: 21300000, guid: 22062909f76086b40b1f373240dce7b1, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 7
-    ExpressionSprite: {fileID: 21300000, guid: 9c124c48551c94945b4ec64167d5b0a1, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 10
-    ExpressionSprite: {fileID: 21300000, guid: 67c5f478150a7e645bd8162354c7da91, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 11
-    ExpressionSprite: {fileID: 21300000, guid: 0e05541dbe85ce946bc0537c67db18a9, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 066dd6dc4701c9a4b89b0a825420abe6, type: 3}
   - name: 12
-    ExpressionSprite: {fileID: 21300000, guid: 5a1ab259cf132f64ca2ac905811de580, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 066dd6dc4701c9a4b89b0a825420abe6, type: 3}
   ExpressionsDobo:
   - name: 0
-    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   - name: 1
-    ExpressionSprite: {fileID: 21300000, guid: 23b70329f12a3384e98fcf15b2239e73, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   - name: 2
-    ExpressionSprite: {fileID: 21300000, guid: 918db029d07844740be767005ec82f80, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   - name: 3
-    ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   - name: 5
-    ExpressionSprite: {fileID: 21300000, guid: 77ddd9797f4167d4eb84438d2ddddecb, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   - name: 6
-    ExpressionSprite: {fileID: 21300000, guid: 22062909f76086b40b1f373240dce7b1, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   - name: 7
-    ExpressionSprite: {fileID: 21300000, guid: 9c124c48551c94945b4ec64167d5b0a1, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   Phone:
   - name: 0
-    ExpressionSprite: {fileID: 21300000, guid: 1cbf3ddc35a121f41a89d421be0edc03, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 9383b62ee94ac2a46bc4424dc8bc6416, type: 3}
   Angel:
   - name: 0
-    ExpressionSprite: {fileID: 21300000, guid: 8173dcd1b94b35044a062c4bcabeb035, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 4a81b31195757544abb62be8c0429e91, type: 3}
   - name: 3
-    ExpressionSprite: {fileID: 21300000, guid: 173eacb15a2c9ed4a8386150f098e7fb, type: 3}
-  Stranger: []
+    ExpressionSprite: {fileID: 21300000, guid: 4a81b31195757544abb62be8c0429e91, type: 3}
+  Stranger:
+  - name: 0
+    ExpressionSprite: {fileID: 21300000, guid: 6270d1d51feb2a84083b4acf52e9167b, type: 3}
+  - name: 1
+    ExpressionSprite: {fileID: 21300000, guid: 5b921ac5cf8908542b97fee383a18283, type: 3}
+  - name: 2
+    ExpressionSprite: {fileID: 21300000, guid: fe432cd655595f24e9d31a3857707783, type: 3}
   ExpressionLeft: {fileID: 0}
   ExpressionRight: {fileID: 0}
 --- !u!114 &2042808982
@@ -222,11 +230,11 @@ MonoBehaviour:
   chapters:
   - stories:
     - {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
+    - {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
+    - {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
+    - {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
     - {fileID: 4900000, guid: 213c5009bdd0b974ba523a0e7a5981df, type: 3}
     - {fileID: 4900000, guid: 14fb78fbdafb9ac459f2b36bc4c60504, type: 3}
-    - {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
-    - {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
-    - {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
     - {fileID: 4900000, guid: b2e92a2a288ce004f831e606ed61b59a, type: 3}
     - {fileID: 4900000, guid: b8587fed40b1aa64baa959d146add887, type: 3}
     - {fileID: 4900000, guid: 4b9b2ac0cd846be46bb17db86f21931f, type: 3}
