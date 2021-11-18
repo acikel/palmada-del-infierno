@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 public class BossDecision : State
 {
     private Vector3 position;
-    private float sightDistance = 8f;
 
     private float closeAttackDistance = 4f;
     

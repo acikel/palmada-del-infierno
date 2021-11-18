@@ -38,8 +38,10 @@ public class DialogueManager : MonoBehaviour
     private int buttonSize = 50;
     private bool showChoices = false;
 
+    public bool startWithDialogue = true;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         UICont = GetComponent<UIControllerDialogue>();
         expChange = GetComponent<ExpressionChanger>();
@@ -54,6 +56,9 @@ public class DialogueManager : MonoBehaviour
         message.text = "";
         tags = new List<string>();
         choiceSelected = null;
+        InstanceRepository.Instance.AddOnce(this);
+
+        if (startWithDialogue) StartDialogue();
     }
 
     private void Update()
@@ -268,6 +273,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        AudioManager.Instance.ChangeGameMusic(GameMusic.Dialogue);
         dialogueStarted = true;
         UICont.ScaleUp();
         AdvanceDialogue();
@@ -282,5 +288,10 @@ public class DialogueManager : MonoBehaviour
 
         }
         
+    }
+
+    void OnDestroy()
+    {
+        InstanceRepository.Instance.Remove(this);
     }
 }

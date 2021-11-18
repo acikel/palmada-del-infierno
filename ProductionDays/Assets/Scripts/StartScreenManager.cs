@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,11 @@ public class StartScreenManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(_gameSceneIndex);
+    }
+
+    private void Start()
+    {
+        AudioManager.Instance.PlayGameMusic();
     }
 
     public void CloseGame()
