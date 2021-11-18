@@ -7,6 +7,7 @@ using UnityEngine;
 public class Chapter
 {
     public List<TextAsset> stories = new List<TextAsset>();
+    
 
     public int Count()
     {
@@ -23,6 +24,7 @@ public class StoryManager : MonoBehaviour
 {
 
     [SerializeField] private List<Chapter> chapters = new List<Chapter>();
+    private int numberOfStories;
 
     private int chapterIndex = 0;
     private int storyIndex = 0;
@@ -33,6 +35,14 @@ public class StoryManager : MonoBehaviour
 
     // PLACEHOLDER SCORE
     private int loveScore = 0;
+
+    void Start()
+    {
+        for(int i = 0; i < chapters.Count; i++)
+        {
+            numberOfStories += chapters[i].Count();
+        }
+    }
 
     public TextAsset NextStory()
     {
@@ -72,5 +82,17 @@ public class StoryManager : MonoBehaviour
     public void UpdateLoveMeter(object _value)
     {
         loveScore += (int)_value;
+    }
+
+    public void SetCurrentStory(int _currentRoom)
+    {
+        // load room+1 story
+        for(int i = 0; i < chapters.Count; i++)
+        {
+            if (_currentRoom + 1 < chapters[0].Count())
+            {
+
+            }
+        }
     }
 }
