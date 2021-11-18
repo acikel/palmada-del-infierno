@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public enum Effect
 {
     Damage,
@@ -12,6 +11,7 @@ public enum Effect
     Miss
 }
 
+[DefaultExecutionOrder(0)]
 public class ParticleEffects : MonoBehaviour
 {
     [Header("Effects")]

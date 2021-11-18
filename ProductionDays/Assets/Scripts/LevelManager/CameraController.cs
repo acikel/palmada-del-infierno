@@ -11,12 +11,11 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float camSpeed = 15;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (InstanceRepository.Instance.Get<CameraController>() == null)
         {
             InstanceRepository.Instance.AddOnce(this);
-            DontDestroyOnLoad(this.gameObject);
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -34,6 +33,10 @@ public class CameraController : MonoBehaviour
             camPosX.transform.position = new Vector3(Player.transform.position.x, camPosX.transform.position.y, camPosX.transform.position.z);
             Player.GetComponent<PlayerController>()._lvlCenterX = camPosX.transform.position.x;
             Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
+        }
+        else
+        {
+            SetActiveRoom(LevelManager.Instance.currentRoom);
         }
     }
 
@@ -57,7 +60,6 @@ public class CameraController : MonoBehaviour
     public void SetIntermissionLvl()
     {
         StartCoroutine(MoveToPlayerPosition());
-        Debug.Log("after Call");
     }
 
     IEnumerator MoveToPlayerPosition()
@@ -69,7 +71,11 @@ public class CameraController : MonoBehaviour
             Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
             yield return null;
         }
-        Debug.Log("Cor");
         cameraFollowing = true;
+    }
+
+    void OnDestroy()
+    {
+        InstanceRepository.Instance.Remove(this);
     }
 }

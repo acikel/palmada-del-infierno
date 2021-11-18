@@ -25,9 +25,9 @@ public class Room : MonoBehaviour
 
     void Awake()
     {
+        currentEnemyCount = 1;
         xScale = transform.GetChild(0).transform.localScale.x;
         zScale = transform.GetChild(0).transform.localScale.z;
-        currentEnemyCount = EnemyCount;
         SpawnTarget = transform.GetChild(2).transform;
     }
 

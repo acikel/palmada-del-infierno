@@ -8,6 +8,6 @@ public class TestReloadLVL : MonoBehaviour
 {
 void OnConfirmButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
