@@ -344,4 +344,10 @@ public class DialogueManager : MonoBehaviour
     {
         InstanceRepository.Instance.Remove(this);
     }
+
+    public void SetCheckpointStory(int _currentRoom)
+    {
+
+        story = new Story(storyMan.GetCurrentStory().text);
+    }
 }
