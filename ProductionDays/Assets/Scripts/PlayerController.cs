@@ -292,6 +292,11 @@ public class PlayerController : MonoBehaviour
             col.gameObject.GetComponent<EnemyHPScript>().Updatehealt(_attackDamage);
         }
     }
+
+    public void AttackHitEvent()
+    {
+        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.PlayerAttack);
+    }
 #endregion
     IEnumerator BlockBrockenTimer()
     {
