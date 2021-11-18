@@ -44,6 +44,7 @@ public class Room : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.ChangeGameMusic(GameMusic.Fight);
             for(int i = 0; i < EnemyCount; i++)
             {
                 temp = Instantiate(Enemy, SpawnTarget);
