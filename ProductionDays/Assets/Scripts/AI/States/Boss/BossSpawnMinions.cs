@@ -21,8 +21,7 @@ public class BossSpawnMinions : State
         
         target = Blackboard.Get<GameObject>(BlackboardConstants.VARIABLE_TARGET);
         floorY = target.GetComponent<PlayerController>().GetFloorPosition().y;
-        Debug.Log(floorY);
-        
+
         minionSpawnAmount = BossConfig.MinionSpawnAmount;
         waitingTime = BossConfig.SpawnWaitDuration;
         spawnDistanceToCenter = BossConfig.SpawnDistanceFromCenter;
