@@ -128,6 +128,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("test");
         camController.cameraFollowing = false;
         activeRoomCleared = false;
+        if (currentRoom == -1) currentRoom = 0;
         camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
         player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
         player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;

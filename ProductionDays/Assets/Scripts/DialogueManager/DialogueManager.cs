@@ -64,9 +64,13 @@ public class DialogueManager : MonoBehaviour
         choiceSelected = null;
         InstanceRepository.Instance.AddOnce(this);
 
-        if (!LevelManager.Instance.reloading)
+        //added to debug
+        if(LevelManager.Instance != null)
         {
-            if (startWithDialogue) StartDialogue();
+            if (!LevelManager.Instance.reloading)
+            {
+                if (startWithDialogue) StartDialogue();
+            }
         }
     }
 
@@ -173,6 +177,7 @@ public class DialogueManager : MonoBehaviour
         //nametagHelvezia.gameObject.SetActive(true);
         //nametagOther.gameObject.SetActive(false);
         message.gameObject.SetActive(false);
+        TextBoxImage.sprite = TextBoxes[0];
 
         Debug.Log("There are choices need to be made here!");
         List<Choice> _choices = story.currentChoices;
@@ -340,7 +345,20 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        int _backgroundIndex = 0;
+
+        if(storyMan.chapterIndex > 3)
+        {
+            _backgroundIndex = 3;
+        }
+        else
+        {
+            _backgroundIndex = storyMan.chapterIndex;
+        }
+
         expChange.DeactivateExpressions();
+
+        Background.sprite = Backgrounds[_backgroundIndex];
 
         AudioManager.Instance.ChangeGameMusic(GameMusic.Dialogue);
         dialogueStarted = true;
@@ -367,5 +385,11 @@ public class DialogueManager : MonoBehaviour
     public void SetCheckpointStory(int _currentRoom)
     {
         storyMan.SetCurrentStory(_currentRoom);
+        Debug.Log(_currentRoom);
+    }
+
+    public void SetCurrentStory(TextAsset _story)
+    {
+        story = new Story(_story.text);
     }
 }

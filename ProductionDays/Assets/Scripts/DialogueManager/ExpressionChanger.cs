@@ -91,6 +91,8 @@ public class ExpressionChanger : MonoBehaviour
     private Dictionary<string, Sprite> AngelDict = new Dictionary<string, Sprite>();
     private Dictionary<string, Sprite> StrangerDict = new Dictionary<string, Sprite>();
 
+    private int stuffStored = 0;
+
     enum ExpressionName
     {
         Neutral,
@@ -111,8 +113,11 @@ public class ExpressionChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StoreExpressions();
-        StoreDictionaries();
+        if(stuffStored < 2)
+        {
+            StoreExpressions();
+            StoreDictionaries();
+        }
     }
 
     // Update is called once per frame
@@ -125,10 +130,17 @@ public class ExpressionChanger : MonoBehaviour
     {
         //ExpressionLeft.sprite = ExpressionsHelvezia[GetExpression(_mood)];
         Sprite temp = null;
-        if(HelveziaDict.TryGetValue(_mood, out temp))
+
+        if (stuffStored < 2)
         {
-            ExpressionLeft.sprite = temp;
+            StoreExpressions();
+            StoreDictionaries();
+        }
+
+        if (HelveziaDict.TryGetValue(_mood, out temp))
+        {
             ExpressionLeft.gameObject.SetActive(true);
+            ExpressionLeft.sprite = temp;
         }
     }
 
@@ -138,12 +150,18 @@ public class ExpressionChanger : MonoBehaviour
         Dictionary<string, Sprite> temp;
         Sprite temp2;
 
+        if (stuffStored < 2)
+        {
+            StoreExpressions();
+            StoreDictionaries();
+        }
+
         if (PeopleDict.TryGetValue(_person, out temp))
         {
             if(temp.TryGetValue(_mood, out temp2))
             {
-                ExpressionRight.sprite = temp2;
                 ExpressionRight.gameObject.SetActive(true);
+                ExpressionRight.sprite = temp2;
             }
         }
     }
@@ -178,6 +196,7 @@ public class ExpressionChanger : MonoBehaviour
         {
             StrangerDict.Add(Enum.GetName(typeof(ExpressionName), _expression.name), _expression.ExpressionSprite);
         }
+        stuffStored++;
     }
 
     private void StoreDictionaries()
@@ -189,6 +208,7 @@ public class ExpressionChanger : MonoBehaviour
         PeopleDict.Add("Phone", PhoneDict);
         PeopleDict.Add("Liberty", PhoneDict);
         PeopleDict.Add("Grandma", PhoneDict);
+        stuffStored++;
     }
 
     public void DeactivateExpressions()

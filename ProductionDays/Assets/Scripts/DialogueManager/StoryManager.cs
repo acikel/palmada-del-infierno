@@ -26,8 +26,10 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private List<Chapter> chapters = new List<Chapter>();
     private int numberOfStories;
 
-    private int chapterIndex = 0;
+    public int chapterIndex = 0;
     private int storyIndex = 0;
+
+    private DialogueManager diaMan;
 
     [SerializeField] private int lastLinearChapter = 2;
     [SerializeField] private int BJDoboChapter = 2;
@@ -36,12 +38,14 @@ public class StoryManager : MonoBehaviour
     // PLACEHOLDER SCORE
     private int loveScore = 0;
 
-    void Start()
+    void Awake()
     {
         for(int i = 0; i < chapters.Count; i++)
         {
             numberOfStories += chapters[i].Count();
         }
+
+        diaMan = GetComponent<DialogueManager>();
     }
 
     public TextAsset NextStory()
@@ -86,14 +90,19 @@ public class StoryManager : MonoBehaviour
 
     public void SetCurrentStory(int _currentRoom)
     {
-        int _nmbrOfStories = numberOfStories;
+        //int _nmbrOfStories = numberOfStories;
         // load room+1 story
-        for(int i = 0; i < chapters.Count; i++)
+
+        Debug.Log(_currentRoom);
+        for (int i = 0; i < chapters.Count; i++)
         {
             if (_currentRoom + 1 < chapters[i].Count())
             {
                 storyIndex = _currentRoom + 1;
                 chapterIndex = i;
+                Debug.Log(storyIndex);
+                Debug.Log(chapterIndex);
+                diaMan.SetCurrentStory(chapters[chapterIndex].GetStory(storyIndex));
             }
             else
             {
