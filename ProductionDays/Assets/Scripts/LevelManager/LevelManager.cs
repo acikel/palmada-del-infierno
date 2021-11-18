@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     private bool activeRoomCleared = false;
     private int _roomAmount;
 
-    private bool reloading = false;
+    public bool reloading = false;
 
     private GameObject lvl;
     private PlayerController player;
@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
             InstanceRepository.Instance.AddOnce(this);
         }
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
 
     }
     // Start is called before the first frame update
@@ -97,8 +98,16 @@ public class LevelManager : MonoBehaviour
             player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
             player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
         }
-        
-        RoomReload();
+
+        if (reloading)
+        {
+            RoomReload();
+        }
+    }
+
+    void OnSceneUnloaded(Scene scene)
+    {
+        reloading = true;
     }
     public GameObject GetCurrentRoom() { return Rooms[currentRoom]; }
 
@@ -129,14 +138,11 @@ public class LevelManager : MonoBehaviour
     {
         AudioManager.Instance.ChangeGameMusic(GameMusic.Fight);
         Debug.Log("test");
-        if (reloading)
-        {
-            camController.cameraFollowing = false;
-        }
+        camController.cameraFollowing = false;
         activeRoomCleared = false;
         if(currentRoom >= 0)
         {
-            camController.SetActiveRoom(Rooms[currentRoom].transform.position.x);
+            camController.YeetCamToPos(Rooms[currentRoom].transform.position.x);
             player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
             player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
             Rooms[currentRoom].GetComponent<Room>().SpawnEnemies();
