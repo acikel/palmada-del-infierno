@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public float _lvlCenterZ;
     private float _lastLvlSizeXwall;
 
+    private ParticleEffects ParticleEffect { get; set; }
 
     void Awake()
     {
@@ -51,6 +52,9 @@ public class PlayerController : MonoBehaviour
         {
             InstanceRepository.Instance.AddOnce(this);
         }
+
+        ParticleEffect = InstanceRepository.Instance.Get<ParticleEffects>();
+        
         _animator = GetComponent<Animator>();
         _attackColliderFist = transform.GetChild(0).GetComponent<BoxCollider>();
         _attackColliderFist.enabled = false;
@@ -254,12 +258,14 @@ public class PlayerController : MonoBehaviour
         if (!_blocking || !dirBlock)
         {
             HealthPoint -= damage;
+            ParticleEffect.SpawnEffect(Effect.Damage, transform.position);
             AudioManager.Instance.PlayOneShot(AudioEvent.Combat.GruntFemale, transform.position);
             if (UpdateUI != null) UpdateUI();
         }
         else if(_blocking && dirBlock)
         {
             _blockStaminaCurrent -= damage;
+            ParticleEffect.SpawnEffect(Effect.Miss, transform.position);
             AudioManager.Instance.PlayOneShot(AudioEvent.Combat.BlockImpact, transform.position);
             if (_blockStaminaCurrent <= 0)
             {
@@ -282,6 +288,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Enemy"))
         {
             AudioManager.Instance.PlayOneShot(AudioEvent.Combat.Impact);
+            ParticleEffect.SpawnEffect(Effect.Hit, col.transform.position);
             col.gameObject.GetComponent<EnemyHPScript>().Updatehealt(_attackDamage);
         }
     }
