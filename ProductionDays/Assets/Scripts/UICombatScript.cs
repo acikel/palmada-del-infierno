@@ -37,6 +37,9 @@ public class UICombatScript : MonoBehaviour
     {
         float currentP = _player.MaxBlockPoints / _player._blockStaminaCurrent;
         float currentValue = _maxBlock / currentP;
-        _block.rectTransform.sizeDelta = new Vector2(currentValue, 50f);
+        //_block.rectTransform.sizeDelta = new Vector2(currentValue, 50f);
+
+        _block.fillAmount = currentValue/400;
+        Debug.Log(currentValue);
     }
 }

@@ -57,11 +57,14 @@ You know she has a very handsome grandson. You two would get on like a house on 
 ===G4===
 -Alright dear, I will have to let you go now, your grandpa needs me. #Grandma
 
- ->DONE
+ ->Continue2
+ 
 ===G5===
 -My goodness Helvezia! This is no way to talk to your grandma! #Grandma
 
-
+ ->Continue2
+ 
+===Continue2===
 Oh my god, Sike! #Helvezia Happy
 No, absolutely not, stay away from me you wretched woman! #Sike Angry
 Don’t be like that Sike, you’re hardly even bruised anymore. #Helvezia Neutral 
