@@ -15,7 +15,6 @@ public class BossRanged : State
     
     public override void OnStart()
     {
-        Debug.Log("Boss Ranged Attack");
         cameraManager = InstanceRepository.Instance.Get<CameraManager>();
         
         attackAmount = BossConfig.RangedAttackAmount;
@@ -38,6 +37,7 @@ public class BossRanged : State
             attackPosition = targetTransform.position;
             yield return new WaitForSeconds(0.25f);
             
+            AudioManager.Instance.PlayOneShot(BossConfig.BossAttackSound, attackPosition);
             GameObject attack = GameObject.Instantiate(attackObject, attackPosition, Quaternion.identity);
             attack.GetComponent<BossRayAttack>().BossConfig = BossConfig;
             

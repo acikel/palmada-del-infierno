@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 
 namespace AI
 {
@@ -11,6 +12,9 @@ namespace AI
         [SerializeField] private float meleeDamage = 1;
 
         [SerializeField] private float meleeDistance = 6f;
+        
+        [SerializeField] private EventReference bossAttackSound;
+        [SerializeField] private EventReference bossVoice;
         
         [Header("Attack: Spawn Minion")]
         [SerializeField] private GameObject minion;
@@ -32,6 +36,9 @@ namespace AI
         public float SpawnDistanceFromCenter => spawnDistanceFromCenter;
         public float DecisionTime => decisionTime;
         public float MeleeDistance => meleeDistance;
+
+        public EventReference BossAttackSound => bossAttackSound;
+        public EventReference BossVoice => bossVoice;
 
         public GameObject RangedAttackPrefab => rangedAttackPrefab;
         public int RangedAttackAmount => rangedAttackAmount;

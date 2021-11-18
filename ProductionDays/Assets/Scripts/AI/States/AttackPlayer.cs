@@ -14,8 +14,6 @@ public class AttackPlayer : State
     
     public override void OnStart()
     {
-        Debug.Log("Attack");
-
         attackRange = MinionConfig.AttackRange;
         attackInterval = MinionConfig.AttackInterval;
         attackDamage = MinionConfig.AttackDamage;
@@ -47,7 +45,7 @@ public class AttackPlayer : State
 
     private void Attack()
     {
-        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.EnemyAttack);
+        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.EnemyAttack, GameObject.transform.position);
         playerController.PlayerHit(attackDamage, this.GameObject.transform);
     }
 }

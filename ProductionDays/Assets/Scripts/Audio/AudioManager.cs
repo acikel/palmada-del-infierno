@@ -89,6 +89,11 @@ public class AudioManager
     {
         RuntimeManager.PlayOneShot(GetEvent(audioEvent), position);
     }
+    
+    public void PlayOneShot(EventReference eventReference, Vector3 position = default)
+    {
+        RuntimeManager.PlayOneShot(eventReference, position);
+    }
 
     public void PlayOneShotAttached(string audioEvent, GameObject gameObject)
     {
@@ -111,6 +116,10 @@ public class AudioManager
         CacheEvent(AudioEvent.Combat.Block);
         CacheEvent(AudioEvent.Combat.Impact);
         CacheEvent(AudioEvent.Combat.BlockImpact);
+        CacheEvent(AudioEvent.Combat.BossAttackAngel);
+        CacheEvent(AudioEvent.Combat.BossAttackBobo);
+        CacheEvent(AudioEvent.Combat.BossAttackBucheli);
+        CacheEvent(AudioEvent.Combat.BossAttackRene);
         CacheEvent(AudioEvent.Combat.EnemyAttack);
         CacheEvent(AudioEvent.Combat.EnemyDie);
         CacheEvent(AudioEvent.Combat.GruntFemale);

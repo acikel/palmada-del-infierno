@@ -10,7 +10,6 @@ public class PatrolStationary : State
 
     public override void OnStart()
     {
-        Debug.Log("Patrol");
         position = GameObject.transform.position;
 
         playerTransform = GameObject.FindWithTag("Player").transform;

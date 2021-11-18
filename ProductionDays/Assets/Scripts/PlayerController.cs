@@ -254,12 +254,13 @@ public class PlayerController : MonoBehaviour
         if (!_blocking || !dirBlock)
         {
             HealthPoint -= damage;
-
+            AudioManager.Instance.PlayOneShot(AudioEvent.Combat.GruntFemale, transform.position);
             if (UpdateUI != null) UpdateUI();
         }
         else if(_blocking && dirBlock)
         {
             _blockStaminaCurrent -= damage;
+            AudioManager.Instance.PlayOneShot(AudioEvent.Combat.BlockImpact, transform.position);
             if (_blockStaminaCurrent <= 0)
             {
                 _blockBrocken = true;
@@ -270,6 +271,7 @@ public class PlayerController : MonoBehaviour
 
         if (HealthPoint <= 0)
         {
+            AudioManager.Instance.PlayOneShot(AudioEvent.Combat.PlayerDie);
             //Destroy(this.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
@@ -279,6 +281,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Enemy"))
         {
+            AudioManager.Instance.PlayOneShot(AudioEvent.Combat.Impact);
             col.gameObject.GetComponent<EnemyHPScript>().Updatehealt(_attackDamage);
         }
     }

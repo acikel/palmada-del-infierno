@@ -12,8 +12,6 @@ public class EngagePlayer : State
 
     public override void OnStart()
     {
-        Debug.Log("Engage");
-
         attackRange = MinionConfig.AttackRange;
         
         target = Blackboard.Get<GameObject>(BlackboardConstants.VARIABLE_TARGET);
