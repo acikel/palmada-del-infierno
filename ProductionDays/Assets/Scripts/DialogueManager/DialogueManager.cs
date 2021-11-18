@@ -64,7 +64,10 @@ public class DialogueManager : MonoBehaviour
         choiceSelected = null;
         InstanceRepository.Instance.AddOnce(this);
 
-        if (startWithDialogue) StartDialogue();
+        if (!LevelManager.Instance.reloading)
+        {
+            if (startWithDialogue) StartDialogue();
+        }
     }
 
     private void Update()
