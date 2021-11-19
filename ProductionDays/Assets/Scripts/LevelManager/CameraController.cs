@@ -30,7 +30,10 @@ public class CameraController : MonoBehaviour
     {
         if (cameraFollowing)
         {
-            camPosX.transform.position = new Vector3(Player.transform.position.x, camPosX.transform.position.y, camPosX.transform.position.z);
+            if(camPosX.transform.position.x < Player.transform.position.x)
+            {
+                camPosX.transform.position = new Vector3(Player.transform.position.x, camPosX.transform.position.y, camPosX.transform.position.z);
+            }
             Player.GetComponent<PlayerController>()._lvlCenterX = camPosX.transform.position.x;
             Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
         }
@@ -77,11 +80,17 @@ public class CameraController : MonoBehaviour
         cameraFollowing = true;
     }
 
-    public void YeetCamToPos(float _activeRoomX)
+    public void YeetCamToPos(float _activeRoomX, GameObject room)
     {
         camPosX.transform.position = new Vector3(_activeRoomX,camPosX.transform.position.y,camPosX.transform.position.z);
+        StartCoroutine(WaitForYeetCam(room));
     }
 
+    IEnumerator WaitForYeetCam(GameObject room)
+    {
+        yield return new WaitForSeconds(0.5f);
+        room.GetComponent<Room>().SpawnEnemies();
+    }
     void OnDestroy()
     {
         InstanceRepository.Instance.Remove(this);

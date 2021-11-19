@@ -21,4 +21,15 @@ public class StartScreenManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void GoCredits()
+    {
+
+        SceneManager.LoadScene(1);
+    }
 }

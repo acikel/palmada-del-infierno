@@ -33,7 +33,7 @@ public class BossSpawnMinions : State
 
     private IEnumerator SpawnMinions()
     {
-        Vector3 spawnCenter = cameraManager.transform.position;
+        Vector3 spawnCenter = Camera.main.transform.position;
         spawnCenter.y = floorY + 1f;
         spawnCenter.z = GameObject.transform.position.z;
         
@@ -49,7 +49,7 @@ public class BossSpawnMinions : State
             else
                 spawnPosition.x += spawnDistanceToCenter + i * 1.5f;
 
-            var instancedMinion = GameObject.Instantiate(minions[Random.Range(0, minions.Length)], spawnPosition, Quaternion.Euler(0, -90, 0));
+            var instancedMinion = GameObject.Instantiate(minions[Random.Range(0, minions.Length)], spawnPosition, Quaternion.Euler(0, -90, 0), GameObject.transform.parent);
             instancedMinion.GetComponent<MinionConfig>().BossSpawned = true;
             instancedMinion.GetComponent<StateMachine>().SetState(new EngagePlayer());
         }

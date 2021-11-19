@@ -38,7 +38,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private int BhomasTuchelinChapter = 3;
 
     // PLACEHOLDER SCORE
-    private int loveScore = 0;
+    public int loveScore = 0;
 
     void Awake()
     {
@@ -52,10 +52,16 @@ public class StoryManager : MonoBehaviour
 
     public TextAsset NextStory()
     {
-        if (chapterIndex + 1 == chapters.Count && storyIndex == chapters[chapterIndex].Count())
+        Debug.Log(chapters.Count);
+        Debug.Log(chapterIndex);
+
+        Debug.Log(chapters[chapterIndex].Count());
+        Debug.Log(storyIndex);
+
+        if (chapterIndex + 1 == chapters.Count && storyIndex + 1 == chapters[chapterIndex].Count())
         {
             storyComplete = true;
-            return GetCurrentStory();
+            chapterIndex--;
         }
 
         if(storyIndex + 1 < chapters[chapterIndex].Count())

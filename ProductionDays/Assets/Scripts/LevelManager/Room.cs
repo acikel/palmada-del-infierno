@@ -11,9 +11,11 @@ public class Room : MonoBehaviour
     public float zScale { get; private set; }
 
     public bool isBossRoom = false;
+    public bool isFinalBossRoom = false;
     [SerializeField] private float spawnDistanceFromCenter = 16;
 
     [SerializeField] private GameObject Boss;
+    [SerializeField] private GameObject Boss2;
     [SerializeField] private GameObject[] Enemies;
     private Transform SpawnTarget;
 
@@ -43,7 +45,17 @@ public class Room : MonoBehaviour
         if (isBossRoom)
         {
             AudioManager.Instance.ChangeGameMusic(GameMusic.Boss);
-            Instantiate(Boss, SpawnTarget);
+            if (isFinalBossRoom)
+            {
+                float love = InstanceRepository.Instance.Get<DialogueManager>().gameObject.GetComponent<StoryManager>()
+                    .loveScore;
+                if (love >= 0)
+                {
+                    Instantiate(Boss, SpawnTarget);
+                }
+                else Instantiate(Boss2, SpawnTarget);
+            }
+            else Instantiate(Boss, SpawnTarget);
         }
         else
         {
