@@ -66,6 +66,9 @@
 		<property name="priority">
 			<value>3</value>
 		</property>
+		<property name="maximumDistance">
+			<value>75</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{6003f5d7-eb43-4ae1-9fbf-b2ab0c86eb67}" />
 	<object class="GroupTrack" id="{6339dce5-5027-4103-86f2-eb71f0627120}">
@@ -142,7 +145,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{5eb5c317-c61a-4d44-bfd2-6826d5093fa1}" />
 	<object class="MixerBusFader" id="{519d57eb-7c1c-4564-b378-a3c086b695a6}" />
-	<object class="SpatialiserEffect" id="{29731395-c9bd-4360-97ed-6a5baa7119af}" />
+	<object class="SpatialiserEffect" id="{29731395-c9bd-4360-97ed-6a5baa7119af}">
+		<property name="maximumDistance">
+			<value>75</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{db1e4c1e-f3bb-4774-ac8f-fa39769f8733}">
 		<relationship name="audioFile">
 			<destination>{5a43a9cd-c574-42e4-a644-1db40e26ef7e}</destination>
