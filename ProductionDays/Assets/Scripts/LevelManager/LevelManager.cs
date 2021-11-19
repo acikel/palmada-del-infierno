@@ -14,10 +14,12 @@ public class LevelManager : MonoBehaviour
     private int _roomAmount;
 
     public bool reloading = false;
+    public int _EndSceneGood;
+    public int _EndSceneBad;
 
     private GameObject lvl;
     private PlayerController player;
-    
+    private StoryManager _storymanager;
     void Awake()
     {
         
@@ -44,6 +46,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.PlayGameMusic();
+
     }
 
     // Update is called once per frame
@@ -68,6 +71,12 @@ public class LevelManager : MonoBehaviour
                 RoomCleared();
             }
         }
+        
+        if(_storymanager.storyComplete)
+        {
+            if (_storymanager.loveScore >= 0) SceneManager.LoadScene(_EndSceneGood);
+            else SceneManager.LoadScene(_EndSceneBad);
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -77,7 +86,7 @@ public class LevelManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         }
         diaMan = InstanceRepository.Instance.Get<DialogueManager>();
-
+        _storymanager = diaMan.GetComponent<StoryManager>();
         _roomAmount = Rooms.Count;
         lvl = GameObject.FindGameObjectWithTag("lvl");
         if (lvl != null)
