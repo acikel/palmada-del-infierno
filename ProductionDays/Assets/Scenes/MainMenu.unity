@@ -12055,7 +12055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4249084268577087905, guid: 649cb47e6c94307429c42f684caf55e6, type: 3}
       propertyPath: _gameSceneIndex
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4249084268577087906, guid: 649cb47e6c94307429c42f684caf55e6, type: 3}
       propertyPath: m_RootOrder
