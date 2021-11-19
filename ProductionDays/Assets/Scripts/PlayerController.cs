@@ -251,7 +251,7 @@ public class PlayerController : MonoBehaviour
     #region Attack / Block
     void OnAttackButton()
     {
-        if (inputDisabled || diaMan.dialogueStarted)
+        if (inputDisabled || (diaMan != null && diaMan.dialogueStarted))
             return;
         
         if (!_blocking)
@@ -265,7 +265,7 @@ public class PlayerController : MonoBehaviour
 
     void OnBlockButtonDown()
     {
-        if (inputDisabled || diaMan.dialogueStarted)
+        if (inputDisabled || (diaMan != null && diaMan.dialogueStarted))
             return;
         
         if (!_attacking && !_blockBrocken)
@@ -429,6 +429,14 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    private void OnPause()
+    {
+        var ingameUI = InstanceRepository.Instance.Get<IngameUI>();
+        
+        if (ingameUI != null)
+            ingameUI.TogglePauseMenu();
     }
 
     IEnumerator BlockBrockenTimer()
