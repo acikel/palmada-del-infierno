@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     private GameObject lvl;
     private PlayerController player;
     private StoryManager _storymanager;
+    public float loveScore;
     void Awake()
     {
         
@@ -108,6 +109,8 @@ public class LevelManager : MonoBehaviour
             player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
         }
 
+        InstanceRepository.Instance.Get<DialogueManager>().gameObject.GetComponent<StoryManager>()
+            .loveScore = (int)loveScore;
         if (reloading)
         {
             RoomReload();
