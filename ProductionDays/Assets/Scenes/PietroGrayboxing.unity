@@ -3321,6 +3321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room5
       objectReference: {fileID: 0}
+    - target: {fileID: 5468183177502679203, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679204, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3878,7 +3882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &202057516
 Transform:
   m_ObjectHideFlags: 0
@@ -8231,7 +8235,7 @@ Transform:
   - {fileID: 695188534}
   - {fileID: 934649749}
   m_Father: {fileID: 562510573}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &436538789
 PrefabInstance:
@@ -10506,10 +10510,10 @@ Transform:
   - {fileID: 79175633}
   - {fileID: 540425056}
   - {fileID: 1956239015}
+  - {fileID: 432701751}
   - {fileID: 1134956189}
   - {fileID: 1265128085}
   - {fileID: 446878821}
-  - {fileID: 432701751}
   - {fileID: 495949827}
   - {fileID: 218040014}
   - {fileID: 669961915}
@@ -17226,6 +17230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room7
       objectReference: {fileID: 0}
+    - target: {fileID: 5468183177502679203, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679204, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -22895,7 +22903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1405146142
 Transform:
   m_ObjectHideFlags: 0
