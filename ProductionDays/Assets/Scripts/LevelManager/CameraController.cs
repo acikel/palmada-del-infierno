@@ -79,7 +79,7 @@ public class CameraController : MonoBehaviour
 
     public void YeetCamToPos(float _activeRoomX)
     {
-        camPosX.transform.position = new Vector3(_activeRoomX,0f,0f);
+        camPosX.transform.position = new Vector3(_activeRoomX,camPosX.transform.position.y,camPosX.transform.position.z);
     }
 
     void OnDestroy()
