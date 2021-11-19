@@ -77,11 +77,17 @@ public class CameraController : MonoBehaviour
         cameraFollowing = true;
     }
 
-    public void YeetCamToPos(float _activeRoomX)
+    public void YeetCamToPos(float _activeRoomX, GameObject room)
     {
         camPosX.transform.position = new Vector3(_activeRoomX,camPosX.transform.position.y,camPosX.transform.position.z);
+        StartCoroutine(WaitForYeetCam(room));
     }
 
+    IEnumerator WaitForYeetCam(GameObject room)
+    {
+        yield return new WaitForSeconds(0.5f);
+        room.GetComponent<Room>().SpawnEnemies();
+    }
     void OnDestroy()
     {
         InstanceRepository.Instance.Remove(this);

@@ -38,7 +38,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private int BhomasTuchelinChapter = 3;
 
     // PLACEHOLDER SCORE
-    private int loveScore = 0;
+    public int loveScore = 0;
 
     void Awake()
     {
