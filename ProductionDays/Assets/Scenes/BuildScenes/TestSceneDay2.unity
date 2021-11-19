@@ -913,6 +913,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 0afc226ccc3b5064da0ed032564464d4, type: 3}
     - target: {fileID: 4570955418230121850, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -1005,6 +1009,38 @@ PrefabInstance:
       propertyPath: ExpressionRight
       value: 
       objectReference: {fileID: 35663978}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsSike.Array.data[1].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 59f185ad1e41e0345a55d5dd7bf3c503, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsSike.Array.data[3].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3bc0ab2161a582549be562695f5f6d9d, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsBhomas.Array.data[1].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 10aff9149b11f2c4298788a6f3aeb00b, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsBhomas.Array.data[6].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de1c2edc8c315054499006df9b9d17bd, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsHelvezia.Array.data[1].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2a43cdc9acfea44480621387eb765e0, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsHelvezia.Array.data[2].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 32abf64b79b170b41a1521bb8d6d41df, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsHelvezia.Array.data[3].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 30f181be37cad774db7ca7989ec40852, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsHelvezia.Array.data[4].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b1cae18ba042454ea892c0d375c7ddd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
 --- !u!1001 &1889484947
