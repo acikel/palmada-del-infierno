@@ -52,7 +52,7 @@ MonoBehaviour:
   minDist: 0.5
   distPerCharacterDivider: 10
   TextBoxes:
-  - {fileID: 21300000, guid: d2f64590bf5b06e4484bab7dec041bbd, type: 3}
+  - {fileID: 21300000, guid: 4fe73a978598f884988edcb919a825d3, type: 3}
   - {fileID: 21300000, guid: 0b8c63b093991734892a9711ef5276af, type: 3}
   - {fileID: 21300000, guid: c7c57654da8de664998ab62a32c1777f, type: 3}
   - {fileID: 21300000, guid: ead3428c937fcc3438906865696669f7, type: 3}
@@ -136,13 +136,13 @@ MonoBehaviour:
   - name: 0
     ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 1
-    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: c068fc1c50193d44faa6026fff1cfd59, type: 3}
   - name: 2
-    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 5348f4b956075f84b899fa681a96f460, type: 3}
   - name: 3
-    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 1993274f4cadfb44d82cf79dcc118017, type: 3}
   - name: 4
-    ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 3f88aaba013057c459e34a65dcf13c69, type: 3}
   - name: 5
     ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 6
@@ -230,6 +230,7 @@ MonoBehaviour:
   chapters:
   - stories:
     - {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
+    - {fileID: 4900000, guid: 4b9b2ac0cd846be46bb17db86f21931f, type: 3}
     - {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
     - {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
     - {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
@@ -237,7 +238,6 @@ MonoBehaviour:
     - {fileID: 4900000, guid: 14fb78fbdafb9ac459f2b36bc4c60504, type: 3}
     - {fileID: 4900000, guid: b2e92a2a288ce004f831e606ed61b59a, type: 3}
     - {fileID: 4900000, guid: b8587fed40b1aa64baa959d146add887, type: 3}
-    - {fileID: 4900000, guid: 4b9b2ac0cd846be46bb17db86f21931f, type: 3}
     - {fileID: 4900000, guid: ea55e80cd5a1c754fb832aec4c24b2d7, type: 3}
     - {fileID: 4900000, guid: a28b9ef6b99067444b976a88a35030c0, type: 3}
   - stories:
@@ -245,6 +245,7 @@ MonoBehaviour:
   - stories: []
   - stories: []
   - stories: []
+  chapterIndex: 0
   lastLinearChapter: 1
   BJDoboChapter: 2
   BhomasTuchelinChapter: 3
