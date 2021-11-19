@@ -119,7 +119,6 @@ public class LevelManager : MonoBehaviour
         camController.SetIntermissionLvl();
         //DialogeManager Call Function
         diaMan.StartDialogue();
-
     }
 
     public void RoomReached()
@@ -143,10 +142,9 @@ public class LevelManager : MonoBehaviour
         activeRoomCleared = false;
         if(currentRoom >= 0)
         {
-            camController.YeetCamToPos(Rooms[currentRoom].transform.position.x);
+            camController.YeetCamToPos(Rooms[currentRoom].transform.position.x, Rooms[currentRoom]);
             player._lvlWidth = Rooms[currentRoom].GetComponent<Room>().xScale;
             player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
-            Rooms[currentRoom].GetComponent<Room>().SpawnEnemies();
             diaMan.SetCheckpointStory(currentRoom);
         }
         

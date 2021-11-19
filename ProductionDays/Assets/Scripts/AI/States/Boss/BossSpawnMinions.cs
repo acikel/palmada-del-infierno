@@ -33,7 +33,7 @@ public class BossSpawnMinions : State
 
     private IEnumerator SpawnMinions()
     {
-        Vector3 spawnCenter = cameraManager.transform.position;
+        Vector3 spawnCenter = Camera.main.transform.position;
         spawnCenter.y = floorY + 1f;
         spawnCenter.z = GameObject.transform.position.z;
         
