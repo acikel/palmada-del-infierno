@@ -8,7 +8,8 @@ public enum Effect
     Fighting,
     Health,
     Hit,
-    Miss
+    Miss,
+    Teleport
 }
 
 [DefaultExecutionOrder(0)]
@@ -20,6 +21,7 @@ public class ParticleEffects : MonoBehaviour
     [SerializeField] private GameObject health;
     [SerializeField] private GameObject hit;
     [SerializeField] private GameObject miss;
+    [SerializeField] private GameObject teleport;
     
     void Awake()
     {
@@ -45,6 +47,9 @@ public class ParticleEffects : MonoBehaviour
                 break;
             case Effect.Miss:
                 effectPrefab = miss;
+                break;
+            case Effect.Teleport:
+                effectPrefab = teleport;
                 break;
         }
 

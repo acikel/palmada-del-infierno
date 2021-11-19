@@ -252,7 +252,7 @@ public class PlayerController : MonoBehaviour
     #region Attack / Block
     void OnAttackButton()
     {
-        if (inputDisabled || diaMan.dialogueStarted)
+        if (inputDisabled || (diaMan != null && diaMan.dialogueStarted))
             return;
         
         if (!_blocking)
@@ -266,7 +266,7 @@ public class PlayerController : MonoBehaviour
 
     void OnBlockButtonDown()
     {
-        if (inputDisabled || diaMan.dialogueStarted)
+        if (inputDisabled || (diaMan != null && diaMan.dialogueStarted))
             return;
         
         if (!_attacking && !_blockBrocken)

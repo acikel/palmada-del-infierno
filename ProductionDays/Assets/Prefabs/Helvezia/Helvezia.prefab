@@ -1453,6 +1453,7 @@ MonoBehaviour:
   health: {fileID: 2347990118892716645, guid: 6eb818e0df7da2643a6333420e26e2fc, type: 3}
   hit: {fileID: 7455332998248694232, guid: 02625b015f3b0134a86dc51332d09b5b, type: 3}
   miss: {fileID: 2328357497917116829, guid: 86a9ab8575b08854eb471e625cd567d9, type: 3}
+  teleport: {fileID: 6923783899433280782, guid: b7bfea7282099c94cad7741c8272c943, type: 3}
 --- !u!1 &3573991710014657206
 GameObject:
   m_ObjectHideFlags: 0
