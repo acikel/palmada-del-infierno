@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Room : MonoBehaviour
 {
@@ -13,12 +14,12 @@ public class Room : MonoBehaviour
     [SerializeField] private float spawnDistanceFromCenter = 16;
 
     [SerializeField] private GameObject Boss;
-    [SerializeField] private GameObject Enemy;
+    [SerializeField] private GameObject[] Enemies;
     private Transform SpawnTarget;
 
     public int currentEnemyCount;
     private int currentEnemy;
-    private List<GameObject> Enemies = new List<GameObject>();
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     private bool enemiesSpawned = false;
 
@@ -60,9 +61,9 @@ public class Room : MonoBehaviour
                 else
                     spawnPosition.x += spawnDistanceFromCenter;
                 
-                temp = Instantiate(Enemy, spawnPosition, Quaternion.identity, SpawnTarget);
+                temp = Instantiate(Enemies[Random.Range(0, Enemies.Length)], spawnPosition, Quaternion.identity, SpawnTarget);
                 temp.GetComponent<StateMachine>().SetState(new EngagePlayer());
-                Enemies.Add(temp);
+                spawnedEnemies.Add(temp);
                 temp.SetActive(false);
                 
             }
@@ -75,7 +76,7 @@ public class Room : MonoBehaviour
     {
         if(currentEnemy < EnemyCount)
         {
-            Enemies[currentEnemy].SetActive(true);
+            spawnedEnemies[currentEnemy].SetActive(true);
             currentEnemy++;
         }
     }
