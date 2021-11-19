@@ -143,12 +143,12 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-    /*
+    
     void OnBlockButtonDown()
     {
         StartDialogue();
     }
-    */
+    
     // DEBUG END
 
     private void ProceedDialogueOnDistWalked()
