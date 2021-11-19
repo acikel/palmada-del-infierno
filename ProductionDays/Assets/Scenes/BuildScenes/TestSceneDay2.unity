@@ -913,6 +913,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: BJDoboChapter
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: lastLinearChapter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: BhomasTuchelinChapter
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4570955418230121850, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: m_Name
       value: DialogueManager
