@@ -33,6 +33,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "MouseClickDown",
+                    "type": "Button",
+                    "id": "c5a16d48-4ec8-4d60-b846-902c75308aff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseClickUp",
+                    "type": "Button",
+                    "id": "331e0faa-b4f4-4193-9eaf-12c6294d88f0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "BlockButtonDown",
                     "type": "Button",
                     "id": "53b4d18b-d12b-4f9d-b8dc-134b4dc8eba1",
@@ -352,6 +370,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ecf02d8-7d88-4562-a2b1-bfe06d1175ea",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseClickUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39312509-16e2-4fc2-a2a0-7cb74e37a7b8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseClickDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

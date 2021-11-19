@@ -49,6 +49,8 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        int _backgroundIndex = 0;
+
         UICont = GetComponent<UIControllerDialogue>();
         expChange = GetComponent<ExpressionChanger>();
         storyMan = GetComponent<StoryManager>();
@@ -72,6 +74,17 @@ public class DialogueManager : MonoBehaviour
                 if (startWithDialogue) StartDialogue();
             }
         }
+
+        if (storyMan.chapterIndex > 3)
+        {
+            _backgroundIndex = 3;
+        }
+        else
+        {
+            _backgroundIndex = storyMan.chapterIndex;
+        }
+
+        Background.sprite = Backgrounds[_backgroundIndex];
     }
 
     private void Update()
@@ -105,6 +118,31 @@ public class DialogueManager : MonoBehaviour
             }
         }   
     }
+
+    void OnAttackButton()
+    {
+        if (!optionPanel.activeInHierarchy && dialogueStarted)
+        {
+            //Are there any choices?
+            if (story.currentChoices.Count != 0)
+            {
+                StartCoroutine(ShowChoices());
+            }
+
+            //Is there more to the story?
+            if (story.canContinue || optionPanel.activeInHierarchy)
+            {
+                if (!optionPanel.activeInHierarchy && !showChoices)
+                {
+                    AdvanceDialogue();
+                }
+            }
+            else
+            {
+                FinishDialogue();
+            }
+        }
+    }
     /*
     void OnBlockButtonDown()
     {
@@ -112,7 +150,7 @@ public class DialogueManager : MonoBehaviour
     }
     */
     // DEBUG END
-    
+
     private void ProceedDialogueOnDistWalked()
     {
         if(dialogueStarted && Player.transform.position.x > nextDialoguePos && !optionPanel.activeInHierarchy)
@@ -274,17 +312,17 @@ public class DialogueManager : MonoBehaviour
 
                     case "Stranger1":
                         TextBoxImage.sprite = TextBoxes[7];
-                        expChange.ChangeExpressionRight("Neutral", subs[0]);
+                        expChange.ChangeExpressionRight("Neutral", "Stranger");
                         break;
 
                     case "Stranger2":
                         TextBoxImage.sprite = TextBoxes[7];
-                        expChange.ChangeExpressionRight("Sad", subs[0]);
+                        expChange.ChangeExpressionRight("Sad", "Stranger");
                         break;
 
                     case "Stranger3":
                         TextBoxImage.sprite = TextBoxes[7];
-                        expChange.ChangeExpressionRight("Happy", subs[0]);
+                        expChange.ChangeExpressionRight("Happy", "Stranger");
                         break;
                 }
 
