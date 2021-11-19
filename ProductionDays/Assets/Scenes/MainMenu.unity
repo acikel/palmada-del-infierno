@@ -5280,7 +5280,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -32.4897}
-  m_SizeDelta: {x: 320, y: 60}
+  m_SizeDelta: {x: 350, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175740128
 MonoBehaviour:
@@ -5985,7 +5985,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -24.367264}
-  m_SizeDelta: {x: 320, y: 60}
+  m_SizeDelta: {x: 350, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1078344926
 MonoBehaviour:
@@ -11350,7 +11350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1649358530}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1609907039
@@ -11434,7 +11434,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -16.244858}
-  m_SizeDelta: {x: 320, y: 60}
+  m_SizeDelta: {x: 360, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1649358532
 MonoBehaviour:
@@ -11480,7 +11480,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4249084268577087905, guid: 649cb47e6c94307429c42f684caf55e6, type: 3}
+      - m_Target: {fileID: 4249084269607065181}
         m_TargetAssemblyTypeName: StartScreenManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
