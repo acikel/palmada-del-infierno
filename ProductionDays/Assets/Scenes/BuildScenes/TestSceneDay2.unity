@@ -1179,14 +1179,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1488601503625052984, guid: a898b9ca7ed333147bafc2e0b55e2665, type: 3}
-      propertyPath: cursor
-      value: 
-      objectReference: {fileID: 2800000, guid: 27f0ec370bd146b49a54f434c139d9c8, type: 3}
-    - target: {fileID: 1488601503625052984, guid: a898b9ca7ed333147bafc2e0b55e2665, type: 3}
-      propertyPath: cursorDown
-      value: 
-      objectReference: {fileID: 2800000, guid: c93556b9ba6d2d84eb7c2be16a0a27af, type: 3}
     - target: {fileID: 1488601503625052985, guid: a898b9ca7ed333147bafc2e0b55e2665, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1234,10 +1226,6 @@ PrefabInstance:
     - target: {fileID: 1488601503625052987, guid: a898b9ca7ed333147bafc2e0b55e2665, type: 3}
       propertyPath: m_Name
       value: CursorManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488601503625052987, guid: a898b9ca7ed333147bafc2e0b55e2665, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a898b9ca7ed333147bafc2e0b55e2665, type: 3}
