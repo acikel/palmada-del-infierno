@@ -21,7 +21,6 @@ public class Room : MonoBehaviour
     private List<GameObject> Enemies = new List<GameObject>();
 
     private bool enemiesSpawned = false;
-    private CameraManager cameraManager;
 
     void Awake()
     {
@@ -29,11 +28,6 @@ public class Room : MonoBehaviour
         xScale = transform.GetChild(0).transform.localScale.x;
         zScale = transform.GetChild(0).transform.localScale.z;
         SpawnTarget = transform.GetChild(2).transform;
-    }
-
-    private void Start()
-    {
-        cameraManager = InstanceRepository.Instance.Get<CameraManager>();
     }
 
     void Update()
@@ -52,11 +46,7 @@ public class Room : MonoBehaviour
         }
         else
         {
-            if (cameraManager == null)
-            {
-                cameraManager = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraManager>();
-            }
-            Vector3 spawnCenter = cameraManager.transform.position;
+            Vector3 spawnCenter = Camera.main.transform.position;
             spawnCenter.z = transform.position.z;
             
             AudioManager.Instance.ChangeGameMusic(GameMusic.Fight);
