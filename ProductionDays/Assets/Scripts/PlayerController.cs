@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public float BlockStamina;
     [SerializeField] private float _blockStaminaRegen;
 
+    private DialogueManager diaMan;
+
     private bool _moveLeft = false;
     private bool _moveRight = false;
     private bool _moveUp = false;
@@ -83,16 +85,26 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = spawn;
             }
-        }
-
-        screenFaderObject = InstanceRepository.Instance.Get<ScreenFader>().gameObject;
-        screenFader = InstanceRepository.Instance.Get<ScreenFader>();
-        screenFaderObject.SetActive(false);
+        }        
     }
 
 
     void FixedUpdate()
     {
+        if(screenFader != null)
+        {
+            screenFaderObject = screenFader.gameObject;
+            screenFaderObject.SetActive(false);
+        }
+        else
+        {
+            screenFader = InstanceRepository.Instance.Get<ScreenFader>();
+        }
+        if(diaMan == null)
+        {
+            diaMan = InstanceRepository.Instance.Get<DialogueManager>();
+        }
+
         if (_walkable)
         {
             Vector3 move = Vector3.zero;
@@ -240,7 +252,7 @@ public class PlayerController : MonoBehaviour
     #region Attack / Block
     void OnAttackButton()
     {
-        if (inputDisabled)
+        if (inputDisabled || diaMan.dialogueStarted)
             return;
         
         if (!_blocking)
@@ -254,7 +266,7 @@ public class PlayerController : MonoBehaviour
 
     void OnBlockButtonDown()
     {
-        if (inputDisabled)
+        if (inputDisabled || diaMan.dialogueStarted)
             return;
         
         if (!_attacking && !_blockBrocken)
