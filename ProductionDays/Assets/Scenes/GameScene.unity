@@ -15457,7 +15457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679205, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: spawnDistanceFromCenter
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
@@ -29181,7 +29181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679205, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: spawnDistanceFromCenter
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
@@ -30840,7 +30840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679205, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: spawnDistanceFromCenter
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
@@ -33569,7 +33569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679205, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: spawnDistanceFromCenter
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
@@ -48393,7 +48393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679205, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: spawnDistanceFromCenter
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
@@ -51815,7 +51815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679205, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: spawnDistanceFromCenter
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
@@ -53702,7 +53702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468183177502679205, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
       propertyPath: spawnDistanceFromCenter
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534a9a3063d132c4bb3a6a7b6b703489, type: 3}
