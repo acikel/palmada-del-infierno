@@ -30,10 +30,11 @@ public class CameraController : MonoBehaviour
     {
         if (cameraFollowing)
         {
+            /*
             if(camPosX.transform.position.x < Player.transform.position.x)
-            {
+            {*/
                 camPosX.transform.position = new Vector3(Player.transform.position.x, camPosX.transform.position.y, camPosX.transform.position.z);
-            }
+            //}
             Player.GetComponent<PlayerController>()._lvlCenterX = camPosX.transform.position.x;
             Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
         }
