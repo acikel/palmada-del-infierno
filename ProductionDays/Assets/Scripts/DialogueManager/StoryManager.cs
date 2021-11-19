@@ -31,6 +31,8 @@ public class StoryManager : MonoBehaviour
 
     private DialogueManager diaMan;
 
+    public bool storyComplete = false;
+
     [SerializeField] private int lastLinearChapter = 2;
     [SerializeField] private int BJDoboChapter = 2;
     [SerializeField] private int BhomasTuchelinChapter = 3;
@@ -50,6 +52,12 @@ public class StoryManager : MonoBehaviour
 
     public TextAsset NextStory()
     {
+        if (chapterIndex + 1 == chapters.Count && storyIndex == chapters[chapterIndex].Count())
+        {
+            storyComplete = true;
+            return GetCurrentStory();
+        }
+
         if(storyIndex + 1 < chapters[chapterIndex].Count())
         {
             storyIndex++;
