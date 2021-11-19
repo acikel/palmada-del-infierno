@@ -15,6 +15,7 @@ public class BossMelee : State
     private Vector3 attackPosition;
 
     private PlayerController playerController;
+    private ParticleEffects particleEffects;
     private Renderer[] renderers;
     private bool updateEffectPosition = false;
     
@@ -28,6 +29,7 @@ public class BossMelee : State
         renderers = GameObject.GetComponentsInChildren<Renderer>();
 
         playerController = InstanceRepository.Instance.Get<PlayerController>();
+        particleEffects = playerController.GetComponent<ParticleEffects>();
         float floorY = playerController.GetFloorPosition().y;
         // var renderer = GameObject.GetComponent<Renderer>();
         // if (renderer == null)
@@ -76,10 +78,14 @@ public class BossMelee : State
         cameraManager.ScreenShake(0.3f);
         yield return new WaitForSeconds(2f);
         
+        particleEffects.SpawnEffect(Effect.Teleport, bossFist.transform.position + new Vector3(0, 1f, 0));
         bossFist.SetActive(false);
         GameObject.transform.position = bossPosition;
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.6f);
+        particleEffects.SpawnEffect(Effect.Teleport, GameObject.transform.position + new Vector3(0, 1f, 0));
+        yield return new WaitForSeconds(0.4f);
+        
         EnableRenderers(true);
         GameObject.Destroy(effect);
         SetState(new BossDecision());

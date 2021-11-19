@@ -427,5 +427,7 @@ MonoBehaviour:
   isBossRoom: 0
   spawnDistanceFromCenter: 16
   Boss: {fileID: 7004529762004609400, guid: ef6374781411cab4e866e835fa445f2c, type: 3}
-  Enemy: {fileID: 1772283408247557581, guid: 1b40d1f2085cbb14d9387c24cb8a5705, type: 3}
+  Enemies:
+  - {fileID: 6424056218315744124, guid: 0ad773a61bc72e94ab08a6d09f2cd0a3, type: 3}
+  - {fileID: 8493731986116759750, guid: d01917d763c57e6498e3d4d5592228ed, type: 3}
   currentEnemyCount: 0
