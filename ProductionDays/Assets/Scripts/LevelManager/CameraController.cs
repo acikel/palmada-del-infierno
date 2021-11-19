@@ -23,26 +23,36 @@ public class CameraController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Player = InstanceRepository.Instance.Get<PlayerController>().gameObject;
+        //Player = InstanceRepository.Instance.Get<PlayerController>().gameObject;
     }
     // Update is called once per frame
     void Update()
     {
-        if (cameraFollowing)
+        if(Player == null)
         {
-            /*
-            if(camPosX.transform.position.x < Player.transform.position.x)
-            {*/
-                camPosX.transform.position = new Vector3(Player.transform.position.x, camPosX.transform.position.y, camPosX.transform.position.z);
-            //}
-            Player.GetComponent<PlayerController>()._lvlCenterX = camPosX.transform.position.x;
-            Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
+            Player = GameObject.FindGameObjectWithTag("Player");
         }
         else
         {
-            if(LevelManager.Instance.currentRoom >= 0)
+            if (cameraFollowing)
             {
-                SetActiveRoom(LevelManager.Instance.currentRoom);
+                
+                if(camPosX.transform.position.x < Player.transform.position.x)
+                {
+                    camPosX.transform.position = new Vector3(Player.transform.position.x, camPosX.transform.position.y, camPosX.transform.position.z);
+                }
+                Player.GetComponent<PlayerController>()._lvlCenterX = camPosX.transform.position.x;
+                Player.GetComponent<PlayerController>()._lvlCenterZ = camPosX.transform.position.z;
+            }
+            else
+            {
+                if (LevelManager.Instance != null)
+                {
+                    if (LevelManager.Instance.currentRoom >= 0)
+                    {
+                        SetActiveRoom(LevelManager.Instance.currentRoom);
+                    }
+                }
             }
         }
     }

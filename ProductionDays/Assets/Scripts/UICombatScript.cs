@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UICombatScript : MonoBehaviour
-{
+{ 
     private PlayerController _player;
     [SerializeField] private Image _hp;
     [SerializeField] private Image _block;
@@ -17,11 +17,16 @@ public class UICombatScript : MonoBehaviour
     [SerializeField] private Sprite _hpFull;
     [SerializeField] private Sprite _hpEmpty;
 
-    void Start()
+    void Update()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        _player.UpdateUI += UpdateHP;
-        _player.StaminaUI += UpdateStamina;
+        GameObject temp;
+        temp = GameObject.FindGameObjectWithTag("Player");
+        if (temp != null)
+        {
+            _player= temp.GetComponent<PlayerController>();
+            _player.UpdateUI += UpdateHP;
+            _player.StaminaUI += UpdateStamina;
+        }
     }
 
     public void UpdateHP()

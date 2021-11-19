@@ -54,21 +54,26 @@ public class StoryManager : MonoBehaviour
 
     public TextAsset NextStory()
     {
+        /*
         Debug.Log(chapters.Count);
         Debug.Log(chapterIndex);
 
         Debug.Log(chapters[chapterIndex].Count());
         Debug.Log(storyIndex);
+        */
 
+        /*
         if (lastStoryLoaded)
         {
             storyComplete = true;
             chapterIndex--;
-        }
+        }*/
 
-        if ((chapterIndex + 2 == chapters.Count || chapterIndex + 1== chapters.Count) && storyIndex == 1)
+        if ((chapterIndex + 2 == chapters.Count || chapterIndex + 1 == chapters.Count) && storyIndex == 2)
         {
-            lastStoryLoaded = true;
+            //lastStoryLoaded = true;
+            storyComplete = true;
+            chapterIndex--;
         }
 
         if(storyIndex + 1 < chapters[chapterIndex].Count())
@@ -121,8 +126,8 @@ public class StoryManager : MonoBehaviour
             {
                 storyIndex = _currentRoom + 1;
                 chapterIndex = i;
-                Debug.Log(storyIndex);
-                Debug.Log(chapterIndex);
+                //Debug.Log(storyIndex);
+                //Debug.Log(chapterIndex);
                 diaMan.SetCurrentStory(chapters[chapterIndex].GetStory(storyIndex));
             }
             else

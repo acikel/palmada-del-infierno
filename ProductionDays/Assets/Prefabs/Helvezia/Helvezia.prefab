@@ -1395,7 +1395,7 @@ MonoBehaviour:
   BlockStamina: 3
   _blockStaminaRegen: 1
   _lvlWidth: 28
-  _lvlDeapth: 4
+  _lvlDeapth: 7.5
   _lvlOffsetX: 3.5
   _lvlOffsetZ: 0.5
   _lvlCenterX: 0

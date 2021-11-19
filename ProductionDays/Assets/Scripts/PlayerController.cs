@@ -72,19 +72,28 @@ public class PlayerController : MonoBehaviour
         _blockStaminaCurrent = BlockStamina;
         MaxHealthPoints = HealthPoint;
         MaxBlockPoints = BlockStamina;
+
+        _lvlWidth = 28;
+        _lvlDeapth = 7.5f;
+        _lvlOffsetX = 3.5f;
+        _lvlOffsetZ = 0.5f;
+        _lvlCenterX = 0;
+        _lvlCenterZ = 0;
+        inputDisabled = false;
     }
 
     void Start()
     {
+        /*
         if(LevelManager.Instance.currentRoom >= 0 && LevelManager.Instance.reloading)
         {
             Vector3 spawn = GameObject.FindGameObjectWithTag("lvl").transform.GetChild(LevelManager.Instance.currentRoom).gameObject.transform.GetChild(5).gameObject.transform.position;
             Debug.Log(spawn);
             if (spawn != null)
             {
-                transform.position = spawn;
+                transform.position = new Vector3(spawn.x, 0.214f, spawn.z);
             }
-        }        
+        }   */     
     }
 
 

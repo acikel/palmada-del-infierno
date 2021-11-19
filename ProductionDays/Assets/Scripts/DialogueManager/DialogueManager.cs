@@ -54,8 +54,6 @@ public class DialogueManager : MonoBehaviour
         UICont = GetComponent<UIControllerDialogue>();
         expChange = GetComponent<ExpressionChanger>();
         storyMan = GetComponent<StoryManager>();
-        Player = GameObject.FindGameObjectWithTag("Player");
-        playerSpeed = Player.GetComponent<PlayerController>()._moveSpeed;
 
         story = new Story(storyMan.GetCurrentStory().text);
         nametagHelvezia = textBox.transform.GetChild(0).GetComponent<TMP_Text>();
@@ -263,7 +261,7 @@ public class DialogueManager : MonoBehaviour
 
         AdvanceDialogue();
         AdvanceDialogue();
-        nextDialoguePos = Player.transform.position.x + Player.transform.position.x + playerSpeed * (minDist + distPerDialogue * sentenceLength / distPerCharacterDivider);
+        //nextDialoguePos = Player.transform.position.x + Player.transform.position.x + playerSpeed * (minDist + distPerDialogue * sentenceLength / distPerCharacterDivider);
     }
 
     /*** Tag Parser ***/
@@ -402,7 +400,7 @@ public class DialogueManager : MonoBehaviour
         dialogueStarted = true;
         UICont.ScaleUp();
         AdvanceDialogue();
-        nextDialoguePos = Player.transform.position.x + playerSpeed * (minDist + distPerDialogue * sentenceLength / distPerCharacterDivider);
+        //nextDialoguePos = Player.transform.position.x + playerSpeed * (minDist + distPerDialogue * sentenceLength / distPerCharacterDivider);
 
         try
         {
@@ -429,6 +427,19 @@ public class DialogueManager : MonoBehaviour
 
     public void SetCurrentStory(TextAsset _story)
     {
+        int _backgroundIndex = 0;
         story = new Story(_story.text);
+
+        if (storyMan.chapterIndex > 3)
+        {
+            _backgroundIndex = 3;
+        }
+        else
+        {
+            _backgroundIndex = storyMan.chapterIndex;
+        }
+
+        Background.sprite = Backgrounds[_backgroundIndex];
+
     }
 }

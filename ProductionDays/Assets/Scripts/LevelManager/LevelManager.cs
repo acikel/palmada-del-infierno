@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] private GameObject PlayerPrefab;
+
+
     public static LevelManager Instance;
     private CameraController camController;
     [SerializeField] public List<GameObject> Rooms;
@@ -42,12 +45,16 @@ public class LevelManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
 
+        GameObject temp;
+        temp = Instantiate(PlayerPrefab, new Vector3(-26.71f, 0.214f, 0), Quaternion.Euler(0, 90, 0));
+        player = temp.GetComponent<PlayerController>();
+
     }
     // Start is called before the first frame update
     void Start()
     {
         AudioManager.Instance.PlayGameMusic();
-
+        
     }
 
     // Update is called once per frame
@@ -82,10 +89,12 @@ public class LevelManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (player == null)
+        /*if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        }
+        }*/
+
+        
         diaMan = InstanceRepository.Instance.Get<DialogueManager>();
         _storymanager = diaMan.GetComponent<StoryManager>();
         _roomAmount = Rooms.Count;
@@ -113,7 +122,23 @@ public class LevelManager : MonoBehaviour
             .loveScore = (int)loveScore;
         if (reloading)
         {
+            Time.timeScale = 1.0f;
             RoomReload();
+        }
+
+        if (currentRoom >= 0 && reloading)
+        {
+            Debug.Log(currentRoom);
+            Debug.Log(lvl.transform.GetChild(currentRoom).childCount);
+            Vector3 spawn = lvl.transform.GetChild(currentRoom).gameObject.transform.GetChild(5).gameObject.transform.position;
+            Debug.Log(spawn);
+            if (spawn != null)
+            {
+                //transform.position = new Vector3(spawn.x, 0.214f, spawn.z);
+                GameObject temp;
+                temp = Instantiate(PlayerPrefab, new Vector3(spawn.x, 0.214f, spawn.z), Quaternion.Euler(0, 90, 0));
+                player = temp.GetComponent<PlayerController>();
+            }
         }
     }
 

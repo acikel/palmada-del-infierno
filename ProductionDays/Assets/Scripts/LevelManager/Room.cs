@@ -69,11 +69,17 @@ public class Room : MonoBehaviour
                 spawnPosition.y = 3f;
                 float random = UnityEngine.Random.Range(-1f, 1f);
                 if (random < 0)
+                {
                     spawnPosition.x -= spawnDistanceFromCenter;
+                    temp = Instantiate(Enemies[Random.Range(0, Enemies.Length)], spawnPosition, Quaternion.Euler(0, -90, 0), SpawnTarget);
+                }
                 else
+                {
                     spawnPosition.x += spawnDistanceFromCenter;
+                    temp = Instantiate(Enemies[Random.Range(0, Enemies.Length)], spawnPosition, Quaternion.Euler(0, 90, 0), SpawnTarget);
+                }
+                    
                 
-                temp = Instantiate(Enemies[Random.Range(0, Enemies.Length)], spawnPosition, Quaternion.identity, SpawnTarget);
                 temp.GetComponent<StateMachine>().SetState(new EngagePlayer());
                 spawnedEnemies.Add(temp);
                 temp.SetActive(false);
