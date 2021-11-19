@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9a3de7d8-baee-471b-843f-cd03ed4fc368}">
+		<property name="assetPath">
+			<value>Angel5.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.473833333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ba190cdf-7dab-47c7-9ca8-c27a40d9e2fe}</destination>
+		</relationship>
+	</object>
+</objects>

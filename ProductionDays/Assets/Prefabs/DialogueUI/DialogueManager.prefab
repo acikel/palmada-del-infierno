@@ -136,13 +136,13 @@ MonoBehaviour:
   - name: 0
     ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 1
-    ExpressionSprite: {fileID: 21300000, guid: c068fc1c50193d44faa6026fff1cfd59, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: e2a43cdc9acfea44480621387eb765e0, type: 3}
   - name: 2
-    ExpressionSprite: {fileID: 21300000, guid: 5348f4b956075f84b899fa681a96f460, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 32abf64b79b170b41a1521bb8d6d41df, type: 3}
   - name: 3
-    ExpressionSprite: {fileID: 21300000, guid: 1993274f4cadfb44d82cf79dcc118017, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 30f181be37cad774db7ca7989ec40852, type: 3}
   - name: 4
-    ExpressionSprite: {fileID: 21300000, guid: 3f88aaba013057c459e34a65dcf13c69, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 2b1cae18ba042454ea892c0d375c7ddd, type: 3}
   - name: 5
     ExpressionSprite: {fileID: 21300000, guid: 5ba0fe0ed1d0ea7438bed5493e4bca2c, type: 3}
   - name: 6
@@ -159,16 +159,16 @@ MonoBehaviour:
   - name: 0
     ExpressionSprite: {fileID: 21300000, guid: c0410e27f72f18b479d6629d5d633325, type: 3}
   - name: 3
-    ExpressionSprite: {fileID: 21300000, guid: c0410e27f72f18b479d6629d5d633325, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 59f185ad1e41e0345a55d5dd7bf3c503, type: 3}
   - name: 6
     ExpressionSprite: {fileID: 21300000, guid: a6fea1d8d94904c448317e58c8093bd1, type: 3}
   - name: 9
-    ExpressionSprite: {fileID: 21300000, guid: a6fea1d8d94904c448317e58c8093bd1, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 3bc0ab2161a582549be562695f5f6d9d, type: 3}
   ExpressionsBhomas:
   - name: 0
     ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 1
-    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 10aff9149b11f2c4298788a6f3aeb00b, type: 3}
   - name: 2
     ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 5
@@ -178,7 +178,7 @@ MonoBehaviour:
   - name: 7
     ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
   - name: 10
-    ExpressionSprite: {fileID: 21300000, guid: 03edfbf5aaac11b44b36aeb0879935dc, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: de1c2edc8c315054499006df9b9d17bd, type: 3}
   - name: 11
     ExpressionSprite: {fileID: 21300000, guid: 066dd6dc4701c9a4b89b0a825420abe6, type: 3}
   - name: 12
@@ -248,3 +248,4 @@ MonoBehaviour:
   lastLinearChapter: 1
   BJDoboChapter: 2
   BhomasTuchelinChapter: 3
+  loveScore: 0
