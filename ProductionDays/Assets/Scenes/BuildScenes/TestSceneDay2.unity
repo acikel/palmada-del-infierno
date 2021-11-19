@@ -409,6 +409,83 @@ PrefabInstance:
       objectReference: {fileID: 252340279}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 670fc4362fab4fa459c6448f309c733d, type: 3}
+--- !u!1 &150488525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150488527}
+  - component: {fileID: 150488526}
+  - component: {fileID: 150488528}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &150488526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150488525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9491233cd4442b44c8b668e3ed872f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: 3280317d630493841bd51d27996c33db, type: 3}
+  cursorDown: {fileID: 2800000, guid: 8a8602dddbb383b438a8050209a254ec, type: 3}
+--- !u!4 &150488527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150488525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.070628524, y: 2.94, z: -2.221726}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &150488528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150488525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 20d320c44849ab343b56b1aec3cbb871, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: MainControlls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &200517250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1176,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 9da4735ca5b393c4c8037f8f787ec088, type: 3}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: 4b9b2ac0cd846be46bb17db86f21931f, type: 3}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[4]
+      value: 
+      objectReference: {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[5]
+      value: 
+      objectReference: {fileID: 4900000, guid: 213c5009bdd0b974ba523a0e7a5981df, type: 3}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[6]
+      value: 
+      objectReference: {fileID: 4900000, guid: 14fb78fbdafb9ac459f2b36bc4c60504, type: 3}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[7]
+      value: 
+      objectReference: {fileID: 4900000, guid: b2e92a2a288ce004f831e606ed61b59a, type: 3}
+    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: chapters.Array.data[0].stories.Array.data[8]
+      value: 
+      objectReference: {fileID: 4900000, guid: b8587fed40b1aa64baa959d146add887, type: 3}
     - target: {fileID: 4570955418230121850, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -1195,6 +1308,22 @@ PrefabInstance:
       propertyPath: ExpressionRight
       value: 
       objectReference: {fileID: 35663978}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsHelvezia.Array.data[1].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c068fc1c50193d44faa6026fff1cfd59, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsHelvezia.Array.data[2].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5348f4b956075f84b899fa681a96f460, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsHelvezia.Array.data[3].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1993274f4cadfb44d82cf79dcc118017, type: 3}
+    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
+      propertyPath: ExpressionsHelvezia.Array.data[4].ExpressionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f88aaba013057c459e34a65dcf13c69, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
 --- !u!1001 &1889484947

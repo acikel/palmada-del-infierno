@@ -205,6 +205,7 @@ public class ExpressionChanger : MonoBehaviour
         PeopleDict.Add("Angel", AngelDict);
         PeopleDict.Add("Sike", SikeDict);
         PeopleDict.Add("Dobo", DoboDict);
+        PeopleDict.Add("Stranger", StrangerDict);
         PeopleDict.Add("Phone", PhoneDict);
         PeopleDict.Add("Liberty", PhoneDict);
         PeopleDict.Add("Grandma", PhoneDict);
