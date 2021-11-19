@@ -187,9 +187,9 @@ MonoBehaviour:
   - name: 0
     ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   - name: 1
-    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 451de5990c3abee4895967fdac86015d, type: 3}
   - name: 2
-    ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
+    ExpressionSprite: {fileID: 21300000, guid: 067f90c229eb77a4a8b1bd8070b38057, type: 3}
   - name: 3
     ExpressionSprite: {fileID: 21300000, guid: cd97cc24d60580b42b7ce2f5602e945e, type: 3}
   - name: 5
