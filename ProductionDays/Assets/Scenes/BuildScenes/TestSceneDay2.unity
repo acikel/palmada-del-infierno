@@ -913,10 +913,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2042808982, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: chapters.Array.data[0].stories.Array.data[0]
-      value: 
-      objectReference: {fileID: 4900000, guid: a28b9ef6b99067444b976a88a35030c0, type: 3}
     - target: {fileID: 4570955418230121850, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -1009,10 +1005,6 @@ PrefabInstance:
       propertyPath: ExpressionRight
       value: 
       objectReference: {fileID: 35663978}
-    - target: {fileID: 4570955418230121855, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
-      propertyPath: ExpressionsSike.Array.data[3].ExpressionSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a6fea1d8d94904c448317e58c8093bd1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169d24bca7e21ea4481c62734847ab0c, type: 3}
 --- !u!1001 &1889484947
@@ -1024,19 +1016,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284975131, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016468091
+      value: 0.000000016468091
       objectReference: {fileID: 0}
     - target: {fileID: 284975131, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000049861364
+      value: -0.0000000049861364
       objectReference: {fileID: 0}
     - target: {fileID: 1067499263, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016468091
+      value: 0.000000016468091
       objectReference: {fileID: 0}
     - target: {fileID: 1067499263, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000049861364
+      value: -0.0000000049861364
       objectReference: {fileID: 0}
     - target: {fileID: 4409455370763558604, guid: 51465bdfaece11b488609a734eaf1850, type: 3}
       propertyPath: m_RootOrder

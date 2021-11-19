@@ -229,9 +229,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chapters:
   - stories:
+    - {fileID: 4900000, guid: 0afc226ccc3b5064da0ed032564464d4, type: 3}
     - {fileID: 4900000, guid: a28b9ef6b99067444b976a88a35030c0, type: 3}
   - stories:
+    - {fileID: 4900000, guid: 4c8e27b4387907b4090d519111ae580e, type: 3}
+  - stories:
+    - {fileID: 4900000, guid: 14fb78fbdafb9ac459f2b36bc4c60504, type: 3}
+  - stories:
+    - {fileID: 4900000, guid: 4b9b2ac0cd846be46bb17db86f21931f, type: 3}
+    - {fileID: 4900000, guid: e8973f5368484574aaaf3fbf6ffa3fb4, type: 3}
     - {fileID: 4900000, guid: b2e92a2a288ce004f831e606ed61b59a, type: 3}
+  - stories:
+    - {fileID: 4900000, guid: 4b9b2ac0cd846be46bb17db86f21931f, type: 3}
+    - {fileID: 4900000, guid: b4e56e764a5d08f4ba238231bdf9101e, type: 3}
+    - {fileID: 4900000, guid: c9601f6fc4b1a9141846a53d17956257, type: 3}
   chapterIndex: 0
   storyComplete: 0
   lastLinearChapter: 1
