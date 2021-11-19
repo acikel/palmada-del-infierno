@@ -58,7 +58,7 @@ public class StoryManager : MonoBehaviour
         Debug.Log(chapters[chapterIndex].Count());
         Debug.Log(storyIndex);
 
-        if (chapterIndex + 1 == chapters.Count && storyIndex + 1 == chapters[chapterIndex].Count())
+        if ((chapterIndex + 1 == chapters.Count || chapterIndex == chapters.Count) && storyIndex + 1 == chapters[chapterIndex].Count())
         {
             storyComplete = true;
             chapterIndex--;
