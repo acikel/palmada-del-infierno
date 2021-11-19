@@ -174,11 +174,11 @@ MonoBehaviour:
   decisionTime: 2
   bossAttackSound:
     Guid:
-      Data1: -1223612224
-      Data2: 1313902430
-      Data3: 93150861
-      Data4: -1988452468
-    Path: event:/Combat/BossAttackAngel
+      Data1: -818628536
+      Data2: 1147623792
+      Data3: -1098783586
+      Data4: -1409275707
+    Path: event:/Combat/BossAttackRene
   bossVoice:
     Guid:
       Data1: -1987873556

@@ -336,6 +336,7 @@ public class PlayerController : MonoBehaviour
         {
             HealthPoint -= damage;
             ParticleEffect.SpawnEffect(Effect.Damage, transform.position);
+            AudioManager.Instance.PlayOneShot(AudioEvent.Combat.Impact, transform.position);
             AudioManager.Instance.PlayOneShot(AudioEvent.Combat.GruntFemale, transform.position);
             if (UpdateUI != null) UpdateUI();
         }
