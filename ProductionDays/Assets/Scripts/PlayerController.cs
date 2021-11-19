@@ -402,8 +402,17 @@ public class PlayerController : MonoBehaviour
         
         if (screenFader != null)
         {
+            var ingameUI = InstanceRepository.Instance.Get<IngameUI>();
+            
             screenFaderObject.SetActive(true);
-            screenFader.FadeToBlack(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); });
+            Time.timeScale = 0;
+
+            if (ingameUI is null)
+                screenFader.FadeToBlack(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); });
+            else
+            {
+                screenFader.FadeToBlack(() => { ingameUI.ShowWasted(); });
+            }
         }
         else
         {

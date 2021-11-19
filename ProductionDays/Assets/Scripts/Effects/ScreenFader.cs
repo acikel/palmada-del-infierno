@@ -14,6 +14,7 @@ public class ScreenFader : MonoBehaviour
 
     private void Awake()
     {
+        canvasGroup.gameObject.SetActive(true);
         canvasGroup.alpha = 1f;
         InstanceRepository.Instance.Add(this);
         
