@@ -40,6 +40,5 @@ public class UICombatScript : MonoBehaviour
         //_block.rectTransform.sizeDelta = new Vector2(currentValue, 50f);
 
         _block.fillAmount = currentValue/400;
-        Debug.Log(currentValue);
     }
 }
