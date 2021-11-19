@@ -16,7 +16,7 @@ public class CursorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.SetCursor(cursor, Vector2.zero, cmode);
+        //Cursor.SetCursor(cursor, Vector2.zero, cmode);
     }
 
     void OnMouseButtonDown()
