@@ -432,6 +432,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnPause()
+    {
+        var ingameUI = InstanceRepository.Instance.Get<IngameUI>();
+        
+        if (ingameUI != null)
+            ingameUI.TogglePauseMenu();
+    }
+
     IEnumerator BlockBrockenTimer()
     {
         while (_blockStaminaCurrent < BlockStamina)

@@ -6,6 +6,7 @@ using UnityEngine;
 public class IngameUI : MonoBehaviour
 {
     [SerializeField] private GameObject wastedUI;
+    [SerializeField] private GameObject pausedUI;
     
     private void Awake()
     {
@@ -31,7 +32,17 @@ public class IngameUI : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        
+        bool showing = pausedUI.activeInHierarchy;
+        if (showing)
+        {
+            Time.timeScale = 1;
+            pausedUI.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 0;
+            pausedUI.SetActive(true);
+        }
     }
 
     private void OnDestroy()
