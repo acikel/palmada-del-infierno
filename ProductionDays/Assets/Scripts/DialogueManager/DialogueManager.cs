@@ -417,6 +417,7 @@ public class DialogueManager : MonoBehaviour
 
     void OnDestroy()
     {
+        LevelManager.Instance.loveScore = GetComponent<StoryManager>().loveScore;
         InstanceRepository.Instance.Remove(this);
     }
 

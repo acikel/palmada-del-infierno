@@ -74,11 +74,11 @@ public class AttackPlayer : State
 
     private IEnumerator Attack()
     {
+        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.EnemyAttack, GameObject.transform.position);
         if (Animator != null)
             Animator.SetTrigger("Punch");
         yield return new WaitForSeconds(0.2f);
         
-        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.EnemyAttack, GameObject.transform.position);
         playerController.PlayerHit(attackDamage, this.GameObject.transform);
 
         rightHand = !rightHand;

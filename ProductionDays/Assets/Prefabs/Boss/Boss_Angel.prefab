@@ -190,11 +190,11 @@ MonoBehaviour:
     Path: event:/Combat/BossAttackAngel
   bossVoice:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -426803243
+      Data2: 1305651045
+      Data3: 31722899
+      Data4: 850512690
+    Path: event:/Bosses/Angel
   meleeDamage: 1
   meleeDistance: 5.5
   meleeEffect: {fileID: 2197254433114130302, guid: a20a1636e866d1d4d86a001a70875418, type: 3}

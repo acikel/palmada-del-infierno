@@ -17,6 +17,7 @@ public class AudioManager
 {
     private static AudioManager instance;
     public static AudioManager Instance => instance ??= new AudioManager();
+    
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void RuntimeInitialize()
@@ -34,6 +35,7 @@ public class AudioManager
 
     private Dictionary<string, FMOD.GUID> eventCache;
     private EventInstance musicInstance;
+    private bool musicPlaying = false;
 
     private const string ParamCombatBossCrossfade = "CombatBossCrossfade";
     private const string ParamStoryCombatCrossfade = "StoryCombatCrossfade";
@@ -58,18 +60,18 @@ public class AudioManager
 
     public void PlayGameMusic()
     {
-        musicInstance.getPlaybackState(out var playbackState);
-        
-        if (playbackState == PLAYBACK_STATE.STOPPED)
+        if  (!musicPlaying)
             musicInstance.start();
+
+        musicPlaying = true;
     }
 
     public void StopGameMusic()
     {
-        musicInstance.getPlaybackState(out var playbackState);
-        
-        if (playbackState == PLAYBACK_STATE.PLAYING)
+        if (musicPlaying)
             musicInstance.stop(STOP_MODE.ALLOWFADEOUT);
+            
+        musicPlaying = false;
     }
 
     public void ChangeGameMusic(GameMusic gameMusic)
