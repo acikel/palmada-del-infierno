@@ -105,6 +105,31 @@ public class DialogueManager : MonoBehaviour
             }
         }   
     }
+
+    void OnAttackButton()
+    {
+        if (!optionPanel.activeInHierarchy && dialogueStarted)
+        {
+            //Are there any choices?
+            if (story.currentChoices.Count != 0)
+            {
+                StartCoroutine(ShowChoices());
+            }
+
+            //Is there more to the story?
+            if (story.canContinue || optionPanel.activeInHierarchy)
+            {
+                if (!optionPanel.activeInHierarchy && !showChoices)
+                {
+                    AdvanceDialogue();
+                }
+            }
+            else
+            {
+                FinishDialogue();
+            }
+        }
+    }
     /*
     void OnBlockButtonDown()
     {
@@ -112,7 +137,7 @@ public class DialogueManager : MonoBehaviour
     }
     */
     // DEBUG END
-    
+
     private void ProceedDialogueOnDistWalked()
     {
         if(dialogueStarted && Player.transform.position.x > nextDialoguePos && !optionPanel.activeInHierarchy)
