@@ -26,4 +26,10 @@ public class StartScreenManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void GoCredits()
+    {
+
+        SceneManager.LoadScene(1);
+    }
 }
