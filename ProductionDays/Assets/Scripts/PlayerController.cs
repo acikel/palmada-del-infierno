@@ -365,7 +365,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Enemy"))
         {
-            AudioManager.Instance.PlayOneShot(AudioEvent.Combat.Impact);
+            AudioManager.Instance.PlayOneShotAttached(AudioEvent.Combat.Impact, col.gameObject);
             ParticleEffect.SpawnEffect(Effect.Hit, col.transform.position);
             
             var enemyHP = col.gameObject.GetComponent<EnemyHPScript>();
@@ -378,7 +378,7 @@ public class PlayerController : MonoBehaviour
 
     public void AttackHitEvent()
     {
-        AudioManager.Instance.PlayOneShot(AudioEvent.Combat.PlayerAttack);
+        AudioManager.Instance.PlayOneShotAttached(AudioEvent.Combat.PlayerAttack, gameObject);
         Vector3 hitBoxOffset = new Vector3(1.25f, 0, 0);
         Vector3 halfSize = new Vector3(.5f, 1f, .5f);
         Vector3 hitPosition = transform.position;

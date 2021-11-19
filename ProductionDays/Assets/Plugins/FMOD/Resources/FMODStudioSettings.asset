@@ -147,7 +147,7 @@ MonoBehaviour:
   Properties:
     LiveUpdate:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     LiveUpdatePort:
       Value: 9264
       HasValue: 1
@@ -167,8 +167,8 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     VirtualChannelCount:
-      Value: 0
-      HasValue: 0
+      Value: 512
+      HasValue: 1
     RealChannelCount:
       Value: 0
       HasValue: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   TargetAssetPath: FMODBanks
   TargetBankFolder: 
   EventLinkage: 0
-  LoggingLevel: 2
+  LoggingLevel: 4
   SpeakerModeSettings: []
   SampleRateSettings: []
   LiveUpdateSettings: []

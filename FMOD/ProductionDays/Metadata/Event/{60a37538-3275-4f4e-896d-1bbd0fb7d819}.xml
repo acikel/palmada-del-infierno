@@ -66,6 +66,9 @@
 		<property name="priority">
 			<value>3</value>
 		</property>
+		<property name="maximumDistance">
+			<value>75</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{5ad3b2ec-d230-4bd3-acca-a97070b28c08}" />
 	<object class="GroupTrack" id="{41de0648-0115-4aa7-a0c6-872cdf47b3fd}">

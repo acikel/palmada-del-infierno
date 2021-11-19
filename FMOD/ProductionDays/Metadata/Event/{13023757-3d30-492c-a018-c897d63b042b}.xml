@@ -69,6 +69,9 @@
 		<property name="priority">
 			<value>3</value>
 		</property>
+		<property name="maximumDistance">
+			<value>75</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{751cac07-5c72-4ac9-bf80-81b1dd5950ad}" />
 	<object class="GroupTrack" id="{16f867cd-1399-4907-9897-d89d70e48a64}">
@@ -159,7 +162,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{ba53c90c-5a0c-4f30-8af6-828b1f9e13cb}" />
-	<object class="SpatialiserEffect" id="{fc1dbcec-6391-4a42-9b9d-d96da9ef5e38}" />
+	<object class="SpatialiserEffect" id="{fc1dbcec-6391-4a42-9b9d-d96da9ef5e38}">
+		<property name="maximumDistance">
+			<value>75</value>
+		</property>
+	</object>
 	<object class="RandomizerModulator" id="{3be56f09-24c9-42bd-bbbe-9d76f68200ff}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>

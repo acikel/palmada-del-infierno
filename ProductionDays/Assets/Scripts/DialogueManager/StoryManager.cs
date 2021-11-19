@@ -37,6 +37,8 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private int BJDoboChapter = 2;
     [SerializeField] private int BhomasTuchelinChapter = 3;
 
+    private bool lastStoryLoaded= false;
+
     // PLACEHOLDER SCORE
     public int loveScore = 0;
 
@@ -58,10 +60,15 @@ public class StoryManager : MonoBehaviour
         Debug.Log(chapters[chapterIndex].Count());
         Debug.Log(storyIndex);
 
-        if ((chapterIndex + 1 == chapters.Count || chapterIndex == chapters.Count) && storyIndex + 1 == chapters[chapterIndex].Count())
+        if (lastStoryLoaded)
         {
             storyComplete = true;
             chapterIndex--;
+        }
+
+        if ((chapterIndex + 2 == chapters.Count || chapterIndex + 1== chapters.Count) && storyIndex == 1)
+        {
+            lastStoryLoaded = true;
         }
 
         if(storyIndex + 1 < chapters[chapterIndex].Count())
