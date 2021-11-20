@@ -97,6 +97,11 @@ public class CameraController : MonoBehaviour
         StartCoroutine(WaitForYeetCam(room));
     }
 
+    public void YeetCamToStart()
+    {
+        camPosX.transform.position = new Vector3(-23.8f, camPosX.transform.position.y, camPosX.transform.position.z);
+    }
+
     IEnumerator WaitForYeetCam(GameObject room)
     {
         yield return new WaitForSeconds(0.5f);

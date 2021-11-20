@@ -7,7 +7,6 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject PlayerPrefab;
 
-
     public static LevelManager Instance;
     private CameraController camController;
     [SerializeField] public List<GameObject> Rooms;
@@ -19,6 +18,8 @@ public class LevelManager : MonoBehaviour
     public bool reloading = false;
     public int _EndSceneGood;
     public int _EndSceneBad;
+
+    public bool mainMenuEntered = false;
 
     private GameObject lvl;
     private PlayerController player;
@@ -94,7 +95,11 @@ public class LevelManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         }*/
 
-        
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            mainMenuEntered = true;
+        }
+
         diaMan = InstanceRepository.Instance.Get<DialogueManager>();
         _storymanager = diaMan.GetComponent<StoryManager>();
         _roomAmount = Rooms.Count;
@@ -123,21 +128,24 @@ public class LevelManager : MonoBehaviour
         if (reloading)
         {
             Time.timeScale = 1.0f;
-            RoomReload();
-        }
-
-        if (currentRoom >= 0 && reloading)
-        {
-            Debug.Log(currentRoom);
-            Debug.Log(lvl.transform.GetChild(currentRoom).childCount);
-            Vector3 spawn = lvl.transform.GetChild(currentRoom).gameObject.transform.GetChild(5).gameObject.transform.position;
-            Debug.Log(spawn);
-            if (spawn != null)
+            if (mainMenuEntered)
             {
-                //transform.position = new Vector3(spawn.x, 0.214f, spawn.z);
-                GameObject temp;
-                temp = Instantiate(PlayerPrefab, new Vector3(spawn.x, 0.214f, spawn.z), Quaternion.Euler(0, 90, 0));
-                player = temp.GetComponent<PlayerController>();
+                GameReload();
+            }
+            else
+            {
+                RoomReload();
+                if (currentRoom >= 0 && reloading)
+                {
+                    Vector3 spawn = lvl.transform.GetChild(currentRoom).gameObject.transform.GetChild(5).gameObject.transform.position;
+                    if (spawn != null)
+                    {
+                        //transform.position = new Vector3(spawn.x, 0.214f, spawn.z);
+                        GameObject temp;
+                        temp = Instantiate(PlayerPrefab, new Vector3(spawn.x, 0.214f, spawn.z), Quaternion.Euler(0, 90, 0));
+                        player = temp.GetComponent<PlayerController>();
+                    }
+                }
             }
         }
     }
@@ -184,8 +192,22 @@ public class LevelManager : MonoBehaviour
             player._lvlDeapth = Rooms[currentRoom].GetComponent<Room>().zScale;
             diaMan.SetCheckpointStory(currentRoom);
         }
-        
-        
+    }
+
+    private void GameReload()
+    {
+        AudioManager.Instance.ChangeGameMusic(GameMusic.Dialogue);
+        camController.cameraFollowing = true;
+        activeRoomCleared = false;
+        currentRoom = 0;
+        diaMan.SetCheckpointStory(1);
+        //_storymanager.chapterIndex = 0;
+        diaMan.startWithDialogue = true;
+        mainMenuEntered = false;
+        camController.YeetCamToStart();
+        GameObject temp;
+        temp = Instantiate(PlayerPrefab, new Vector3(-26.71f, 0.214f, 0), Quaternion.Euler(0, 90, 0));
+        player = temp.GetComponent<PlayerController>();
     }
 
     void OnConfirmButton()

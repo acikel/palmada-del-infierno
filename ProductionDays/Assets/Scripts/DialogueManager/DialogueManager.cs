@@ -441,5 +441,10 @@ public class DialogueManager : MonoBehaviour
 
         Background.sprite = Backgrounds[_backgroundIndex];
 
+        if (LevelManager.Instance.mainMenuEntered)
+        {
+            StartDialogue();
+        }
+
     }
 }

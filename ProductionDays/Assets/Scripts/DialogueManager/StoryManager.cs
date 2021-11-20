@@ -119,16 +119,24 @@ public class StoryManager : MonoBehaviour
         //int _nmbrOfStories = numberOfStories;
         // load room+1 story
 
-        Debug.Log(_currentRoom);
         for (int i = 0; i < chapters.Count; i++)
         {
+            Debug.Log("Room" + _currentRoom);
+            Debug.Log("stories" + chapters[i].Count());
             if (_currentRoom + 1 < chapters[i].Count())
             {
                 storyIndex = _currentRoom + 1;
                 chapterIndex = i;
-                //Debug.Log(storyIndex);
-                //Debug.Log(chapterIndex);
+                Debug.Log("Story" + storyIndex);
+                Debug.Log("chapter" + chapterIndex);
+                if (LevelManager.Instance.mainMenuEntered)
+                {
+                    storyIndex = 0;
+                    chapterIndex = 0;
+                }
+
                 diaMan.SetCurrentStory(chapters[chapterIndex].GetStory(storyIndex));
+                return;
             }
             else
             {
